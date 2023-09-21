@@ -175,14 +175,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" >
+        <li class="chapter " data-level="1.4.1" data-path="ideas/break_down_game.html">
             
-                <span>
+                <a href="ideas/break_down_game.html">
             
                     
                     ゲームを仕組みに分解し、組み立てる
             
-                </span>
+                </a>
             
 
             
@@ -652,6 +652,113 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ターゲットデバイスと開発環境、何向けに何で作ろうか">ターゲットデバイスと開発環境、何向けに何で作ろうか</h2>
+<p>じゃあ小さなゲームを作ってみようか、と思ったときに、まず考えないといけないことの一つに、PC、スマホ、ゲーム機などなど、どのデバイスで動くゲームを作るかということがある。</p>
+<p>特にこだわりがないのであれば、PC の Web ブラウザ向けのゲームを作るのがおススメだ。今のブラウザは様々な開発環境で開発されたゲームを動作させるためのプラットフォームとして成熟しているし、他の人にプレイしてもらうにも、ネット上の URL 告知からシームレスに遊んでもらえてお手軽だ。</p>
+<p>ゲーム作りを楽しむ、という面では、どの開発環境・プログラミング言語・ゲームエンジンでゲームを作りたいか、から考える手もある。これについては小さなゲームだからどうこう、ということは特になくて、自分の好みで決めて良いと思う。ただ、重厚な 3D ゲームを主なターゲットとしている Unreal Engine <sup><a href="#fn_1" id="reffn_1">1</a></sup> などは小さなゲームを作るにはリッチすぎる、などは考慮しても良いかもしれない。</p>
+<p>ブラウザ向けに作るとして、開発環境の選択肢は色々ある。</p>
+<ul>
+<li>JavaScript</li>
+</ul>
+<p>ブラウザで動くプログラムは JavaScript で書く。だからゲームも JavaScript で書こう、というのは自然な発想だ。p5.js <sup><a href="#fn_2" id="reffn_2">2</a></sup> や Phaser <sup><a href="#fn_3" id="reffn_3">3</a></sup> などのライブラリを利用することで、画面描画などの面倒な部分を楽して書くことができる。p5.js なら、文系大学生のための p5.js 入門 <sup><a href="#fn_4" id="reffn_4">4</a></sup> や p5.js 日本語リファレンス <sup><a href="#fn_5" id="reffn_5">5</a></sup> を見ながら、p5.js web editor <sup><a href="#fn_6" id="reffn_6">6</a></sup> を使えば、すぐに始めることができる。</p>
+<ul>
+<li>ファンタジーコンソール</li>
+</ul>
+<p>ゲームの実行環境と開発環境、キャラクタ・レベル・音のエディタなどを内包した、軽量なゲームエンジンをファンタジーコンソールと呼ぶ。代表的なものとしては PICO-8 <sup><a href="#fn_7" id="reffn_7">7</a></sup>、Pyxel <sup><a href="#fn_8" id="reffn_8">8</a></sup>、TIC-80 <sup><a href="#fn_9" id="reffn_9">9</a></sup> などがある。オールインワンの環境で、機能も意図的に絞られているため、小さなゲームを作るには良い選択だ。それぞれ使えるプログラミング言語などが異なるので、自分の好みのものを見つけると良い。PICO-8 を試してみるなら、PICO-8 日本語版マニュアル <sup><a href="#fn_10" id="reffn_10">10</a></sup> や PICO-8 API 早見表 <sup><a href="#fn_11" id="reffn_11">11</a></sup> を見ながら、PICO-8 Education Edition <sup><a href="#fn_12" id="reffn_12">12</a></sup> を使ってみよう。</p>
+<ul>
+<li>ゲームエンジン</li>
+</ul>
+<p>Unity <sup><a href="#fn_13" id="reffn_13">13</a></sup>、GameMaker <sup><a href="#fn_14" id="reffn_14">14</a></sup>、Godot <sup><a href="#fn_15" id="reffn_15">15</a></sup>、など多くのゲームエンジンは、ブラウザ (HTML5)向けにゲームをエクスポートすることができ、ブラウザ上で作ったゲームを遊ぶことができる。画像や音などのアセット管理機能が充実していたり、ブラウザだけでなく PC・スマホ向けにもゲームをリリースできるなど、採用するメリットは大きい。</p>
+<ul>
+<li>ツクール</li>
+</ul>
+<p>RPG が作りたい、ノベルゲームが作りたい、などのジャンルが決まっているのであれば、専用のツールが使える。RPG ツクール MV <sup><a href="#fn_16" id="reffn_16">16</a></sup> に代表されるツクールが歴史的にも有名なため、このカテゴリのツールは伝統的にツクールと呼ばれがちだ。RPG ツクール以外にも WOLF RPG エディター <sup><a href="#fn_17" id="reffn_17">17</a></sup> などもあるし、ノベルゲームならティラノスクリプト <sup><a href="#fn_18" id="reffn_18">18</a></sup> などがある。最近の多くのツクールはブラウザ向けのエクスポート機能を備えている。</p>
+<ul>
+<li>ビジュアルプログラミング言語</li>
+</ul>
+<p>テキストベースのプログラムにそもそも慣れていない場合は、Scratch <sup><a href="#fn_19" id="reffn_19">19</a></sup> や MakeCode <sup><a href="#fn_20" id="reffn_20">20</a></sup> などのビジュアルプログラミング言語が利用できる。複雑なゲームを作ることは大変だが、あらかじめ絵や音なども用意されていて、小さなゲームであれば十分に制作することができる。</p>
+<ul>
+<li>他のプログラミング言語</li>
+</ul>
+<p>今のブラウザは、JavaScript 以外の言語も WebAssembly <sup><a href="#fn_21" id="reffn_21">21</a></sup> などの技術を活用することで動作させることができる。ただし動作させるためのコンパイルなどの作業が複雑なことも多く、可能であれば上記ファンタジーコンソールやゲームエンジンの助けを借りた方が良い。Python で作りたかったら Pyxel、C#で作りたかったら Unity、など。HSP <sup><a href="#fn_22" id="reffn_22">22</a></sup> など、オフィシャルで対応している言語は手間は少なくて済みそうだ。</p>
+<p><br></p>
+<p>ブラウザ向けに作る場合、タッチ操作（PC 上ではマウス操作）のみでゲームを操作可能にすることで、スマホ対応を行うこともできる。より多くの人に遊んでもらいたい場合は検討したい。</p>
+<p>ゲームを作る体験それ自身を楽しみたい、という面では別にブラウザ向けにこだわる必要もない。PC 用アプリやスマホ用アプリでもよい。プチコン 4 <sup><a href="#fn_23" id="reffn_23">23</a></sup> などを使って Switch 向けゲームを作っても良い。MakeCode で作ったゲームは好きなハンドヘルドデバイス <sup><a href="#fn_24" id="reffn_24">24</a></sup> で遊ぶこともできる。PICO-8 用ゲームをハンドヘルドデバイスで動かしている <sup><a href="#fn_25" id="reffn_25">25</a></sup> 人もいる。多くの人に手軽に遊んでもらいたい！という考え方だけでなく、このデバイス向けに作ってみるのが面白そう！というモチベーションで作るのも楽しい。自由に作ろう。</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://www.unrealengine.com/ja/" target="_blank">Unreal Engine</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://p5js.org/" target="_blank">p5.js</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://phaser.io/" target="_blank">Phaser</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="https://zenn.dev/ojk/books/intro-to-p5js" target="_blank">文系大学生のための p5.js 入門</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://processing-fan.firebaseapp.com/refer.html" target="_blank">p5.js 日本語リファレンス</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://editor.p5js.org/" target="_blank">p5.js web editor</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. <a href="https://www.lexaloffle.com/pico-8.php" target="_blank">PICO-8</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. <a href="https://github.com/kitao/pyxel/blob/main/docs/README.ja.md" target="_blank">Pyxel</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. <a href="https://tic80.com/" target="_blank">TIC-80</a><a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_10">
+<sup>10</sup>. <a href="https://raw.githubusercontent.com/kitao/pico8-jp/master/pico8-jp.txt" target="_blank">PICO-8 日本語版マニュアル</a><a href="#reffn_10" title="Jump back to footnote [10] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_11">
+<sup>11</sup>. <a href="https://kitao.github.io/pico8-api-jp/" target="_blank">PICO-8 API 早見表</a><a href="#reffn_11" title="Jump back to footnote [11] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_12">
+<sup>12</sup>. <a href="https://www.pico-8-edu.com/" target="_blank">PICO-8 Education Edition</a><a href="#reffn_12" title="Jump back to footnote [12] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_13">
+<sup>13</sup>. <a href="https://unity.com/ja" target="_blank">Unity</a><a href="#reffn_13" title="Jump back to footnote [13] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_14">
+<sup>14</sup>. <a href="https://gamemaker.io/ja-JP" target="_blank">GameMaker</a><a href="#reffn_14" title="Jump back to footnote [14] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_15">
+<sup>15</sup>. <a href="https://godotengine.org/" target="_blank">Godot</a><a href="#reffn_15" title="Jump back to footnote [15] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_16">
+<sup>16</sup>. <a href="https://rpgmakerofficial.com/product/mv/" target="_blank">RPG ツクール MV</a><a href="#reffn_16" title="Jump back to footnote [16] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_17">
+<sup>17</sup>. <a href="https://www.silversecond.com/WolfRPGEditor/" target="_blank">WOLF RPG エディター</a><a href="#reffn_17" title="Jump back to footnote [17] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_18">
+<sup>18</sup>. <a href="https://tyrano.jp/" target="_blank">ティラノスクリプト</a><a href="#reffn_18" title="Jump back to footnote [18] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_19">
+<sup>19</sup>. <a href="https://scratch.mit.edu/" target="_blank">Scratch</a><a href="#reffn_19" title="Jump back to footnote [19] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_20">
+<sup>20</sup>. <a href="https://www.microsoft.com/ja-jp/makecode" target="_blank">MakeCode</a><a href="#reffn_20" title="Jump back to footnote [20] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_21">
+<sup>21</sup>. <a href="https://developer.mozilla.org/ja/docs/WebAssembly" target="_blank">WebAssembly</a><a href="#reffn_21" title="Jump back to footnote [21] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_22">
+<sup>22</sup>. <a href="https://www.onionsoft.net/hsp/v34/doclib/hsp3dish_js.htm" target="_blank">hsp3dish.js プログラミングガイド</a><a href="#reffn_22" title="Jump back to footnote [22] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_23">
+<sup>23</sup>. <a href="https://www.petc4.smilebasic.com/" target="_blank">プチコン 4</a><a href="#reffn_23" title="Jump back to footnote [23] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_24">
+<sup>24</sup>. <a href="https://arcade.makecode.com/hardware" target="_blank">MakeCode ハードウェア</a><a href="#reffn_24" title="Jump back to footnote [24] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_25">
+<sup>25</sup>. <a href="https://yoshives.com/rg351p-pico8-celeste/" target="_blank">【RG351P】PICO-8 を動かして CELESTE を遊ぼう</a><a href="#reffn_25" title="Jump back to footnote [25] in the text."> ↩</a>
+</blockquote>
 
                                 
                                 </section>
@@ -687,7 +794,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ターゲットデバイスと開発環境、何向けに何で作ろうか","level":"1.3","depth":1,"next":{"title":"自作ゲームの紹介（）：","level":"1.3.1","depth":2,"ref":"","articles":[]},"previous":{"title":"自作ゲームの紹介（１）：THUNDER","level":"1.2.1","depth":2,"ref":"","articles":[]},"articles":[{"title":"自作ゲームの紹介（）：","level":"1.3.1","depth":2,"ref":"","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"device_and_environment.md","mtime":"2023-09-17T11:04:40.608Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-20T12:49:34.097Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ターゲットデバイスと開発環境、何向けに何で作ろうか","level":"1.3","depth":1,"next":{"title":"自作ゲームの紹介（）：","level":"1.3.1","depth":2,"ref":"","articles":[]},"previous":{"title":"自作ゲームの紹介（１）：THUNDER","level":"1.2.1","depth":2,"ref":"","articles":[]},"articles":[{"title":"自作ゲームの紹介（）：","level":"1.3.1","depth":2,"ref":"","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"device_and_environment.md","mtime":"2023-09-21T00:20:42.220Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-21T22:24:47.675Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
