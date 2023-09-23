@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>制約がアイデアを生み、ゲームを完成させる · The Joys of Small Game Development</title>
+        <title>チャット AI は新しいゲームを作れるのか · The Joys of Small Game Development</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="one_button.html" />
+    <link rel="next" href="../conclusion.html" />
     
     
-    <link rel="prev" href="../ideas/break_down_game.html" />
+    <link rel="prev" href="chat_ai_combine_tags.html" />
     
 
     </head>
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
             
-                <a href="./">
+                <a href="../restrictions/">
             
                     
                     制約がアイデアを生み、ゲームを完成させる
@@ -173,9 +173,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="one_button.html">
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
             
-                <a href="one_button.html">
+                <a href="../restrictions/one_button.html">
             
                     
                     ワンボタンゲームにおけるワンボタンでできること
@@ -186,9 +186,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="limited_size.html">
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
             
-                <a href="limited_size.html">
+                <a href="../restrictions/limited_size.html">
             
                     
                     限られたサイズでゲームを作る
@@ -378,9 +378,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="../generation/">
+        <li class="chapter " data-level="1.10" data-path="./">
             
-                <a href="../generation/">
+                <a href="./">
             
                     
                     小さなゲーム、それ自体を自動生成することはできるのか
@@ -392,9 +392,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="chat_ai_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="chat_ai_new_puzzle.html">
             
                     
                     チャット AI にパズルゲームを考えてもらう
@@ -405,9 +405,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="chat_ai_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="chat_ai_combine_tags.html">
             
                     
                     チャット AI にゲームメカニクスを教えたら
@@ -418,9 +418,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter active" data-level="1.10.3" data-path="can_chat_ai_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="can_chat_ai_create_game.html">
             
                     
                     チャット AI は新しいゲームを作れるのか
@@ -479,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >制約がアイデアを生み、ゲームを完成させる</a>
+        <a href=".." >チャット AI は新しいゲームを作れるのか</a>
     </h1>
 </div>
 
@@ -494,38 +494,77 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="制約がアイデアを生み、ゲームを完成させる">制約がアイデアを生み、ゲームを完成させる</h2>
-<p>アイデアを思いつくためのテクニックとして、なんらかの制約をあらかじめ自らに課してしまう、という方法がある。その制約の中でゲームを面白くするにはどうすれば良いかを考えることで、今までとは違った発想が生まれることが期待できる。また、その制約を逆に活かす方法を考えることで、アイデアの独自性を高めることができる。</p>
-<p>制約とはどのようなものが考えられるだろうか。例として考えられるのは、ゲーム制作コンテストであるゲームジャムでのフォーマット、ルール、テーマだ。多くのゲームジャムでは、投稿できるゲームになんらかの制約を設けることで、参加者がその制約内にフォーカスしてゲームを作れるようにしている。</p>
-<p>&apos;Different Game Jam Formats&apos; <sup><a href="#fn_1" id="reffn_1">1</a></sup> というビデオの中では、その制約のタイプとして以下を挙げている。</p>
+                                <h2 id="チャット-ai-は新しいゲームを作れるのか">チャット AI は新しいゲームを作れるのか</h2>
+<p>ChatGPT を用いたゲーム考案の試みはいくつか考えられるが、新しいゲームを考え、それを実装することは難しいように思える。少なくとも現状の ChatGPT では以下の問題がある。</p>
 <ul>
-<li>ツール：利用できるゲームエンジンなどを規定する</li>
-<li>アセット：ゲーム内で利用可能な画像などをあらかじめ与える</li>
-<li>ビジュアル：解像度や色数を制限する</li>
-<li>ゴール：「より多くのものを集める」などゲームの目的を規定する</li>
-<li>インタラクト：「2 つのボタンしか利用できない」などプレイヤーがゲームとインタラクトする手段を制約する</li>
-<li>ジャンル：「プラットフォーマー」「ローグライク」などのジャンルを規定する</li>
-<li>タイムリミット：一定時間内にゲームを完成させる</li>
+<li>ChatGPT に、実装可能なアルゴリズムのレベルまで詳細化された、新しいゲームのアイデアを考えさせるのは難しい。</li>
+<li>ChatGPT は、今までにない新しいアルゴリズムを、ソースコードとして実装することを不得意としている。</li>
 </ul>
-<p>アイデアを生み出すために役立つ制約としては、インタラクト、ビジュアル、ゴールあたりだろうか。</p>
-<p>インタラクトに関する制約としては、利用可能なボタン数を限定する、マウスだけを使う、キーボード全体を使う、ツインスティックなど、入力に用いるデバイスに制約を加えるのが一般的である。使えるボタンが限られていると、そのボタンにどのようなアクションを割り当てるかを熟慮する必要がでてくる。既存の方向キー＋ 2 ボタンを使っているゲームをワンボタンゲームにしなければいけない、などの無理難題をふっかけることで、強引な解決策を生み出す過程で、新たなアイデアが生み出せる可能性がある。</p>
-<p>ビジュアルに関する制約は、基本見た目に影響があるだけでゲームのルールなどに影響を与えたりしない。だが、16x16 ピクセルなどの非常に少ない画素数であったり、縦 1 ラインしか許容しない実質 1 次元のフィールドだったり、という極端な制約が与えられた場合、それを打破するためのアイデアが求められることもある。過去には、出力として 1x1 ピクセル 2 色のディスプレイしか許さないゲームジャム <sup><a href="#fn_2" id="reffn_2">2</a></sup> もあった。</p>
-<p>ゴールについては、ありきたりのゴールを設定するだけではアイデア発掘にはつながらない。「自身を破壊せよ」「犠牲を払え」「勝つために敵を利用しろ」のような特殊なゴールを持つゲームを考えることで、あらたなゲームが発想できる。ちなみにこれら特殊なゴールは Game Jam Theme Generator <sup><a href="#fn_3" id="reffn_3">3</a></sup> から出てきたものだ。このジェネレーターはゴールに限らずいろんなゲームジャムのテーマを出してくれるので、アイデアジェネレーター同様に発想の手助けに使える。</p>
-<p>ツール、アセット、ジャンル、タイムリミットなどは、アイデア発想のためというよりは、限られた時間でゲームを完成させるためのものだ。ツールやアセットの選定に時間をかけることなく、決まったジャンルのゲームを、タイムリミット内に作る。このように作り方を定式化することで、ゲーム本体の制作にフォーカスして素早くゲームを作ることができる。</p>
-<p>もしあなたがゲームをたくさん作ることを目指すのであれば、自分なりの作り方の定式、レギュレーションを決めるのも良い手だ。作るもの、作り方をパターン化して、開発にかかる手間をなるべく減らすのだ <sup><a href="#fn_4" id="reffn_4">4</a></sup>。</p>
-<p>ゲーム制作に対していくつかの制約を課すことは、新たなアイデアを発想したり、素早くゲームを完成させることに役立つ。あまりにきつい制約を加えると、今度はそれを乗り越えるのが苦しくなるので、自分の感性に合う制約を見つけて、うまく活用しよう。</p>
+<h3 id="chatgpt-に新しいゲームのアイデアを考えさせるのは難しい">ChatGPT に新しいゲームのアイデアを考えさせるのは難しい</h3>
+<p>ChatGPT は与えられた問に対して愚直に正しい答えを返すので、単に新しいアクションミニゲームのアイデアを教えて、と聞いても当たり障りのない凡庸なアイデアが返ってくる。</p>
+<blockquote>
+<p>I want you to act as a game designer. Show me ideas for new action mini-games.</p>
+</blockquote>
+<p>このプロンプトに対する回答例は、以下のようにタイムアタックという、良くあるメカニクスの説明が返ってきただけだ。</p>
+<blockquote>
+<p>Sure, here are a few ideas for action mini-games:</p>
+<ol>
+<li>Time Attack: In this game, the player has to race against the clock to reach the end of a level. The catch is that the clock constantly ticks down and the player must collect time bonuses along the way to keep the clock running. The player must also avoid obstacles and enemies that can slow them down or cost them precious seconds.</li>
+</ol>
+</blockquote>
+<p>プロンプトの工夫で、ある程度は ChatGPT にありきたりではないゲームを考えさせることができる。ただ、そのような工夫を経ても、返ってきたアイデアはまだぼんやりとしていて、ブレーンストーミングの元ネタにはなるが、ここから具体的なゲームのルール、アルゴリズムまで到達させることは難しい。</p>
+<p>より詳細なアルゴリズムにするために、以下のようなプロンプトで、そのゲームの疑似コードを書いてもらうことはできる。</p>
+<blockquote>
+<p>I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm representing the rules of the following game:</p>
+<p>Game 2: Pinball Panic</p>
+<p>Selected tags: player: circle, weapon: bounce, field: pins, on pressed: shoot</p>
+<p>Description: In this game, the player controls a circular character that bounces around a pinball-like field. The player can shoot projectiles by pressing the button, which bounce off the pins and destroy enemies. The objective is to survive as long as possible while racking up points by destroying enemies and collecting power-ups.</p>
+</blockquote>
+<p>でもこのようにして出てくるコードにはあまり具体性が無く、実装可能な解像度までは遠い。</p>
+<h3 id="chatgpt-は新しいアルゴリズムを実装するのは不得意">ChatGPT は新しいアルゴリズムを実装するのは不得意</h3>
+<p>別の問題として、ChatGPT は既存のアルゴリズムを様々なプログラミング言語で実装するのは得意だが、前例の無い新しいアルゴリズムをコードにするのは不得意なのでは、という点がある。</p>
+<p>&apos;Can GPT-4 <em>Actually</em> Write Code?&apos;という記事 <sup><a href="#fn_1" id="reffn_1">1</a></sup> には、可能であればなるべく火を通らないように目的地までのパスを探索する、というアルゴリズムを ChatGPT に書かせようとしたがうまくいかなかった、ということが書いてある。一般的な A*の探索アルゴリズムのコードであれば ChatGPT は難なく出力するが、それをアレンジした要求をするとうまく答えられなくなるという例だ。</p>
+<p>ChatGPT はユーザーの要求を解釈してそれに合致する既存コードを持ってくることや、それに対する追加要求に応じてコードを書き換える、といったことは得意だ。だが、今までに無いアルゴリズムやルールを含むコードを生成する能力がどの程度あるのかは未知数だ。</p>
+<p>今までにない簡単なゲームの例として、自作したゲームの一つである PIN CLIMB を、なんとかして ChatGPT に書かせられないかということを試していた。</p>
+<p><a href="https://abagames.github.io/crisp-game-lib-games/?pinclimb" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/pinclimb/screenshot.gif" alt="PIN CLIMB"></a></p>
+<p>上記のゲーム実装方法を説明する文章を元に、以下のプロンプトでゲームのアルゴリズムを示す疑似コードを作成し、</p>
+<blockquote>
+<p>
+I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm for the following game inside one unique code block. Do not write explanations.<br>
+# Characters<br>
+- bar<br>
+- pins<br>
+# Controls<br>
+- The bar stretches as long as the button is held down and shrinks to a default length when the button is released.<br>
+# Rules<br>
+- One end of the bar is fixed to the pin and the other end rotates around the pin.<br>
+- The game screen scrolls down so that the bar is positioned slightly above the bottom edge of the screen.<br>
+- Pins appear at random locations at the top edge of the screen after each scrolling of a certain distance.<br>
+- When the bar catches on another pin, the bar is fixed to that pin.<br>
+# Initial state<br>
+- Pins are placed in about 10 random positions on the screen, and the bar is fixed to the bottom pin.
+</p>
+</blockquote>
+
+<p>その後、以下のプロンプトで具体的な Phaser のソースコードにする、ということを試した。Phaser を選んだのは、JavaScript ベースのゲームライブラリで一番 Web 上に情報が豊富なのは Phaser だろうという予測の元だ。</p>
+<blockquote>
+<p>Implement the game using the HTML5 game framework &quot;Phaser 3&quot; without using external resources such as image files or audio files. Just show me the JavaScript source code.</p>
+</blockquote>
+<p>結果としてはうまくいかなかった。最初の疑似コード時点で十分な情報量があるか怪しいものが出てくるし、そこから Phaser への変換もあまりうまくいかない。</p>
+<p>疑似コードを挟まず、ピンを書く、スクロールさせる、ひもを回す、のようにステップバイステップで指示して直接ソースコードを書かせても、ひもが他のピンに当たるとそのピンへ固定される、のあたりでうまくいかなくなる。まあここの実装難度が高いのは分かる。回転する矩形の当たり判定を取るのも、当たったあとにそのピンへ固定するのも、両方とも処理としては特殊なので、この辺が限界と言われても納得はできる。</p>
+<h3 id="プロンプトの工夫でこれらの課題を乗り越えられる？">プロンプトの工夫でこれらの課題を乗り越えられる？</h3>
+<p>分からない。</p>
+<p>ゲームのアイデア発想はなるべく自由に、それをルールや実装へ落とすところは具体的に、みたいなことをプロンプトでうまく制御するのはかなり難しいのでは、となんとなく思う。あとモデルの限界はプロンプトでは乗り越えられない。</p>
+<h3 id="gpt-〇〇-になればこの辺の問題は解決される？">GPT-〇〇 になればこの辺の問題は解決される？</h3>
+<p>分からない。</p>
+<p>画像生成 AI の急激な改善を見ていると、半年後にはこの辺の問題は解決するのかもしれない。モデルの規模で乗り越えられる課題なのか、そもそもアプローチとして筋悪なのか、どちらかは現時点では不明だ。</p>
+<h3 id="今でもできる他のアプローチがあるのでは？">今でもできる他のアプローチがあるのでは？</h3>
+<p>分からない。</p>
+<p>ポンとかブロック崩しとか、既存のゲームのコードをまず提示させて、そこから対話的に新しい要素を加えていく、のような方法は今でもうまくいく可能性がある。その場合、どのくらいの新しさなら許容されるのか、どの程度細切れに指示するのが効率が良いのか、などのプロンプトエンジニアリングが必要となる。</p>
+<p>そのようにゲームを作るのが直接コードを書くのに比べて効率良いかと問われると、おそらく悪いので、これは効率性の問題ではなく、ChatGPT を使ってゲームを作るという縛りプレイとしての楽しさを追い求めることになる。「AI にゲームを作らせるゲーム」という新しいゲームを、旬のうちにいろいろ試したいところだ。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://www.youtube.com/watch?v=P7WgK1AZnmM" target="_blank">Different Game Jam Formats</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. <a href="https://itch.io/jam/bit-jam" target="_blank">bit jam</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. <a href="https://letsmakeagame.net/game-jam-theme-generator/" target="_blank">Game Jam Theme Generator</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
-</blockquote>
-<blockquote id="fn_4">
-<sup>4</sup>. <a href="https://aba.hatenablog.com/entry/2021/12/28/192244" target="_blank">ゲーム作りをパターン化して 1 年で 139 個のミニゲームを作る</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+<sup>1</sup>. <a href="https://tylerglaiel.substack.com/p/can-gpt-4-actually-write-code" target="_blank">Can GPT-4 <em>Actually</em> Write Code?</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -554,12 +593,12 @@
 
             
                 
-                <a href="../ideas/break_down_game.html" class="navigation navigation-prev " aria-label="Previous page: ゲームを仕組みに分解し、組み立てる">
+                <a href="chat_ai_combine_tags.html" class="navigation navigation-prev " aria-label="Previous page: チャット AI にゲームメカニクスを教えたら">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="one_button.html" class="navigation navigation-next " aria-label="Next page: ワンボタンゲームにおけるワンボタンでできること">
+                <a href="../conclusion.html" class="navigation navigation-next " aria-label="Next page: おわりに">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -570,7 +609,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"next":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},"previous":{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"path":"ideas/break_down_game.md","ref":"ideas/break_down_game.md","articles":[]},"articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/README.md","mtime":"2023-09-21T23:04:31.584Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"チャット AI は新しいゲームを作れるのか","level":"1.10.3","depth":2,"next":{"title":"おわりに","level":"1.11","depth":1,"path":"conclusion.md","ref":"conclusion.md","articles":[]},"previous":{"title":"チャット AI にゲームメカニクスを教えたら","level":"1.10.2","depth":2,"path":"generation/chat_ai_combine_tags.md","ref":"generation/chat_ai_combine_tags.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/can_chat_ai_create_game.md","mtime":"2023-09-22T07:00:25.268Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

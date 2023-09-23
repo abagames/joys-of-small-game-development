@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>制約がアイデアを生み、ゲームを完成させる · The Joys of Small Game Development</title>
+        <title>音の自動生成 · The Joys of Small Game Development</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="one_button.html" />
+    <link rel="next" href="puzzle_level.html" />
     
     
-    <link rel="prev" href="../ideas/break_down_game.html" />
+    <link rel="prev" href="pixel_art.html" />
     
 
     </head>
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
             
-                <a href="./">
+                <a href="../restrictions/">
             
                     
                     制約がアイデアを生み、ゲームを完成させる
@@ -173,9 +173,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="one_button.html">
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
             
-                <a href="one_button.html">
+                <a href="../restrictions/one_button.html">
             
                     
                     ワンボタンゲームにおけるワンボタンでできること
@@ -186,9 +186,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="limited_size.html">
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
             
-                <a href="limited_size.html">
+                <a href="../restrictions/limited_size.html">
             
                     
                     限られたサイズでゲームを作る
@@ -320,9 +320,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../procedural/">
+        <li class="chapter " data-level="1.9" data-path="./">
             
-                <a href="../procedural/">
+                <a href="./">
             
                     
                     自動生成で楽をする
@@ -334,9 +334,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../procedural/pixel_art.html">
+        <li class="chapter " data-level="1.9.1" data-path="pixel_art.html">
             
-                <a href="../procedural/pixel_art.html">
+                <a href="pixel_art.html">
             
                     
                     ドット絵の自動生成
@@ -347,9 +347,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../procedural/sound.html">
+        <li class="chapter active" data-level="1.9.2" data-path="sound.html">
             
-                <a href="../procedural/sound.html">
+                <a href="sound.html">
             
                     
                     音の自動生成
@@ -360,9 +360,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../procedural/puzzle_level.html">
+        <li class="chapter " data-level="1.9.3" data-path="puzzle_level.html">
             
-                <a href="../procedural/puzzle_level.html">
+                <a href="puzzle_level.html">
             
                     
                     パズルゲームのレベル生成
@@ -479,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >制約がアイデアを生み、ゲームを完成させる</a>
+        <a href=".." >音の自動生成</a>
     </h1>
 </div>
 
@@ -494,38 +494,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="制約がアイデアを生み、ゲームを完成させる">制約がアイデアを生み、ゲームを完成させる</h2>
-<p>アイデアを思いつくためのテクニックとして、なんらかの制約をあらかじめ自らに課してしまう、という方法がある。その制約の中でゲームを面白くするにはどうすれば良いかを考えることで、今までとは違った発想が生まれることが期待できる。また、その制約を逆に活かす方法を考えることで、アイデアの独自性を高めることができる。</p>
-<p>制約とはどのようなものが考えられるだろうか。例として考えられるのは、ゲーム制作コンテストであるゲームジャムでのフォーマット、ルール、テーマだ。多くのゲームジャムでは、投稿できるゲームになんらかの制約を設けることで、参加者がその制約内にフォーカスしてゲームを作れるようにしている。</p>
-<p>&apos;Different Game Jam Formats&apos; <sup><a href="#fn_1" id="reffn_1">1</a></sup> というビデオの中では、その制約のタイプとして以下を挙げている。</p>
-<ul>
-<li>ツール：利用できるゲームエンジンなどを規定する</li>
-<li>アセット：ゲーム内で利用可能な画像などをあらかじめ与える</li>
-<li>ビジュアル：解像度や色数を制限する</li>
-<li>ゴール：「より多くのものを集める」などゲームの目的を規定する</li>
-<li>インタラクト：「2 つのボタンしか利用できない」などプレイヤーがゲームとインタラクトする手段を制約する</li>
-<li>ジャンル：「プラットフォーマー」「ローグライク」などのジャンルを規定する</li>
-<li>タイムリミット：一定時間内にゲームを完成させる</li>
-</ul>
-<p>アイデアを生み出すために役立つ制約としては、インタラクト、ビジュアル、ゴールあたりだろうか。</p>
-<p>インタラクトに関する制約としては、利用可能なボタン数を限定する、マウスだけを使う、キーボード全体を使う、ツインスティックなど、入力に用いるデバイスに制約を加えるのが一般的である。使えるボタンが限られていると、そのボタンにどのようなアクションを割り当てるかを熟慮する必要がでてくる。既存の方向キー＋ 2 ボタンを使っているゲームをワンボタンゲームにしなければいけない、などの無理難題をふっかけることで、強引な解決策を生み出す過程で、新たなアイデアが生み出せる可能性がある。</p>
-<p>ビジュアルに関する制約は、基本見た目に影響があるだけでゲームのルールなどに影響を与えたりしない。だが、16x16 ピクセルなどの非常に少ない画素数であったり、縦 1 ラインしか許容しない実質 1 次元のフィールドだったり、という極端な制約が与えられた場合、それを打破するためのアイデアが求められることもある。過去には、出力として 1x1 ピクセル 2 色のディスプレイしか許さないゲームジャム <sup><a href="#fn_2" id="reffn_2">2</a></sup> もあった。</p>
-<p>ゴールについては、ありきたりのゴールを設定するだけではアイデア発掘にはつながらない。「自身を破壊せよ」「犠牲を払え」「勝つために敵を利用しろ」のような特殊なゴールを持つゲームを考えることで、あらたなゲームが発想できる。ちなみにこれら特殊なゴールは Game Jam Theme Generator <sup><a href="#fn_3" id="reffn_3">3</a></sup> から出てきたものだ。このジェネレーターはゴールに限らずいろんなゲームジャムのテーマを出してくれるので、アイデアジェネレーター同様に発想の手助けに使える。</p>
-<p>ツール、アセット、ジャンル、タイムリミットなどは、アイデア発想のためというよりは、限られた時間でゲームを完成させるためのものだ。ツールやアセットの選定に時間をかけることなく、決まったジャンルのゲームを、タイムリミット内に作る。このように作り方を定式化することで、ゲーム本体の制作にフォーカスして素早くゲームを作ることができる。</p>
-<p>もしあなたがゲームをたくさん作ることを目指すのであれば、自分なりの作り方の定式、レギュレーションを決めるのも良い手だ。作るもの、作り方をパターン化して、開発にかかる手間をなるべく減らすのだ <sup><a href="#fn_4" id="reffn_4">4</a></sup>。</p>
-<p>ゲーム制作に対していくつかの制約を課すことは、新たなアイデアを発想したり、素早くゲームを完成させることに役立つ。あまりにきつい制約を加えると、今度はそれを乗り越えるのが苦しくなるので、自分の感性に合う制約を見つけて、うまく活用しよう。</p>
+                                <h2 id="bgm-や効果音の自動生成">BGM や効果音の自動生成</h2>
+<p>小さなゲームに合う BGM とはどのようなものだろう。一つ考えられるのは、昔のアーケードゲームのような BGM だろう。昔というのはゼビウスとかディグダグとか、1980 年代前半までさかのぼるくらいの昔を想定している。この頃のレトロアーケードゲームの BGM は、4 ～ 8 小節くらいの短いフレーズを繰り返すものがあった。</p>
+<p>そのような BGM を自動生成する技術はいくつかある。一つは WolframTones <sup><a href="#fn_1" id="reffn_1">1</a></sup> だ。セルラオートマタを切り出してメロディにする手法。これはお手軽でよさそうなのだが、16 分音符で完全五度で往復するベースとか、昔のゲームでよく見るフレーズが再現できないのが弱点に見える。</p>
+<p>最新のものだと OpenAI の Jukebox <sup><a href="#fn_2" id="reffn_2">2</a></sup> があるが、これは楽譜ではなく音楽の波形を生成するものなので、レトロゲーム向けではない。同様の技術である MusicLM <sup><a href="#fn_3" id="reffn_3">3</a></sup> には 8-bit というサンプルがあり、チップチューンっぽい楽曲も作れるようだ。ただ、まだ表現としてリッチすぎる感じがある。</p>
+<p>そこで Magenta <sup><a href="#fn_4" id="reffn_4">4</a></sup>だ。Magenta は Google が開発している、機械学習を音楽や絵に応用するリサーチプロジェクト。ブラウザで動かせる実装として、Magenta.js <sup><a href="#fn_5" id="reffn_5">5</a></sup> が公開されている。</p>
+<p>Magenta.js は曲の楽譜を入力すると、それに続くフレーズを自動生成してくれる、MusicRNN <sup><a href="#fn_6" id="reffn_6">6</a></sup>を備えている。これにレトロゲームの短い楽譜を与えれば、それっぽい別の曲が生成される。それを簡単に試せるデモプログラムを作成した（画像クリックでデモページへ）<sup><a href="#fn_7" id="reffn_7">7</a></sup>。</p>
+<p><a href="https://abagames.github.io/short-vgm-generator/build/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/short-vgm-generator/main/docs/screenshot.png" alt="Short VGM generator" width="700"></a></p>
+<p>真ん中の「Generate」ボタンを押すと、画面左のフレーズを元に新たなフレーズを生成し、画面右に表示、再生する。メロディとベースの 2 トラックのみから成るシンプルなフレーズの生成だが、一応それっぽいものが生成できる。複数トラックについては、それぞれ別々にフレーズを作成した上で、ベースがメロディと不協和音だった場合に調整（振動数が 1 ～ 4 くらいの比率になるようにする）している。画面中央下のチェックボックスを外すとこの調整を行わなくなるので、より自由なフレーズが生成される。</p>
+<p>Magenta.js の JavaScript からの詳しい使い方については、他の記事 <sup><a href="#fn_8" id="reffn_8">8</a></sup> を参照いただきたい。</p>
+<p>効果音の自動生成については、メロディをターゲットとして MusicRNN では対応が難しいと思われる。その代わりに、sfxr <sup><a href="#fn_9" id="reffn_9">9</a></sup> をベースとした波形生成ベースのものが多数あるので、それらを利用すると良い。これらのツール、ライブラリは、&apos;coin&apos;, &apos;laser&apos;などの音のタイプに対してプリセットの波形パラメタを持ち、それをランダムに変更するで様々な効果音を生成する。アクションゲームなどに簡単な効果音をつけるために活用したい。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://www.youtube.com/watch?v=P7WgK1AZnmM" target="_blank">Different Game Jam Formats</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+<sup>1</sup>. <a href="https://tones.wolfram.com/about/how-it-works" target="_blank">WolframTones</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. <a href="https://itch.io/jam/bit-jam" target="_blank">bit jam</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+<sup>2</sup>. <a href="https://openai.com/blog/jukebox/" target="_blank">Jukebox</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_3">
-<sup>3</sup>. <a href="https://letsmakeagame.net/game-jam-theme-generator/" target="_blank">Game Jam Theme Generator</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+<sup>3</sup>. <a href="https://google-research.github.io/seanet/musiclm/examples/" target="_blank">MusicLM: Generating Music From Text</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_4">
-<sup>4</sup>. <a href="https://aba.hatenablog.com/entry/2021/12/28/192244" target="_blank">ゲーム作りをパターン化して 1 年で 139 個のミニゲームを作る</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+<sup>4</sup>. <a href="https://magenta.tensorflow.org/" target="_blank">Magenta</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://hello-magenta.glitch.me/" target="_blank">Magenta.js</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://magenta.github.io/magenta-js/music/classes/_music_rnn_model_.musicrnn.html" target="_blank">MusicRNN</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. <a href="https://github.com/abagames/short-vgm-generator" target="_blank">short-VGM-generator</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. <a href="https://qiita.com/youtoy/items/32eedd5c5c9280fe3f0f" target="_blank">機械学習・AI で音を作れる「Magenta」の JavaScript 版（Magenta.js）を p5.js Web Editor 上で動かしてみる</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. <a href="http://www.drpetter.se/project_sfxr.html" target="_blank">sfxr</a><a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -554,12 +559,12 @@
 
             
                 
-                <a href="../ideas/break_down_game.html" class="navigation navigation-prev " aria-label="Previous page: ゲームを仕組みに分解し、組み立てる">
+                <a href="pixel_art.html" class="navigation navigation-prev " aria-label="Previous page: ドット絵の自動生成">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="one_button.html" class="navigation navigation-next " aria-label="Next page: ワンボタンゲームにおけるワンボタンでできること">
+                <a href="puzzle_level.html" class="navigation navigation-next " aria-label="Next page: パズルゲームのレベル生成">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -570,7 +575,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"next":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},"previous":{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"path":"ideas/break_down_game.md","ref":"ideas/break_down_game.md","articles":[]},"articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/README.md","mtime":"2023-09-21T23:04:31.584Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"音の自動生成","level":"1.9.2","depth":2,"next":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]},"previous":{"title":"ドット絵の自動生成","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"procedural/sound.md","mtime":"2023-09-23T07:54:11.497Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>制約がアイデアを生み、ゲームを完成させる · The Joys of Small Game Development</title>
+        <title>ファンタジーコンソールを自作する · The Joys of Small Game Development</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="one_button.html" />
+    <link rel="next" href="../procedural/" />
     
     
-    <link rel="prev" href="../ideas/break_down_game.html" />
+    <link rel="prev" href="for_handheld.html" />
     
 
     </head>
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
             
-                <a href="./">
+                <a href="../restrictions/">
             
                     
                     制約がアイデアを生み、ゲームを完成させる
@@ -173,9 +173,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="one_button.html">
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
             
-                <a href="one_button.html">
+                <a href="../restrictions/one_button.html">
             
                     
                     ワンボタンゲームにおけるワンボタンでできること
@@ -186,9 +186,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="limited_size.html">
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
             
-                <a href="limited_size.html">
+                <a href="../restrictions/limited_size.html">
             
                     
                     限られたサイズでゲームを作る
@@ -262,9 +262,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../tools/">
+        <li class="chapter " data-level="1.8" data-path="./">
             
-                <a href="../tools/">
+                <a href="./">
             
                     
                     ゲームを作るツールを自作する
@@ -276,9 +276,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../tools/for_browser.html">
+        <li class="chapter " data-level="1.8.1" data-path="for_browser.html">
             
-                <a href="../tools/for_browser.html">
+                <a href="for_browser.html">
             
                     
                     ブラウザ用小さなゲーム向けライブラリを作ってみる
@@ -289,9 +289,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../tools/for_handheld.html">
+        <li class="chapter " data-level="1.8.2" data-path="for_handheld.html">
             
-                <a href="../tools/for_handheld.html">
+                <a href="for_handheld.html">
             
                     
                     ハンドヘルドデバイスでもゲームを動かそう
@@ -302,9 +302,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../tools/fantasy_console.html">
+        <li class="chapter active" data-level="1.8.3" data-path="fantasy_console.html">
             
-                <a href="../tools/fantasy_console.html">
+                <a href="fantasy_console.html">
             
                     
                     ファンタジーコンソールを自作する
@@ -479,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >制約がアイデアを生み、ゲームを完成させる</a>
+        <a href=".." >ファンタジーコンソールを自作する</a>
     </h1>
 </div>
 
@@ -494,38 +494,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="制約がアイデアを生み、ゲームを完成させる">制約がアイデアを生み、ゲームを完成させる</h2>
-<p>アイデアを思いつくためのテクニックとして、なんらかの制約をあらかじめ自らに課してしまう、という方法がある。その制約の中でゲームを面白くするにはどうすれば良いかを考えることで、今までとは違った発想が生まれることが期待できる。また、その制約を逆に活かす方法を考えることで、アイデアの独自性を高めることができる。</p>
-<p>制約とはどのようなものが考えられるだろうか。例として考えられるのは、ゲーム制作コンテストであるゲームジャムでのフォーマット、ルール、テーマだ。多くのゲームジャムでは、投稿できるゲームになんらかの制約を設けることで、参加者がその制約内にフォーカスしてゲームを作れるようにしている。</p>
-<p>&apos;Different Game Jam Formats&apos; <sup><a href="#fn_1" id="reffn_1">1</a></sup> というビデオの中では、その制約のタイプとして以下を挙げている。</p>
-<ul>
-<li>ツール：利用できるゲームエンジンなどを規定する</li>
-<li>アセット：ゲーム内で利用可能な画像などをあらかじめ与える</li>
-<li>ビジュアル：解像度や色数を制限する</li>
-<li>ゴール：「より多くのものを集める」などゲームの目的を規定する</li>
-<li>インタラクト：「2 つのボタンしか利用できない」などプレイヤーがゲームとインタラクトする手段を制約する</li>
-<li>ジャンル：「プラットフォーマー」「ローグライク」などのジャンルを規定する</li>
-<li>タイムリミット：一定時間内にゲームを完成させる</li>
-</ul>
-<p>アイデアを生み出すために役立つ制約としては、インタラクト、ビジュアル、ゴールあたりだろうか。</p>
-<p>インタラクトに関する制約としては、利用可能なボタン数を限定する、マウスだけを使う、キーボード全体を使う、ツインスティックなど、入力に用いるデバイスに制約を加えるのが一般的である。使えるボタンが限られていると、そのボタンにどのようなアクションを割り当てるかを熟慮する必要がでてくる。既存の方向キー＋ 2 ボタンを使っているゲームをワンボタンゲームにしなければいけない、などの無理難題をふっかけることで、強引な解決策を生み出す過程で、新たなアイデアが生み出せる可能性がある。</p>
-<p>ビジュアルに関する制約は、基本見た目に影響があるだけでゲームのルールなどに影響を与えたりしない。だが、16x16 ピクセルなどの非常に少ない画素数であったり、縦 1 ラインしか許容しない実質 1 次元のフィールドだったり、という極端な制約が与えられた場合、それを打破するためのアイデアが求められることもある。過去には、出力として 1x1 ピクセル 2 色のディスプレイしか許さないゲームジャム <sup><a href="#fn_2" id="reffn_2">2</a></sup> もあった。</p>
-<p>ゴールについては、ありきたりのゴールを設定するだけではアイデア発掘にはつながらない。「自身を破壊せよ」「犠牲を払え」「勝つために敵を利用しろ」のような特殊なゴールを持つゲームを考えることで、あらたなゲームが発想できる。ちなみにこれら特殊なゴールは Game Jam Theme Generator <sup><a href="#fn_3" id="reffn_3">3</a></sup> から出てきたものだ。このジェネレーターはゴールに限らずいろんなゲームジャムのテーマを出してくれるので、アイデアジェネレーター同様に発想の手助けに使える。</p>
-<p>ツール、アセット、ジャンル、タイムリミットなどは、アイデア発想のためというよりは、限られた時間でゲームを完成させるためのものだ。ツールやアセットの選定に時間をかけることなく、決まったジャンルのゲームを、タイムリミット内に作る。このように作り方を定式化することで、ゲーム本体の制作にフォーカスして素早くゲームを作ることができる。</p>
-<p>もしあなたがゲームをたくさん作ることを目指すのであれば、自分なりの作り方の定式、レギュレーションを決めるのも良い手だ。作るもの、作り方をパターン化して、開発にかかる手間をなるべく減らすのだ <sup><a href="#fn_4" id="reffn_4">4</a></sup>。</p>
-<p>ゲーム制作に対していくつかの制約を課すことは、新たなアイデアを発想したり、素早くゲームを完成させることに役立つ。あまりにきつい制約を加えると、今度はそれを乗り越えるのが苦しくなるので、自分の感性に合う制約を見つけて、うまく活用しよう。</p>
+                                <h2 id="ファンタジーコンソールを自作する">ファンタジーコンソールを自作する</h2>
+<p>ファンタジーコンソール <sup><a href="#fn_1" id="reffn_1">1</a></sup> は、こんなゲーム機があったら面白いなという開発者の妄想を具現化したものだ。実在しなかった別のゲームボーイやファミコンを勝手に考えて PC 上で実装して遊ぶ、それがファンタジーコンソールだ。</p>
+<p>ファンタジーコンソールの代表例はなんといっても PICO-8 <sup><a href="#fn_2" id="reffn_2">2</a></sup> だ。128x128 ドットの画面、4 音同時再生、256 個の 8x8 スプライトを持ち、Lua での開発環境やドット絵エディタ、音楽エディタ、マップエディタなどを含むとてもリッチなマシンだ。</p>
+<p>コンソール（Video game console <sup><a href="#fn_3" id="reffn_3">3</a></sup> = ゲーム機）という名前にもかかわらず、ファンタジーコンソールは開発環境を内包した作りになっていることが多い。どちらかというと MSX のようなマイコンやファミリーベーシックっぽいものになっている。</p>
+<p>PICO-8 レベルのファンタジーコンソールを作るのはとても大変だ。しかし自分でもファンタジーコンソールを作ってみたい。ならば思いっきり仕様を絞る必要がある。ごく小さな画面、単純な音出力、簡素な入力手段しか持たないファンタジーコンソールを目指した結果、PEEKPOKE <sup><a href="#fn_4" id="reffn_4">4</a></sup> というファンタジーコンソールを作ってみた。</p>
+<p>PEEKPOKE は、PC やスマホのブラウザで遊べる（下の画面をクリック）。</p>
+<p><a href="https://abagames.github.io/peekpoke/bombsnake/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/peekpoke/main/docs/screenshot.gif" alt="BOMB SNAKE"></a></p>
+<p>上下左右 or WASD キーで蛇を動かして赤い爆弾を取るスネークゲームだ。スマホでも画面下のバーチャルパッドで操作できる。</p>
+<p><img src="https://raw.githubusercontent.com/abagames/peekpoke/main/docs/memorymap.png" alt="PEEKPOKE memory map"></p>
+<p>PEEKPOKE では peek 命令と poke 命令しかマシンの制御に使えない。32x30 ドット 8 色の画面と 8x5 のテキスト画面、7 つのキー入力、単音ブザーのみ、という限定された機能を、メモリから操作できるメモリマップド I/O <sup><a href="#fn_5" id="reffn_5">5</a></sup>にあんっている。開発環境は入っていない。ゲームは JavaScript で記述できる <sup><a href="#fn_6" id="reffn_6">6</a></sup>。</p>
+<p>コンソール独自の機能はすべてメモリに押し込んだうえで、開発環境は JavaScript に丸投げしたので、作りはかなり簡単にできた。作れるゲームもかなり簡単なものに限られるが、ぎりぎりファンタジーコンソールを名乗れるのではないか。あと起動時にスプラッシュスクリーンを入れると、なんとなくファンタジーコンソールっぽくなる。</p>
+<p>開発環境抜きであればファンタジーコンソールを作る手間はだいぶ削減できるので、何か面白いスペックのコンソールを妄想して作ってみるのも楽しい。今回作ったものはだいぶ素直なアーキテクチャのものだが、もっと変わった機能を持ったコンソールだったり、カセットビジョンや ATARI 2600 などの既存コンソールをオマージュしたものなどを考えてみるのも楽しそうだ。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://www.youtube.com/watch?v=P7WgK1AZnmM" target="_blank">Different Game Jam Formats</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+<sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB" target="_blank">ファンタジーコンソール</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. <a href="https://itch.io/jam/bit-jam" target="_blank">bit jam</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+<sup>2</sup>. <a href="https://www.lexaloffle.com/pico-8.php" target="_blank">PICO-8</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_3">
-<sup>3</sup>. <a href="https://letsmakeagame.net/game-jam-theme-generator/" target="_blank">Game Jam Theme Generator</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+<sup>3</sup>. <a href="https://en.wikipedia.org/wiki/Video_game_console" target="_blank">Video game console</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_4">
-<sup>4</sup>. <a href="https://aba.hatenablog.com/entry/2021/12/28/192244" target="_blank">ゲーム作りをパターン化して 1 年で 139 個のミニゲームを作る</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+<sup>4</sup>. <a href="https://github.com/abagames/peekpoke" target="_blank">PEEKPOKE</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97%E3%83%89I/O" target="_blank">メモリマップド I/O</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://github.com/abagames/peekpoke/blob/main/docs/bombsnake/main.js" target="_blank">peekpoke bombsnake/main.js</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -554,12 +552,12 @@
 
             
                 
-                <a href="../ideas/break_down_game.html" class="navigation navigation-prev " aria-label="Previous page: ゲームを仕組みに分解し、組み立てる">
+                <a href="for_handheld.html" class="navigation navigation-prev " aria-label="Previous page: ハンドヘルドデバイスでもゲームを動かそう">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="one_button.html" class="navigation navigation-next " aria-label="Next page: ワンボタンゲームにおけるワンボタンでできること">
+                <a href="../procedural/" class="navigation navigation-next " aria-label="Next page: 自動生成で楽をする">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -570,7 +568,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"next":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},"previous":{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"path":"ideas/break_down_game.md","ref":"ideas/break_down_game.md","articles":[]},"articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/README.md","mtime":"2023-09-21T23:04:31.584Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"next":{"title":"自動生成で楽をする","level":"1.9","depth":1,"path":"procedural/README.md","ref":"procedural/README.md","articles":[{"title":"ドット絵の自動生成","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},{"title":"音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]}]},"previous":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/fantasy_console.md","mtime":"2023-09-23T01:37:57.535Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
