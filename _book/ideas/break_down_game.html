@@ -209,7 +209,7 @@
                 <a href="../difficulty/">
             
                     
-                    小さなゲームにおける適切な難しさとは？
+                    小さなゲームにおける適切な難しさとは
             
                 </a>
             
@@ -339,7 +339,7 @@
                 <a href="../procedural/pixel_art.html">
             
                     
-                    ドット絵の自動生成
+                    ドット絵を自動生成する
             
                 </a>
             
@@ -352,7 +352,7 @@
                 <a href="../procedural/sound.html">
             
                     
-                    音の自動生成
+                    BGM や効果音の自動生成
             
                 </a>
             
@@ -397,7 +397,7 @@
                 <a href="../generation/chat_ai_new_puzzle.html">
             
                     
-                    チャット AI にパズルゲームを考えてもらう
+                    チャット AI が考えるパズルゲーム
             
                 </a>
             
@@ -410,7 +410,7 @@
                 <a href="../generation/chat_ai_combine_tags.html">
             
                     
-                    チャット AI にゲームメカニクスを教えたら
+                    ゲームメカニクスをチャット AI に教えたら
             
                 </a>
             
@@ -495,31 +495,33 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ゲームを仕組みに分解し、組み立てる">ゲームを仕組みに分解し、組み立てる</h2>
-<p>ゲームのアイデアを考える方法の一つとして、今まで作ったゲームが、どのような仕組みから出来上がっていて、その仕組みがプレイヤーにとってどのような楽しさや難しさを提供しているかを整理し、それら仕組みを組み合わせて新たなゲームを作る、という方法も考えられる。</p>
-<p>一例として、今まで私が作ってきたゲームを仕組みに分解してみるとどうなるかを試してみた。</p>
-<p><img src="https://abagames.github.io/action-mini-game-mechanic-tags/twitter_card_image.png" alt="action-mini-game mechanic tags" width="600"></p>
-<p>各ゲームが、どのようなプレイヤーキャラクタ、武器、障害物、フィールド、ルール、操作から構成されているかを、カテゴリごとのタグで整理した。上記ページ <sup><a href="#fn_1" id="reffn_1">1</a></sup> でタグが一覧できる。各タグの詳細（Detail）ボタンを押すと、それぞれのタグの説明、およびそのタグが付加されたゲームの一覧が見られる。</p>
-<p>例えばプレイヤーキャラクタが回転するタグのページ <sup><a href="#fn_2" id="reffn_2">2</a></sup> を見てみる。回転のタイミングに合わせて操作するゲームで、プレイヤーがタイミングを図る方法としてどのようなバリエーションが考えられるかが、ゲームの一覧からおおまかに分かる。</p>
-<p>武器が放物線上に飛ぶ <sup><a href="#fn_3" id="reffn_3">3</a></sup>。投げ方や投げるもの、着弾した時の効果のバリエーションが分かる。</p>
-<p>ペナルティのある物を混ぜる <sup><a href="#fn_4" id="reffn_4">4</a></sup>。何も考えずに攻撃を続けるのではなく、画面の状況をよく見て攻撃タイミングを図るタイプのゲームとなる。</p>
-<p>到達することでゲームオーバーになる地点 <sup><a href="#fn_5" id="reffn_5">5</a></sup>。ゲームオーバーになるリスクを与える方法のバリエーションの一つと考えられる。</p>
-<p>近接ボーナス <sup><a href="#fn_6" id="reffn_6">6</a></sup>。障害物の近くにボーナス点を配置することで、リスク・リワードの基本形が実現できる。</p>
-<p>ボタンを押したら属性反転 <sup><a href="#fn_7" id="reffn_7">7</a></sup>。プレイヤー操作に対する動作バリエーションについても、タグに基づいて整理 <sup><a href="#fn_8" id="reffn_8">8</a></sup> することで、より分かりやすくなる。</p>
-<p>これらページの使い方としては、</p>
+<p>ゲームのアイデアの考え方として、今まで作ったゲームが、どのような仕組みから出来上がっていて、その仕組みがプレイヤーにとってどのような楽しさや難しさを提供しているかを整理し、それら仕組みを組み合わせて新たなゲームを作る、という方法も考えられる。</p>
+<p>一例として、今まで私が作ってきたゲームを仕組みに分解してみるとどうなるかを試してみた。各ゲームが、どのようなプレイヤーキャラクタ、武器、障害物、フィールド、ルール、操作から構成されているかを、カテゴリごとのタグで整理した <sup><a href="#fn_1" id="reffn_1">1</a></sup>（画像クリックでトップページへ移動）。</p>
+<p><a href="https://abagames.github.io/action-mini-game-mechanic-tags/index_ja.html" target="_blank"><img src="https://abagames.github.io/action-mini-game-mechanic-tags/twitter_card_image.png" alt="action-mini-game mechanic tags" width="600"></a></p>
+<p>各タグの詳細（Detail）ボタンを押すと、それぞれのタグの説明、およびそのタグが付加されたゲームの一覧を見ることができる。</p>
+<p>タグには、例えば以下のような仕組みが対応している。</p>
 <ul>
-<li>タグ一覧ページを見てアクションミニゲームに組み込める仕組みを把握する</li>
-<li>タグ詳細ページを見てその仕組みを使った別のゲームを考える</li>
-<li>複数のタグを適当に組み合わせてそれら仕組みを使ったゲームを考える</li>
+<li>プレイヤーキャラクタが回転する <sup><a href="#fn_2" id="reffn_2">2</a></sup>：回転のタイミングに合わせて操作する。</li>
+<li>武器が放物線状に飛ぶ <sup><a href="#fn_3" id="reffn_3">3</a></sup>：投げ方や投げるもの、着弾した時の効果などにバリエーションがある。</li>
+<li>ペナルティのある物を混ぜる <sup><a href="#fn_4" id="reffn_4">4</a></sup>：何も考えずに攻撃を続けるのではなく、画面の状況をよく見て攻撃タイミングを図る必要がある。</li>
+<li>1D フィールド <sup><a href="#fn_5" id="reffn_5">5</a></sup>：ゲーム画面が 1 次元でも表現でき、キャラクタは左右（もしくは上下）にしか動けない。</li>
+<li>近接ボーナス <sup><a href="#fn_6" id="reffn_6">6</a></sup>：障害物の近くにボーナス点を配置することで、リスク・リワードの基本形が実現できる。</li>
+<li>ボタンを押したら属性反転 <sup><a href="#fn_7" id="reffn_7">7</a></sup>：特殊なプレイヤー操作の一例である。</li>
 </ul>
-<p>などを想定している。</p>
-<p>こういったゲームの仕組みは、よくゲームメカニクスと呼ばれる <sup><a href="#fn_9" id="reffn_9">9</a></sup>。</p>
-<p>ゲーム内でとれるプレイヤーの行動や、その行動に対応して起こるゲーム内の出来事などを整理したものがゲームメカニクスだ。あるゲームがどのようにデザインされているかを解析するためや、新たなゲームを考える際の助けとして使われたりする。ゲームプレイはゲームメカニクスの間のフローと言われたりする <sup><a href="#fn_10" id="reffn_10">10</a></sup> が、ゲームメカニクスをベースに、それらを組み合わせたゲームプレイ体験をどのようにするか、プレイヤーに対するチャレンジをどう与えるかなどを考えることができる。</p>
+<p>これらページの使い方としては、以下を想定している。</p>
+<ul>
+<li>タグ一覧ページを見てアクションミニゲームに組み込める仕組みを把握する。</li>
+<li>タグ詳細ページを見てその仕組みを使った別のゲームを考える。</li>
+<li>複数のタグを適当に組み合わせてそれら仕組みを使ったゲームを考える。</li>
+</ul>
+<p>こういったゲームの仕組みは、よくゲームメカニクスと呼ばれる <sup><a href="#fn_8" id="reffn_8">8</a></sup>。</p>
+<p>ゲーム内でとれるプレイヤーの行動や、その行動に対応して起こるゲーム内の出来事などを整理したものがゲームメカニクスだ。あるゲームがどのようにデザインされているかを解析するためや、新たなゲームを考える際の助けとして使われたりする。ゲームプレイはゲームメカニクスの間のフローと言われたりする <sup><a href="#fn_9" id="reffn_9">9</a></sup> が、ゲームメカニクスをベースに、それらを組み合わせたゲームプレイ体験をどのようにするか、プレイヤーに対するチャレンジをどう与えるかなどを考えることができる。</p>
 <p>ゲームメカニクスとしてどの程度の粒度のものを挙げるべきかは、特に決まった指標が無いように思える。ターン、リソース管理、リスクとリワード、など抽象的な要素をメカニクスとして挙げる場合もあれば、ジャンプ、シールド、回転、パワーアップなど細かなゲーム内アクションを挙げる場合もある。</p>
 <p>今回は新しいアクションミニゲームを考える助けになるために、という目的のもと整理し、後者の細かなゲーム内アクションに近い粒度でまとめた。あと各メカニクスに対してそれを取り入れた実例が見えることが、そのメカニクスをどのように他のメカニクスと組み合わせているか、どのようなリスク（チャレンジ）やリワードをプレイヤーに与えているかを把握することを重視し、実例のゲームが見られて遊べるようにした。</p>
 <p>自作ゲームを例に整理したので、アクションミニゲーム、とくにワンボタンゲームに偏重した内容になっていることは否めないが、今回はゲームアイデア発想法と一例として示した。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/index_ja.html" target="_blank">action-mini-game mechanic tags</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+<sup>1</sup>. <a href="https://github.com/abagames/action-mini-game-mechanic-tags" target="_blank">action-mini-game-mechanic-tags</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_2">
 <sup>2</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/player_rotate_ja.html" target="_blank">回転する</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
@@ -531,7 +533,7 @@
 <sup>4</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/obstacle_penalty_ja.html" target="_blank">接触したり破壊したりすることでペナルティになる物が混在している</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_5">
-<sup>5</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/field_outpost_ja.html" target="_blank">敵やアイテムが到達するとゲームオーバーになる地点がある</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+<sup>5</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/field_1D_ja.html" target="_blank">1 次元に制限されたフィールド</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_6">
 <sup>6</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/rule_proximity_bonus_ja.html" target="_blank">リスクに近接すると点が入る</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
@@ -540,13 +542,10 @@
 <sup>7</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/on_pressed_reverse_state_ja.html" target="_blank">属性や状態を反転させる</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_8">
-<sup>8</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/index_ja.html#on_pressed" target="_blank">プレイヤーがボタンを押したときに起こるイベントのカテゴリ</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
+<sup>8</sup>. <a href="https://en.wikipedia.org/wiki/Game_mechanics" target="_blank">Game mechanics</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_9">
-<sup>9</sup>. <a href="https://en.wikipedia.org/wiki/Game_mechanics" target="_blank">Game mechanics</a><a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
-</blockquote>
-<blockquote id="fn_10">
-<sup>10</sup>. <a href="https://gamedesignskills.com/game-design/video-game-mechanics/#ancor4" target="_blank">Video Game Mechanics: A Beginner’s Guide (with Examples)</a><a href="#reffn_10" title="Jump back to footnote [10] in the text."> ↩</a>
+<sup>9</sup>. <a href="https://gamedesignskills.com/game-design/video-game-mechanics/#ancor4" target="_blank">Video Game Mechanics: A Beginner’s Guide (with Examples)</a><a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -591,7 +590,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"next":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"previous":{"title":"小さなゲームのアイデアって、どうやって思いつくの","level":"1.4","depth":1,"path":"ideas/README.md","ref":"ideas/README.md","articles":[{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"path":"ideas/break_down_game.md","ref":"ideas/break_down_game.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"ideas/break_down_game.md","mtime":"2023-09-21T22:24:30.410Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"next":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"previous":{"title":"小さなゲームのアイデアって、どうやって思いつくの","level":"1.4","depth":1,"path":"ideas/README.md","ref":"ideas/README.md","articles":[{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"path":"ideas/break_down_game.md","ref":"ideas/break_down_game.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"ideas/break_down_game.md","mtime":"2023-09-24T00:42:12.874Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

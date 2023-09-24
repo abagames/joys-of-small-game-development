@@ -209,7 +209,7 @@
                 <a href="../difficulty/">
             
                     
-                    小さなゲームにおける適切な難しさとは？
+                    小さなゲームにおける適切な難しさとは
             
                 </a>
             
@@ -339,7 +339,7 @@
                 <a href="../procedural/pixel_art.html">
             
                     
-                    ドット絵の自動生成
+                    ドット絵を自動生成する
             
                 </a>
             
@@ -352,7 +352,7 @@
                 <a href="../procedural/sound.html">
             
                     
-                    音の自動生成
+                    BGM や効果音の自動生成
             
                 </a>
             
@@ -397,7 +397,7 @@
                 <a href="../generation/chat_ai_new_puzzle.html">
             
                     
-                    チャット AI にパズルゲームを考えてもらう
+                    チャット AI が考えるパズルゲーム
             
                 </a>
             
@@ -410,7 +410,7 @@
                 <a href="../generation/chat_ai_combine_tags.html">
             
                     
-                    チャット AI にゲームメカニクスを教えたら
+                    ゲームメカニクスをチャット AI に教えたら
             
                 </a>
             
@@ -494,21 +494,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="ワンボタンゲームにおけるワンボタンでできること">ワンボタンゲームにおけるワンボタンでできること</h2>
-<p>ゲームジャムにおけるインタラクトへの制約において、プレイヤーが使える操作をただ 1 つのボタンに限る、といういわゆるワンボタンゲームのゲームジャムもある。ここで言うワンボタンゲームは、レバーによる移動の他のボタンが 1 つ、といったものではなくて、純粋に 1 つのボタンしか操作に使わないゲームを指す。</p>
+                                <h2 id="ワンボタンの可能性">ワンボタンの可能性</h2>
+<p>ゲームジャムにおけるインタラクトへの制約において、プレイヤーが使える操作をただ 1 つのボタンに限るという、いわゆるワンボタンゲームのゲームジャムもある。ここで言うワンボタンゲームは、レバーによる移動の他のボタンが 1 つ、といったものではなくて、純粋に 1 つのボタンしか操作に使わないゲームを指す。</p>
 <p>ワンボタンゲームの利点は、操作が分かりやすく、タッチデバイスでも操作しやすい点にある。とにかく何かボタンを押せばそれがプレイヤーが取れる動作の全てであり、操作説明がほぼ不要である。またタッチデバイスでも画面中のどこかをタップあるいはホールドすれば操作ができるので、バーチャルパッドでよく起こる、ボタンを押した感触が無いので操作がしづらいという問題が発生しない。</p>
-<p>欠点は、当然のことながら、動作にバリエーションを与えるのが難しいこと。レバーがあれば簡単に実現できる左右移動さえ、ボタンを押すと進行方向が反転する、というちょっと特殊な操作にせざるを得ない。</p>
+<p>欠点は、当然のことながら、動作にバリエーションを与えるのが難しいことである。レバーがあれば簡単に実現できる左右移動さえ、ボタンを押すと進行方向が反転する、というちょっと特殊な操作にせざるを得ない。</p>
 <p>なのでワンボタンゲームを作る際に問題になるのは、たった 1 つのボタンによるゲームへのインタラクションに、どのようにバリエーションを与えられるか、という点になる。その点に関して、今まで作ったいくつかのワンボタンゲームを例に整理してみたい。</p>
 <h3 id="特殊な動作を取り入れる">特殊な動作を取り入れる</h3>
 <p>ボタンを押した瞬間にプレイヤーが以下の動作を行う、というのがワンボタンゲームでは良く見られる。</p>
 <ul>
-<li>移動方向が反転する・90 度回る</li>
-<li>ジャンプ・羽ばたく</li>
-<li>ショットを撃つ</li>
+<li>移動方向が反転する、90 度回る。</li>
+<li>ジャンプ、羽ばたく。</li>
+<li>ショットを撃つ。</li>
 </ul>
-<p>ボタンで移動方向が反転する例としては、</p>
+<p>ボタンで移動方向が反転する例としては、THUNDER というゲームを作った（画像クリックでプレイ）。</p>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?thunder" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/thunder/screenshot.gif" alt="THUNDER"></a></p>
-<p>というゲームを作った（スクリーンショットをクリックすれば、そのままブラウザで遊べる）。2 方向に移動するだけのゲームであれば、障害物やボーナスアイテムなどを工夫して、ワンボタンゲームに仕上げることはできる。が、ワンボタンならではの特徴があるゲームとはあまり言えない。</p>
+<p>2 方向に移動するだけのゲームであれば、障害物やボーナスアイテムなどを工夫して、ワンボタンゲームに仕上げることはできる。が、ワンボタンならではの特徴があるゲームとはあまり言えない。</p>
 <p>ボタン操作で発生する動作を、通常のゲームではあまり見かけないものにすれば、ワンボタン操作ならではのゲームであることを、プレイヤーに強く印象づけることができる。</p>
 <h4 id="瞬間移動">瞬間移動</h4>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?cywall" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/cywall/screenshot.gif" alt="CYWALL"></a></p>
@@ -635,7 +635,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"next":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]},"previous":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/one_button.md","mtime":"2023-09-22T11:37:19.260Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"next":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]},"previous":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/one_button.md","mtime":"2023-09-24T00:38:13.346Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -209,7 +209,7 @@
                 <a href="../difficulty/">
             
                     
-                    小さなゲームにおける適切な難しさとは？
+                    小さなゲームにおける適切な難しさとは
             
                 </a>
             
@@ -339,7 +339,7 @@
                 <a href="../procedural/pixel_art.html">
             
                     
-                    ドット絵の自動生成
+                    ドット絵を自動生成する
             
                 </a>
             
@@ -352,7 +352,7 @@
                 <a href="../procedural/sound.html">
             
                     
-                    音の自動生成
+                    BGM や効果音の自動生成
             
                 </a>
             
@@ -397,7 +397,7 @@
                 <a href="../generation/chat_ai_new_puzzle.html">
             
                     
-                    チャット AI にパズルゲームを考えてもらう
+                    チャット AI が考えるパズルゲーム
             
                 </a>
             
@@ -410,7 +410,7 @@
                 <a href="../generation/chat_ai_combine_tags.html">
             
                     
-                    チャット AI にゲームメカニクスを教えたら
+                    ゲームメカニクスをチャット AI に教えたら
             
                 </a>
             
@@ -498,26 +498,26 @@
 <p>ゲームジャムにおいては、ゲームのバイナリやソースコードのサイズに制約を加えることも多い。13 キロバイト以内の Web ゲームを作る js13kGames <sup><a href="#fn_1" id="reffn_1">1</a></sup> などが有名である。ゲームジャムではないが、古くマイコンの時代には、1 画面に収まるソースコードでゲームを作る <sup><a href="#fn_2" id="reffn_2">2</a></sup> という投稿プログラムもあった。</p>
 <p>様々なプログラミング言語で、短いコードを使って多彩な表現を行うための試みは、ゲームに限らず色々行われている。ggplot2 <sup><a href="#fn_3" id="reffn_3">3</a></sup> を用いて 280 文字以内で美しい幾何学模様を作る試み <sup><a href="#fn_4" id="reffn_4">4</a></sup> や、SuperCollider <sup><a href="#fn_5" id="reffn_5">5</a></sup> で 140 文字以内で作られた楽曲群 <sup><a href="#fn_6" id="reffn_6">6</a></sup>、JavaScript の 140 文字以内で作られたジェネレーティブアートを集めたサイト Dwitter <sup><a href="#fn_7" id="reffn_7">7</a></sup> もある。</p>
 <p>短いコードで作られた作品は情報がギュッと詰まった感じが美しい。最低限の構成要素で最大限の効果を得る工夫が詰め込まれている。</p>
-<p>Dwitter ではグラフィックスや音楽だけでなくゲームも投稿されている。例えばこの Crossy tortoise <sup><a href="#fn_8" id="reffn_8">8</a></sup> という道路を横断するカメを操作するゲームは、ワンボタンゲームを 140 字で実現している。ただしスコアは無く、一度渡りきったらそこで終わりという簡潔な作りだ。</p>
+<p>Dwitter ではグラフィックスや音楽だけでなくゲームも投稿されている。例えば Crossy tortoise <sup><a href="#fn_8" id="reffn_8">8</a></sup> という道路を横断するカメを操作するゲームは、ワンボタンゲームを 140 字で実現している。ただしスコアは無く、一度渡りきったらそこで終わりという簡潔な作りだ。</p>
 <p>ゲームを名乗るからには以下の要素は入れたい。</p>
 <ol>
-<li>スコアがある</li>
-<li>ゲームオーバーがある</li>
-<li>難度が上昇する</li>
-<li>できれば音も鳴る</li>
+<li>スコアがある。</li>
+<li>ゲームオーバーがある。</li>
+<li>難度が上昇する。</li>
+<li>できれば音も鳴る。</li>
 </ol>
-<p>上記要素を入れたいと思ったときの、短いコード向けの妥当なレギュレーションはどんなもんだろう、ということを考えてみよう。</p>
+<p>上記要素を入れたいと思ったときの、短いコード向けの妥当なレギュレーションはどうなるか、ということを考えてみよう。</p>
 <ol>
 <li><p>JavaScript256 文字以内で毎フレームのアップデート用関数を書く。</p>
 </li>
 <li><p>ゲーム向けに便利な関数を使えるようにするため、p5.js <sup><a href="#fn_9" id="reffn_9">9</a></sup>、Tone.js <sup><a href="#fn_10" id="reffn_10">10</a></sup>、lodash.range <sup><a href="#fn_11" id="reffn_11">11</a></sup>をライブラリとして導入する。</p>
 </li>
-<li><p>p5.mouseIsPressed, p5.mouseX, p5.mouseY, p5.random(), Tone.synth.triggerAttackRelease(), _.range()に 1 文字のエイリアスを与えて、短い文字数での関数呼び出しを許す。</p>
+<li><p>p5.mouseIsPressed (M), p5.mouseX (X), p5.mouseY (Y), p5.random() (R), Tone.synth.triggerAttackRelease() (N), _.range() (A)に 1 文字のエイリアスを与えて、短い文字数での関数呼び出しを許す。</p>
 </li>
-<li><p>変数 S をスコアとし、画面上部に表示する。変数 T にゲーム開始からの経過フレーム数が入っているので、それを難度調整などに利用できる。</p>
+<li><p>変数 S をスコアとし、画面上部に表示する。変数 T にゲーム開始からの経過フレーム数が入っているので、それを難度調整などに利用する。</p>
 </li>
 </ol>
-<p>このレギュレーションに沿ったサンプルゲームをいくつか作ってみた <sup><a href="#fn_12" id="reffn_12">12</a></sup>。</p>
+<p>このレギュレーションに沿ったサンプルゲームをいくつか作ってみた <sup><a href="#fn_12" id="reffn_12">12</a></sup>（画像クリックでプレイ）。</p>
 <p><a href="https://abagames.github.io/jsgame256/springcar.html" target="_blank"><img src="https://raw.githubusercontent.com/abagames/jsgame256/master/docs/springcar.png" alt="springcar"></a></p>
 <p>サンプルゲームの一つである、クリックで車がジャンプするゲーム springcar のコードは以下になる。</p>
 <pre><code class="lang-javascript"><span class="hljs-title function_">clear</span>(),
@@ -612,7 +612,7 @@
                 </a>
                 
                 
-                <a href="../difficulty/" class="navigation navigation-next " aria-label="Next page: 小さなゲームにおける適切な難しさとは？">
+                <a href="../difficulty/" class="navigation navigation-next " aria-label="Next page: 小さなゲームにおける適切な難しさとは">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -623,7 +623,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"next":{"title":"小さなゲームにおける適切な難しさとは？","level":"1.6","depth":1,"path":"difficulty/README.md","ref":"difficulty/README.md","articles":[{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"path":"difficulty/level.md","ref":"difficulty/level.md","articles":[]}]},"previous":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/limited_size.md","mtime":"2023-09-22T11:52:38.430Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"next":{"title":"小さなゲームにおける適切な難しさとは","level":"1.6","depth":1,"path":"difficulty/README.md","ref":"difficulty/README.md","articles":[{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"path":"difficulty/level.md","ref":"difficulty/level.md","articles":[]}]},"previous":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/limited_size.md","mtime":"2023-09-24T00:38:50.555Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -14,9 +14,9 @@ crisp-game-lib-portable で作ったゲームは、M5StickC PLUS [^3] や Adafru
 
 デバイス個別コードで書かないといけない処理は、
 
-- デバイスの初期化処理（Arduino なら`setup()`）とそこからの`initGame()`の呼び出し
-- フレームの更新処理（Arduino なら`loop()`）とそこからの`setButtonState()`呼び出しによるボタン状態の通知と`updateFrame()`の呼び出し
-- machineDependent.h [^8] で定義された描画や音周りの処理
+- デバイスの初期化処理（Arduino なら`setup()`）とそこからの`initGame()`の呼び出し。
+- フレームの更新処理（Arduino なら`loop()`）とそこからの`setButtonState()`呼び出しによるボタン状態の通知と`updateFrame()`の呼び出し。
+- machineDependent.h [^8] で定義された描画や音周りの処理。
 
 だけである。そのため、一般的なデバイスで固有に必要な実装は 250 行程度だ。
 

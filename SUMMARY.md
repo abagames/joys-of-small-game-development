@@ -6,7 +6,7 @@
 - [小さなゲームのアイデアって、どうやって思いつくの](ideas/README.md)
   - [ゲームを仕組みに分解し、組み立てる](ideas/break_down_game.md)
 - [制約がアイデアを生み、ゲームを完成させる](restrictions/README.md)
-  - [ワンボタンゲームにおけるワンボタンでできること](restrictions/one_button.md)
+  - [ワンボタンの可能性](restrictions/one_button.md)
   - [限られたサイズでゲームを作る](restrictions/limited_size.md)
 - [小さなゲームにおける適切な難しさとは](difficulty/README.md)
   - [難度の上昇カーブ](difficulty/curve.md)

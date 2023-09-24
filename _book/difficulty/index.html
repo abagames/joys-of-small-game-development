@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>小さなゲームにおける適切な難しさとは？ · The Joys of Small Game Development</title>
+        <title>小さなゲームにおける適切な難しさとは · The Joys of Small Game Development</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -209,7 +209,7 @@
                 <a href="./">
             
                     
-                    小さなゲームにおける適切な難しさとは？
+                    小さなゲームにおける適切な難しさとは
             
                 </a>
             
@@ -339,7 +339,7 @@
                 <a href="../procedural/pixel_art.html">
             
                     
-                    ドット絵の自動生成
+                    ドット絵を自動生成する
             
                 </a>
             
@@ -352,7 +352,7 @@
                 <a href="../procedural/sound.html">
             
                     
-                    音の自動生成
+                    BGM や効果音の自動生成
             
                 </a>
             
@@ -397,7 +397,7 @@
                 <a href="../generation/chat_ai_new_puzzle.html">
             
                     
-                    チャット AI にパズルゲームを考えてもらう
+                    チャット AI が考えるパズルゲーム
             
                 </a>
             
@@ -410,7 +410,7 @@
                 <a href="../generation/chat_ai_combine_tags.html">
             
                     
-                    チャット AI にゲームメカニクスを教えたら
+                    ゲームメカニクスをチャット AI に教えたら
             
                 </a>
             
@@ -479,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >小さなゲームにおける適切な難しさとは？</a>
+        <a href=".." >小さなゲームにおける適切な難しさとは</a>
     </h1>
 </div>
 
@@ -498,15 +498,14 @@
 <p>難しすぎるゲームは投げたくなる、でも簡単すぎるゲームはヒマだ。プレイヤーにとって適切な難易度設定は良いゲームに欠かせないが、どの程度が適切かの加減は難しい。高難度を何度もリトライを繰り返してねじ伏せるソウルライクから、なんとなく遊んでいてもクリアできるカジュアルな 3 マッチパズルまで、ゲームのタイプによっても求められる難易度は異なる。</p>
 <p>スキルに応じたチャレンジを与えることで、人をより物事にのめり込ませることができる、のような話はミハイ・チクセントミハイのフローモデル <sup><a href="#fn_1" id="reffn_1">1</a></sup> を代表に良く聞く。</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Challenge_vs_skill_jp.svg/450px-Challenge_vs_skill_jp.svg.png" alt="フローモデル" width="300"></p>
-<p>適切なスキルとチャレンジのバランスを取るために、小さなゲームで良く行われる方法として、単純に時間経過で難度を上げるという方法がある。プレイヤーのスキルレベルと見合うところまで難度（＝チャレンジレベル）が上昇し、スキルレベルを超えたところでプレイヤーがミスしてゲームが終わるという方法だ。</p>
-<p>難度を適切な手段で、適切な速度で上昇させることができるのであれば、この方法でも問題なく良いゲームを作ることができる。その場合の適切な手段とはなんだろう。高難度になってプレイヤーがミスした時に、プレイヤーが自分のスキルが足りないせいで負けたと思えるのであれば、適切な難しさと言えるだろう。逆にゲームが理不尽に難しくて、例えば絶対にかわせないような攻撃を受けたりした場合は、不適切な難しさだ。</p>
+<p>適切なスキルとチャレンジのバランスを取るために、小さなゲームで良く行われる方法として、時間経過で難度を上げるという方法がある。プレイヤーのスキルレベルと見合うところまで難度（＝チャレンジレベル）が上昇し、スキルレベルを超えたところでプレイヤーがミスしてゲームが終わるという方法だ。</p>
+<p>難度を適切な手段で、適切な速度で上昇させれば、この方法でも問題なく良いゲームを作ることができる。その場合の適切な手段とはなんだろう。高難度になってプレイヤーがミスした時に、プレイヤーが自分のスキルが足りないせいで負けたと思えるのであれば、適切な難しさと言えるだろう。逆にゲームが理不尽に難しくて、例えば絶対にかわせないような攻撃を受けたりした場合は、不適切な難しさだ。</p>
 <p>適切な難しさとしてよく使われるものは、ゲームスピードだ。ゲーム時間が経過するにつれゲームスピードが速くなり、プレイヤーや敵などの速度が上昇する。プレイヤーはより忙しい操作が要求され、操作をミスすることでゲームオーバーになる。古くはゲーム＆ウォッチ <sup><a href="#fn_2" id="reffn_2">2</a></sup> 時代から使われている伝統的な難易度調整方法で、今でも有効な手段だ。ゲームスピードを難易度調整に使う利点は、難しくしても理不尽になりにくい点にある。ゲームスピードを変化させる場合、敵の速度上昇に合わせてプレイヤーの速度も上昇するので、ゲーム序盤に回避可能だった敵が後半に回避不可能になる、のような状況は発生しない。</p>
-<p>ゲームスピードによる難度調整だけではどうしても単調になりがちな点は否めない。その場合は、出現する敵の数を増やす、障害物を大きくする、など別の方法で難しくすることもできる。その結果、障害物が大きすぎてプレイヤーのジャンプ能力では原理的に避けられない、のような理不尽な状況が発生しないよう調整することが重要だ。</p>
-<p>複数の難度調整方法を組み合わせることでゲーム展開がより複雑になり、プレイヤーが飽きにくいゲームにすることができる。理想的には、プレイヤーにより高度なテクニックを要求するような新しい要素、例えば新しい敵、武器、地形、アイテムなどを逐次
-投入できればより良いが、小さなゲームにおいては実装コストが高すぎて、なかなか難しい。</p>
+<p>ゲームスピードによる難度調整だけではどうしても単調になりがちな点は否めない。その場合は、出現する敵の数を増やす、障害物を大きくする、など別の方法で難しくすることもできる。その結果、障害物が大きすぎてプレイヤーのジャンプ能力では原理的に避けられない、などの理不尽な状況が発生しないよう調整することが重要だ。</p>
+<p>複数の難易度調整方法を組み合わせることでゲーム展開がより複雑になり、プレイヤーが飽きにくいゲームにすることができる。理想的には、プレイヤーにより高度なテクニックを要求するような新しい要素、例えば新しい敵、武器、地形、アイテムなどを逐次投入できればより良いが、小さなゲームにおいては実装コストが高すぎて、なかなか難しい。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AD%E3%83%BC_%28%E5%BF%83%E7%90%86%E5%AD%A6%29" target="_blank">ミハイ・チクセントミハイのフローモデル</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+<sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AD%E3%83%BC_%28%E5%BF%83%E7%90%86%E5%AD%A6%29" target="_blank">フロー (心理学)</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_2">
 <sup>2</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%82%B2%E3%83%BC%E3%83%A0%26%E3%82%A6%E3%82%AA%E3%83%83%E3%83%81" target="_blank">ゲーム＆ウォッチ</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
@@ -554,7 +553,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"小さなゲームにおける適切な難しさとは？","level":"1.6","depth":1,"next":{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},"previous":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]},"articles":[{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"path":"difficulty/level.md","ref":"difficulty/level.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"difficulty/README.md","mtime":"2023-09-20T23:38:59.038Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小さなゲームにおける適切な難しさとは","level":"1.6","depth":1,"next":{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},"previous":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]},"articles":[{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"path":"difficulty/level.md","ref":"difficulty/level.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"difficulty/README.md","mtime":"2023-09-20T23:38:59.038Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

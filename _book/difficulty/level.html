@@ -209,7 +209,7 @@
                 <a href="./">
             
                     
-                    小さなゲームにおける適切な難しさとは？
+                    小さなゲームにおける適切な難しさとは
             
                 </a>
             
@@ -339,7 +339,7 @@
                 <a href="../procedural/pixel_art.html">
             
                     
-                    ドット絵の自動生成
+                    ドット絵を自動生成する
             
                 </a>
             
@@ -352,7 +352,7 @@
                 <a href="../procedural/sound.html">
             
                     
-                    音の自動生成
+                    BGM や効果音の自動生成
             
                 </a>
             
@@ -397,7 +397,7 @@
                 <a href="../generation/chat_ai_new_puzzle.html">
             
                     
-                    チャット AI にパズルゲームを考えてもらう
+                    チャット AI が考えるパズルゲーム
             
                 </a>
             
@@ -410,7 +410,7 @@
                 <a href="../generation/chat_ai_combine_tags.html">
             
                     
-                    チャット AI にゲームメカニクスを教えたら
+                    ゲームメカニクスをチャット AI に教えたら
             
                 </a>
             
@@ -498,7 +498,7 @@
 <p>今まではレベル（面、ステージ、ラウンド）の概念が無いゲームを主に想定して述べたが、複数のレベルで構成され、それぞれのレベルの難度を設定したい場合、どのような難度設定が考えられるだろうか。</p>
 <p>レベルの数が進むたびに少しずつ難しくならないとハリが無い。かといって単に線形に難しくなっていくとメリハリが無い。それなりの波がありながらも確実に難しくなっていくレベルをどうすれば作れるか。一例として、以下のグラフを使う方法を示す。</p>
 <p><img src="http://chart.googleapis.com/chart?cht=lc&amp;chs=400x300&amp;chd=t:-1|-1|-1|-1|-1&amp;chdl=STAGE1|STAGE10|STAGE50|STAGE100|STAGE200&amp;chco=4444CC,44CCCC,44CC44,CCCC44,CC4444&amp;chxr=0,0,1,0.2|1,0,1,0.2&amp;chfd=0,x,0,1,0.01,(x^100)*100|1,x,0,1,0.01,(x^10)*100|2,x,0,1,0.01,(x^2)*100|3,x,0,1,0.01,(x^1)*100|4,x,0,1,0.01,(x^.5)*100&amp;chxt=x,y,x,y&amp;chxl=2:|random|3:|difficulty&amp;chxp=2,50|3,50" alt="level-difficulty-curve"></p>
-<p>横軸は 0 から 1 の値をランダムに返す <code>random</code> 関数から得られる数値を表している。縦軸は難度で、0 が最も簡単、1 が最も難しい状態を示している。ステージ開始前に <code>random</code> 関数から一つ値を取得し横軸の値とし、対応する難度をそのステージの難度として採用する。</p>
+<p>横軸は、 0 から 1 の値をランダムに返す <code>random</code> 関数から得られる数値を表している。縦軸は難度で、0 が最も簡単、1 が最も難しい状態を示している。ステージ開始前に <code>random</code> 関数から一つ値を取得し横軸の値とし、対応する難度をそのステージの難度として採用する。</p>
 <p>このグラフの難度は</p>
 <pre><code>pow(random(), 100 / ([現在のレベルの数] + 1))
 </code></pre><p>という式で算出されている。レベルの数が少ないうちは難度の低い下方向に張り付き、レベル数が進むと上へ膨らむようになっている。そのため、先のレベルになるとより高い難度が設定されやすくなる、まれに <code>random</code>の返値によっては、そのレベル数にしては非常に簡単だったり難しくなったりする。</p>
@@ -508,9 +508,9 @@
 <li>敵が弾を撃つ頻度</li>
 <li>弾のスピード</li>
 </ul>
-<p>などのいくつかのパラメタに対してそれぞれ <code>random()</code>を用いて上の式を当てはめた難度を設定する。そうすることで、あるステージでは敵の数は非常に多いが弾はあまり撃たないとか、敵は一人しかいないが非常に速い弾を多数撃つとか、より複雑なバリエーションが得られる。</p>
+<p>などのいくつかのパラメタに対してそれぞれ <code>random</code>を用いて上の式を当てはめた難度を設定する。そうすることで、あるステージでは敵の数は非常に多いが弾はあまり撃たないとか、敵は一人しかいないが非常に速い弾を多数撃つとか、より複雑なバリエーションが得られる。</p>
 <p>ゲーム後半のレベルになると、全てのパラメタが難度 1 に張り付きがちになるので、全般的に難しいレベルが連続するようになる。しかし難度自体は 1 が上限なので、単に線形に難度を上げていくよりは一定の制約を設けることができる。</p>
-<p>この方法はあくまで一例であり、最終的には全てのパラメタが難度 1 に張り付いてしまい無限に難しくなるレベルは実現できない、その 1 に張り付いた状態の難度はどの程度が妥当なのかの調整が難しい、などの欠点もある。他の方法を利用する場合でも、難度上昇が単調にならない工夫は重要である。プレイヤーに与える緊張感に緩急を与えることで、より展開が楽しめるゲームにできる。</p>
+<p>この方法には、最終的には全てのパラメタが難度 1 に張り付いてしまい無限に難しくなるレベルは実現できない、その 1 に張り付いた状態の難度はどの程度が妥当なのかの調整が難しい、などの欠点もある。他の方法を利用する場合でも、難度上昇が単調にならない工夫は重要である。プレイヤーに与える緊張感に緩急を与えることで、より展開が楽しめるゲームにできる。</p>
 
                                 
                                 </section>
@@ -554,7 +554,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"next":{"title":"ゲームを「ジューシー」にする","level":"1.7","depth":1,"path":"make_game_juicy.md","ref":"make_game_juicy.md","articles":[]},"previous":{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"difficulty/level.md","mtime":"2023-09-21T22:58:01.438Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-23T07:55:15.088Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"next":{"title":"ゲームを「ジューシー」にする","level":"1.7","depth":1,"path":"make_game_juicy.md","ref":"make_game_juicy.md","articles":[]},"previous":{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"difficulty/level.md","mtime":"2023-09-21T22:58:01.438Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
