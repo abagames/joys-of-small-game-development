@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>BGM や効果音の自動生成 · The Joys of Small Game Development</title>
+        <title>BGM や効果音の自動生成 · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -496,13 +496,13 @@
                                 
                                 <h2 id="bgm-や効果音の自動生成">BGM や効果音の自動生成</h2>
 <p>小さなゲームに合う BGM とはどのようなものだろう。一つ考えられるのは、昔のアーケードゲームのような BGM だろう。昔というのはゼビウスとかディグダグとか、1980 年代前半までさかのぼるくらいの昔を想定している。この頃のレトロアーケードゲームの BGM は、4 ～ 8 小節くらいの短いフレーズを繰り返すものがあった。</p>
-<p>そのような BGM を自動生成する技術はいくつかある。一つは WolframTones <sup><a href="#fn_1" id="reffn_1">1</a></sup> だ。セルラオートマタを切り出してメロディにする手法である。これはお手軽でよさそうなのだが、16 分音符で完全五度で往復するベースとか、昔のゲームでよく見るフレーズが再現できないのが弱点に見える。</p>
+<p>そのような BGM を自動生成する技術はいくつかある。一つは WolframTones <sup><a href="#fn_1" id="reffn_1">1</a></sup> だ。セルラオートマタを切り出してメロディにする手法である。これはお手軽でよさそうなのだが、16 分音符で完全五度で往復するベースなど、昔のゲームでよく見るフレーズが再現できないのが弱点に見える。</p>
 <p>最新のものだと OpenAI の Jukebox <sup><a href="#fn_2" id="reffn_2">2</a></sup> があるが、これは楽譜ではなく音楽の波形を生成するものなので、レトロゲーム向けではない。同様の技術である MusicLM <sup><a href="#fn_3" id="reffn_3">3</a></sup> には 8 bit というサンプルがあり、チップチューンっぽい楽曲も作れるようだ。ただ、まだ表現としてリッチすぎる感じがある。</p>
-<p>そこで Magenta <sup><a href="#fn_4" id="reffn_4">4</a></sup>だ。Magenta は Google が開発している、機械学習を音楽や絵に応用するリサーチプロジェクトだ。ブラウザで動かせる実装として、Magenta.js <sup><a href="#fn_5" id="reffn_5">5</a></sup> が公開されている。</p>
+<p>そこで Magenta <sup><a href="#fn_4" id="reffn_4">4</a></sup> だ。Magenta は Google が開発している、機械学習を音楽や絵に応用するリサーチプロジェクトだ。ブラウザで動かせる実装として、Magenta.js <sup><a href="#fn_5" id="reffn_5">5</a></sup> が公開されている。</p>
 <p>Magenta.js は曲の楽譜を入力すると、それに続くフレーズを自動生成してくれる、MusicRNN <sup><a href="#fn_6" id="reffn_6">6</a></sup>を備えている。これにレトロゲームの短い楽譜を与えれば、それっぽい別の曲が生成される。それを簡単に試せるデモプログラムを作成した（画像クリックでデモページへ）<sup><a href="#fn_7" id="reffn_7">7</a></sup>。</p>
 <p><a href="https://abagames.github.io/short-vgm-generator/build/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/short-vgm-generator/main/docs/screenshot.png" alt="Short VGM generator" width="700"></a></p>
-<p>真ん中の「Generate」ボタンを押すと、画面左のフレーズを元に新たなフレーズを生成し、画面右に表示、再生する。メロディとベースの 2 トラックのみから成るシンプルなフレーズの生成だが、一応それっぽいものが生成できる。複数トラックについては、それぞれ別々にフレーズを作成した上で、ベースがメロディと不協和音だった場合に調整（振動数が 1 ～ 4 くらいの比率になるようにする）している。画面中央下のチェックボックスを外すとこの調整を行わなくなるので、より自由なフレーズが生成される。</p>
-<p>Magenta.js の JavaScript からの詳しい使い方については、他の記事 <sup><a href="#fn_8" id="reffn_8">8</a></sup> を参照いただきたい。</p>
+<p>画面中央の「Generate」ボタンを押すと、画面左のフレーズを元に新たなフレーズを生成し、画面右に表示、再生する。メロディとベースの 2 トラックのみから成るシンプルなフレーズの生成だが、一応それっぽいものが生成できる。複数トラックについては、それぞれ別々にフレーズを作成した上で、ベースがメロディと不協和音だった場合に調整（振動数が 1 ～ 4 くらいの比率になるようにする）している。画面中央下のチェックボックスを外すとこの調整を行わなくなるので、より自由なフレーズが生成される。</p>
+<p>Magenta.js の詳しい使い方については、他の記事 <sup><a href="#fn_8" id="reffn_8">8</a></sup> を参照いただきたい。</p>
 <p>効果音の自動生成については、メロディをターゲットとして MusicRNN では対応が難しいと思われる。その代わりに、sfxr <sup><a href="#fn_9" id="reffn_9">9</a></sup> をベースとした波形生成ベースのものが多数あるので、それらを利用すると良い。これらのツール、ライブラリは、&apos;coin&apos;, &apos;laser&apos;などの音のタイプに対してプリセットの波形パラメタを持ち、それをランダムに変更することで様々な効果音を生成する。アクションゲームなどに簡単な効果音をつけるために活用したい。</p>
 <hr>
 <blockquote id="fn_1">
@@ -575,7 +575,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"next":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]},"previous":{"title":"ドット絵を自動生成する","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"procedural/sound.md","mtime":"2023-09-23T08:57:53.261Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"next":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]},"previous":{"title":"ドット絵を自動生成する","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"procedural/sound.md","mtime":"2023-09-25T06:56:16.092Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -627,10 +627,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

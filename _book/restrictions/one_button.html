@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>ワンボタンゲームにおけるワンボタンでできること · The Joys of Small Game Development</title>
+        <title>ワンボタンの可能性 · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -479,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ワンボタンゲームにおけるワンボタンでできること</a>
+        <a href=".." >ワンボタンの可能性</a>
     </h1>
 </div>
 
@@ -495,10 +495,10 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ワンボタンの可能性">ワンボタンの可能性</h2>
-<p>ゲームジャムにおけるインタラクトへの制約において、プレイヤーが使える操作をただ 1 つのボタンに限るという、いわゆるワンボタンゲームのゲームジャムもある。ここで言うワンボタンゲームは、レバーによる移動の他のボタンが 1 つ、といったものではなくて、純粋に 1 つのボタンしか操作に使わないゲームを指す。</p>
-<p>ワンボタンゲームの利点は、操作が分かりやすく、タッチデバイスでも操作しやすい点にある。とにかく何かボタンを押せばそれがプレイヤーが取れる動作の全てであり、操作説明がほぼ不要である。またタッチデバイスでも画面中のどこかをタップあるいはホールドすれば操作ができるので、バーチャルパッドでよく起こる、ボタンを押した感触が無いので操作がしづらいという問題が発生しない。</p>
+<p>ゲームジャムにおけるインタラクトへの制約において、プレイヤーが使える操作をただ 1 つのボタンに限るという、いわゆるワンボタンゲームのゲームジャムもある。ここで言うワンボタンゲームは、レバーによる移動の他にボタンが 1 つ、といったものではなくて、純粋に 1 つのボタンしか操作に使わないゲームを指す。</p>
+<p>ワンボタンゲームの利点は、操作が分かりやすく、タッチデバイスでも操作しやすい点にある。とにかく何かボタンを押せばそれがプレイヤーが取れる動作の全てであり、操作説明がほぼ不要である。またタッチデバイスでも画面中のどこかをタップあるいはホールドすれば操作ができるので、バーチャルパッドでよく起こる、ボタンを押した感触が無いので操作がしずらいという問題が発生しない。</p>
 <p>欠点は、当然のことながら、動作にバリエーションを与えるのが難しいことである。レバーがあれば簡単に実現できる左右移動さえ、ボタンを押すと進行方向が反転する、というちょっと特殊な操作にせざるを得ない。</p>
-<p>なのでワンボタンゲームを作る際に問題になるのは、たった 1 つのボタンによるゲームへのインタラクションに、どのようにバリエーションを与えられるか、という点になる。その点に関して、今まで作ったいくつかのワンボタンゲームを例に整理してみたい。</p>
+<p>そのため、ワンボタンゲームを作る際に問題になるのは、たった 1 つのボタンによるゲームへのインタラクションに、どのようにバリエーションを与えられるか、という点になる。その点に関して、今まで作ったいくつかのワンボタンゲームを例に整理してみたい。</p>
 <h3 id="特殊な動作を取り入れる">特殊な動作を取り入れる</h3>
 <p>ボタンを押した瞬間にプレイヤーが以下の動作を行う、というのがワンボタンゲームでは良く見られる。</p>
 <ul>
@@ -515,7 +515,7 @@
 <p>プレイヤーが移動可能な点を画面上に用意しておいて、押した瞬間に一番近い点へ瞬間移動する。ワンボタンでテンポ良く移動できるのがこの動作の良いところである。</p>
 <h4 id="分裂">分裂</h4>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?divarr" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/divarr/screenshot.gif" alt="DIVARR"></a></p>
-<p>ボタンを押すたびにミサイルが分裂する。ボタンをバシバシ押すだけで攻撃力アップが楽しめるが、それを防ぐために撃ってはいけないものを混ぜるなどの工夫が必要になる。</p>
+<p>ボタンを押すたびにミサイルが分裂する。ボタンをバシバシ押すだけで攻撃力アップが楽しめるが、むやみにボタンを押すことを防ぐために撃ってはいけないものを混ぜるなどの工夫が必要になる。</p>
 <h4 id="選択">選択</h4>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?jumpon" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/jumpon/screenshot.gif" alt="JUMP ON"></a></p>
 <p>あるポイントで曲がる、床に飛び移るなどの動作を選択する。ここにどっちにいくのかを選択する場所・瞬間がある、というのがプレイヤーにはっきり分かる必要があるので、ゲームフィールドとその見せ方には工夫が必要である。</p>
@@ -536,7 +536,7 @@
 <p>カエルが飛ぶ距離を、ボタンを押している時間で決定する。ワンボタンでプレイヤーを上下左右に動かすことは難しいということを強引に解決した一例である。</p>
 <h4 id="伸縮する">伸縮する</h4>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?pinclimb" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/pinclimb/screenshot.gif" alt="PIN CLIMB"></a></p>
-<p>ボタンを押している間、棒が伸びて、放すと縮む。伸びるだけでは何も良いことはないので、伸びたものがなにかに引っかって先に進めるなど、なんらかの地形と組み合わせて使われることが多い。</p>
+<p>ボタンを押している間、棒が伸びて、放すと縮む。伸びたものがなにかに引っかって先に進めるなど、なんらかの地形と組み合わせて使われることが多い。</p>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?squarebar" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/squarebar/screenshot.gif" alt="SQUARE BAR"></a></p>
 <p>幾何学図形と組み合わせると、伸縮だけで複雑な動きを実現することもできる。</p>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?tapej" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/tapej/screenshot.gif" alt="TAPE J"></a></p>
@@ -635,7 +635,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"next":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]},"previous":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンゲームにおけるワンボタンでできること","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/one_button.md","mtime":"2023-09-24T00:38:13.346Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ワンボタンの可能性","level":"1.5.1","depth":2,"next":{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]},"previous":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンの可能性","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"restrictions/one_button.md","mtime":"2023-09-25T05:15:31.627Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -687,10 +687,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>ゲームを作るツールを自作する · The Joys of Small Game Development</title>
+        <title>ゲームを作るツールを自作する · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -495,9 +495,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ゲームを作るツールを自作する">ゲームを作るツールを自作する</h2>
-<p>ゲーム作りをより楽しむ方法として、ゲームをより簡単に速く作るためのツールを自作する、という方法がある。ここで言うツールとは、ゲーム向けのライブラリや、ドット絵描画ツール、作曲ツールなどである。気合があれば、ファンタジーコンソール、ゲームエンジン、果てはプログラミング言語まで、ゲームの根幹を支える様々なツールも自作することができる。</p>
+<p>ゲーム作りをより楽しむ方法として、ゲームを簡単に速く作るためのツールを自作する、という方法がある。ここで言うツールとは、ゲーム向けのライブラリや、ドット絵描画ツール、作曲ツールなどである。気合があれば、ファンタジーコンソール、ゲームエンジン、果てはプログラミング言語まで、ゲームの根幹を支える様々なツールも自作することができる。</p>
 <p>既存のツールが多数あるのに、わざわざ自作のツールを作る意味は何だろう。一つの理由として、その内情まで完全に把握している、極めて手になじんだツールが手に入るということがある。自分が作ったツールなので、当然それがどのように扱えばどう動作するかを知り尽くしている。また、自分の気に入った機能を追加することも自由だ。API や UI なども自分の好みで設計できる。快適な開発環境整備に向けた良い手段だ。</p>
-<p>あと、ツール作りそれ自身が楽しいということもある。最終形が楽しくなるかを模索しながら制作するゲームと違って、これらツールは目的が比較的はっきりしており、ゲーム制作の合間に気分転換に行うのにとても良い。自分が必要とする機能が少しずつ拡充されていくのも嬉しいだろう。</p>
+<p>また、ツール作りそれ自身が楽しいということもある。最終形が楽しくなるかを模索しながら制作するゲームと違って、これらツールは目的が比較的はっきりしており、ゲーム制作の合間に気分転換に行うのにとても良い。自分が必要とする機能が少しずつ拡充されていくのも嬉しいだろう。</p>
 <p>問題はこれがちょっと楽しすぎる点にある。ゲーム制作者の間でよく言われる合言葉として「ゲームエンジンを作るなゲームを作れ」がある。ゲーム本体ではなく、その周辺ツールを作るのに夢中になってしまい、ゲームが全然完成しなくなることに対する戒めの言葉である。</p>
 <p>大切なことは適切なバランスでゲームとツールの開発を進めることである。適切なバランスさえ保てば、ツール作りはゲーム開発に新たな楽しみをもたらしてくれるだろう。</p>
 
@@ -543,7 +543,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ゲームを作るツールを自作する","level":"1.8","depth":1,"next":{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},"previous":{"title":"ゲームを「ジューシー」にする","level":"1.7","depth":1,"path":"make_game_juicy.md","ref":"make_game_juicy.md","articles":[]},"articles":[{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"path":"tools/fantasy_console.md","ref":"tools/fantasy_console.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/README.md","mtime":"2023-09-22T12:48:43.044Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ゲームを作るツールを自作する","level":"1.8","depth":1,"next":{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},"previous":{"title":"ゲームを「ジューシー」にする","level":"1.7","depth":1,"path":"make_game_juicy.md","ref":"make_game_juicy.md","articles":[]},"articles":[{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"path":"tools/fantasy_console.md","ref":"tools/fantasy_console.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/README.md","mtime":"2023-09-25T05:34:27.890Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -595,10 +595,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>チャット AI は新しいゲームを作れるのか · The Joys of Small Game Development</title>
+        <title>ゲームメカニクスを AI に教えたら · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../conclusion.html" />
+    <link rel="next" href="can_ai_chatbot_create_game.html" />
     
     
-    <link rel="prev" href="chat_ai_combine_tags.html" />
+    <link rel="prev" href="ai_chatbot_new_puzzle.html" />
     
 
     </head>
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="ai_chatbot_new_puzzle.html">
             
-                <a href="chat_ai_new_puzzle.html">
+                <a href="ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="chat_ai_combine_tags.html">
+        <li class="chapter active" data-level="1.10.2" data-path="ai_chatbot_combine_tags.html">
             
-                <a href="chat_ai_combine_tags.html">
+                <a href="ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.10.3" data-path="can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="can_ai_chatbot_create_game.html">
             
-                <a href="can_chat_ai_create_game.html">
+                <a href="can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -479,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >チャット AI は新しいゲームを作れるのか</a>
+        <a href=".." >ゲームメカニクスを AI に教えたら</a>
     </h1>
 </div>
 
@@ -494,85 +494,50 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="チャット-ai-は新しいゲームを作れるのか">チャット AI は新しいゲームを作れるのか</h2>
-<p>ChatGPT を用いたゲーム考案の試みはいくつか考えられるが、新しいゲームを考え、それを実装することは難しいように思える。少なくとも現状の ChatGPT では以下の問題がある。</p>
-<ul>
-<li>ChatGPT に、実装可能なアルゴリズムのレベルまで詳細化された、新しいゲームのアイデアを考えさせるのは難しい。</li>
-<li>ChatGPT は、今までにない新しいアルゴリズムを、ソースコードとして実装することを不得意としている。</li>
-</ul>
-<h3 id="chatgpt-に新しいゲームのアイデアを考えさせるのは難しい">ChatGPT に新しいゲームのアイデアを考えさせるのは難しい</h3>
-<p>ChatGPT は与えられた問に対して愚直に正しい答えを返すので、単に新しいアクションミニゲームのアイデアを教えて、と聞いても当たり障りのない凡庸なアイデアが返ってくる（以下は GPT-3.5 での入出力例である。また GPT のモデルは逐次改良されるので、異なる結果が得られる場合もある）。</p>
+                                <h2 id="ゲームメカニクスを-ai-に教えたら">ゲームメカニクスを AI に教えたら</h2>
+<p>前の章で、アクションミニゲームのゲームメカニクスをタグとして列挙するということを行った <sup><a href="#fn_1" id="reffn_1">1</a></sup>。このタグの使い方として、複数のタグを適当に組み合わせてそれら仕組みを使ったゲームを考える、ということを示したが、これを ChatGPT にしてもらうことで、新たなゲームが考えられるかもしれない。</p>
+<p>ChatGPT に以下のプロンプトを与えて、ゲームデザイナーとして振舞ってもらう。</p>
 <blockquote>
-<p>I want you to act as a game designer. Show me ideas for new action mini-games.</p>
+<p>I want you to act as a game designer. Remember the following tags related to game mechanics. The tags are written in a format of &apos;Category: Name, &quot;Description&quot;&apos;, with one line for each tag. Randomly combine those tags and come up with a new game that contains only the game mechanics corresponding to that tag. Make that game an action mini-game that utilizes only a single button. The maximum number of tags that may be combined is 5. Describe what kind of game it is and the selected tags. Try to devise 5 different games without using the same game mechanic tags as much as possible.</p>
+<p>player: rotate, &quot;The player character rotates.&quot;<br>
+player: reciprocate, &quot;The player character reciprocates horizontally or vertically.&quot;<br>
+player: reflect, &quot;The player character reflects upon colliding with a wall or object.&quot;<br>
+...</p>
 </blockquote>
-<p>このプロンプトに対する回答例は、以下のような漠然とした当たり障りのないゲームアイデアが返ってきただけだ。</p>
+<p>以下タグ一覧ファイル <sup><a href="#fn_2" id="reffn_2">2</a></sup> にあるタグとその概要説明が続く。プロンプト全体は、それらタグを全て記載したものになる <sup><a href="#fn_3" id="reffn_3">3</a></sup>。</p>
+<p>すると以下のような回答が得られる。</p>
 <blockquote>
-<p>Certainly! Here are some ideas for action mini-games that could be integrated into a larger video game or used as standalone experiences:</p>
-<p>Laser Maze Runner:</p>
-<p>The player navigates through a complex maze filled with laser beams. They must use their agility and quick reflexes to dodge and jump over the lasers to reach the exit.</p>
-</blockquote>
-<p>プロンプトの工夫で、ある程度は ChatGPT にありきたりではないゲームを考えさせることができる。ただ、そのような工夫を経ても、返ってきたアイデアはまだぼんやりとしていて、ブレーンストーミングの元ネタにはなるが、ここから具体的なゲームのルール、アルゴリズムまで到達させることは難しい。</p>
-<p>より詳細なアルゴリズムにするために、以下のようなプロンプトで、そのゲームの疑似コードを書いてもらうことはできる。</p>
-<blockquote>
-<p>I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm representing the rules of the following game:</p>
-<p>Game 2: Pinball Panic</p>
-<p>Selected tags: player: circle, weapon: bounce, field: pins, on pressed: shoot</p>
+<p>Game 1: Scaffold Jump<br>
+Selected tags: player: scaffold, on pressed: jump</p>
+<p>Description: In this game, the player controls a character that moves along scaffolds. The character constantly moves forward, and the player can make the character jump by pressing the button. The objective is to avoid falling off the scaffolds or hitting obstacles while collecting coins or power-ups. The game gets progressively faster and more difficult as the player advances.</p>
+<p>Game 2: Pinball Panic<br>
+Selected tags: player: circle, weapon: bounce, field: pins, on pressed: shoot</p>
 <p>Description: In this game, the player controls a circular character that bounces around a pinball-like field. The player can shoot projectiles by pressing the button, which bounce off the pins and destroy enemies. The objective is to survive as long as possible while racking up points by destroying enemies and collecting power-ups.</p>
+<p>Game 3: Springy Strings<br>
+Selected tags: player: string, player: bounce, field: gravity, on pressed: jump</p>
+<p>Description: In this game, the player controls a spring-like character that bounces around a zero-gravity field. The character can jump by pressing the button, which sends it bouncing higher into the air. The objective is to avoid obstacles and enemies while collecting power-ups and reaching the end of the level.</p>
+<p>Game 4: Wipeout Warriors<br>
+Selected tags: player: bar, field: water, obstacle: chase, weapon: wipe, on pressed: jump</p>
+<p>Description: In this game, the player controls a bar-shaped character that races through a water course filled with obstacles and enemies. The character automatically moves forward, and the player can make the character jump by pressing the button. The character can also use a wiping weapon to clear the way of obstacles and enemies. The objective is to reach the end of the course in the shortest time possible.</p>
+<p>Game 5: Color Conundrum<br>
+Selected tags: rule: match, rule: time limit, field: roughness, on pressed: turn</p>
+<p>Description: In this game, the player controls a character that must navigate a rough terrain while matching colors. The character automatically moves forward, and the player can turn left or right by pressing the button. The objective is to match as many colors as possible before the time runs out, while avoiding obstacles and enemies on the way.</p>
 </blockquote>
-<p>しかし、結果として出力されるコードにはあまり具体性が無く、実装可能な解像度までは遠い。</p>
-<h3 id="chatgpt-は新しいアルゴリズムを実装するのは不得意">ChatGPT は新しいアルゴリズムを実装するのは不得意</h3>
-<p>別の問題として、ChatGPT は既存のアルゴリズムを様々なプログラミング言語で実装するのは得意だが、前例の無い新しいアルゴリズムをコードにするのは不得意なのでは、という点がある。</p>
-<p>&apos;Can GPT-4 <em>Actually</em> Write Code?&apos;という記事 <sup><a href="#fn_1" id="reffn_1">1</a></sup> には、可能であればなるべく火を通らないように目的地までのパスを探索する、というアルゴリズムを ChatGPT に書かせようとしたがうまくいかなかった、ということが書いてある。一般的な A*の探索アルゴリズムのコードであれば ChatGPT は難なく出力するが、それをアレンジした要求をするとうまく答えられなくなるという例だ。</p>
-<p>ChatGPT はユーザーの要求を解釈してそれに合致する既存コードを持ってくることや、それに対する追加要求に応じてコードを書き換える、といったことは得意だ。だが、今までに無いアルゴリズムやルールを含むコードを生成する能力がどの程度あるのかは未知数だ。</p>
-<p>今までにない簡単なゲームの例として、自作したゲームの一つである PIN CLIMB を、なんとかして ChatGPT に書かせられないかということを試していた。</p>
-<p><a href="https://abagames.github.io/crisp-game-lib-games/?pinclimb" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/pinclimb/screenshot.gif" alt="PIN CLIMB"></a></p>
-<p>上記のゲーム実装方法を説明する文章を元に、以下のプロンプトでゲームのアルゴリズムを示す疑似コードを作成し、</p>
-<blockquote>
-<p>
-I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm for the following game inside one unique code block. Do not write explanations.<br>
-# Characters<br>
-- bar<br>
-- pins<br>
-# Controls<br>
-- The bar stretches as long as the button is held down and shrinks to a default length when the button is released.<br>
-# Rules<br>
-- One end of the bar is fixed to the pin and the other end rotates around the pin.<br>
-- The game screen scrolls down so that the bar is positioned slightly above the bottom edge of the screen.<br>
-- Pins appear at random locations at the top edge of the screen after each scrolling of a certain distance.<br>
-- When the bar catches on another pin, the bar is fixed to that pin.<br>
-# Initial state<br>
-- Pins are placed in about 10 random positions on the screen, and the bar is fixed to the bottom pin.
-</p>
-</blockquote>
-
-<p>その後、以下のプロンプトで具体的な Phaser のソースコードにする、ということを試した。Phaser を選んだのは、JavaScript ベースのゲームライブラリで一番 Web 上に情報が豊富なのは Phaser だろうという予測の元だ。</p>
-<blockquote>
-<p>Implement the game using the HTML5 game framework &quot;Phaser 3&quot; without using external resources such as image files or audio files. Just show me the JavaScript source code.</p>
-</blockquote>
-<p>結果としてはうまくいかなかった。最初の疑似コード時点で十分な情報量があるか怪しいものが出てくるし、そこから Phaser への変換もあまりうまくいかない。</p>
-<p>疑似コードを挟まず、ピンを書く、スクロールさせる、ひもを回す、のようにステップバイステップで指示して直接ソースコードを書かせても、ひもが他のピンに当たるとそのピンへ固定される、のあたりでうまくいかなくなる。ここの実装難度が高いことは分かる。回転する矩形の当たり判定を取ることも、当たった後にそのピンへ固定することも、両方とも処理としては特殊であり、この辺が限界であっても納得はできる。</p>
-<h3 id="プロンプトの工夫でこれらの課題を乗り越えられる？">プロンプトの工夫でこれらの課題を乗り越えられる？</h3>
-<p>分からない。</p>
-<p>ゲームのアイデア発想はなるべく自由に、それをルールや実装へ落とすところは具体的に、のようなことをプロンプトでうまく制御するのはかなり難しいのでは、と直感的には思われる。また、モデルの限界はプロンプトでは乗り越えられない。</p>
-<h3 id="gpt-〇〇-になればこの辺の問題は解決される？">GPT-〇〇 になればこの辺の問題は解決される？</h3>
-<p>分からない。</p>
-<p>画像生成 AI の急激な改善を見ていると、半年後にはこの辺の問題は解決するのかもしれない。モデルの規模で乗り越えられる課題なのか、そもそもアプローチとして筋悪なのか、どちらかは現時点では不明だ。</p>
-<p>実際、最初に試したアクションミニゲームのアイデアについて、GPT-3.5 でなく GPT-4 に聞いてみると、下記のような少し改良された回答が得られる。</p>
-<blockquote>
-<p>Certainly! Here are some unique action mini-game ideas:</p>
-<p>Asteroid Surfing</p>
-<p>Setting: Outer space, amidst a field of rapidly moving asteroids.<br>
-Objective: Ride the largest asteroids and jump between them to reach a goal point in the least amount of time.<br>
-Mechanics: Players must balance on moving asteroids, time their jumps, and avoid smaller, more hazardous space debris.</p>
-</blockquote>
-<p>ゲームアイデアとしてはまだ凡庸だが、より詳細なゲーム内容が得られる。言語モデルの発展と、プロンプトの工夫で、より面白く具体的なゲームが考案できる可能性はある。</p>
-<h3 id="今でもできる他のアプローチがあるのでは？">今でもできる他のアプローチがあるのでは？</h3>
-<p>分からない。</p>
-<p>ポンとかブロック崩しとか、既存のゲームのコードをまず提示させて、そこから対話的に新しい要素を加えていく、のような方法は今でもうまくいく可能性がある。その場合、どのくらいの新しさなら許容されるのか、どの程度細切れに指示するのが効率が良いのか、などのプロンプトエンジニアリングが必要となる。</p>
-<p>そのようにゲームを作るのが直接コードを書くのに比べて効率良いかと問われると、おそらく悪いので、これは効率性の問題ではなく、ChatGPT を使ってゲームを作るという縛りプレイとしての楽しさを追い求めることになる。「AI にゲームを作らせるゲーム」という新しいゲームを、旬のうちにいろいろ試してみるのも楽しいだろう。</p>
+<p>ゲーム名と選択したタグ、ゲームの内容が出力される。ここから面白そうなゲームをピックアップすれば、ゲームアイデアとして使えるかもしれない。</p>
+<p>例えばゲーム 2「ピンボールパニック」を考えてみよう。ピンボールのようなフィールドにピンや敵がいて、ボタンを押すと発射される球で敵を破壊する。ピンで跳ね返る球をうまく制御して敵に当てる必要がある。球をピンボールのフリッパーで打ち出すようにしても面白そうだ。</p>
+<p>ゲーム 3「スプリンギーストリングス」はどうだろう。重力の無い空間を、バネの伸縮を利用して障害物や敵をかわしながら進んでいく。障害物を蹴って進んだり、腕の振りなどで推進するゲームだろうか。</p>
+<p>ゲーム 5「カラーコンランダム」は、デコボコした地形の上を、ボタン操作で左右に曲がるプレイヤーキャラクタを操作して、色をマッチさせながら進む。見下ろし型のゲームで、出っ張った地形を避けつつ、同色のカラーアイテムを集めるようなゲームが思いつく。</p>
+<p>このまま ChatGPT がゲームの実装をしてくれるととても楽なのだが、さすがにそれはまだ無理だ。&apos;Implement Game 1 in p5.js.&apos;のように頼むと一応なんらかのコードは出力されるが、これらゲームメカニクスを正しく反映できてはいない。</p>
+<p>ChatGPT にゲームメカニクスのタグを教え、それらを組み合わせてもらう。ゲームアイデアのベースを考えるには良い方法ではないだろうか。こういったブレーンストーミング的な使い方には ChatGPT はよくマッチする。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://tylerglaiel.substack.com/p/can-gpt-4-actually-write-code" target="_blank">Can GPT-4 <em>Actually</em> Write Code?</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+<sup>1</sup>. <a href="../ideas/break_down_game.html">ゲームを仕組みに分解し、組み立てる</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://github.com/abagames/action-mini-game-mechanic-tags/blob/main/src/tags.csv" target="_blank">action-mini-game-mechanic-tags/src/tags.csv</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://github.com/abagames/action-mini-game-mechanic-tags/blob/main/combine_tags_with_chatgpt.md#prompt" target="_blank">combine_tags_with_chatgpt.md</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -601,12 +566,12 @@ Mechanics: Players must balance on moving asteroids, time their jumps, and avoid
 
             
                 
-                <a href="chat_ai_combine_tags.html" class="navigation navigation-prev " aria-label="Previous page: ゲームメカニクスをチャット AI に教えたら">
+                <a href="ai_chatbot_new_puzzle.html" class="navigation navigation-prev " aria-label="Previous page: AI チャットボットが考えるパズルゲーム">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../conclusion.html" class="navigation navigation-next " aria-label="Next page: おわりに">
+                <a href="can_ai_chatbot_create_game.html" class="navigation navigation-next " aria-label="Next page: AI チャットボットは新しいゲームを作れるのか">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -617,7 +582,7 @@ Mechanics: Players must balance on moving asteroids, time their jumps, and avoid
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"チャット AI は新しいゲームを作れるのか","level":"1.10.3","depth":2,"next":{"title":"おわりに","level":"1.11","depth":1,"path":"conclusion.md","ref":"conclusion.md","articles":[]},"previous":{"title":"ゲームメカニクスをチャット AI に教えたら","level":"1.10.2","depth":2,"path":"generation/chat_ai_combine_tags.md","ref":"generation/chat_ai_combine_tags.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/can_chat_ai_create_game.md","mtime":"2023-09-24T00:23:29.553Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ゲームメカニクスを AI に教えたら","level":"1.10.2","depth":2,"next":{"title":"AI チャットボットは新しいゲームを作れるのか","level":"1.10.3","depth":2,"path":"generation/can_ai_chatbot_create_game.md","ref":"generation/can_ai_chatbot_create_game.md","articles":[]},"previous":{"title":"AI チャットボットが考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/ai_chatbot_new_puzzle.md","ref":"generation/ai_chatbot_new_puzzle.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/ai_chatbot_combine_tags.md","mtime":"2023-09-25T08:52:00.568Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -669,10 +634,6 @@ Mechanics: Players must balance on moving asteroids, time their jumps, and avoid
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

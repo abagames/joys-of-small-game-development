@@ -1,10 +1,10 @@
-## チャット AI が考えるパズルゲーム]
+## AI チャットボットが考えるパズルゲーム
 
-'ChatGPT invented its own puzzle game.' [^1] という記事で、ChatGPT に今までに無かった新しいロジックパズルを考えてとお願いしたら、Sumplete というゲームが提案されたという話があった。2 次元のグリッド上に数字が、右端と下端に各行と列の数字の合計が書いてあるので、グリッド上の数字に × をつけて、書いてある合計になるようにするゲームだ。
+"ChatGPT invented its own puzzle game." [^1] という記事で、ChatGPT に今までに無かった新しいロジックパズルを考えてとお願いしたら、Sumplete というゲームが提案されたという話があった。2 次元のグリッド上に数字が配置されており、右端と下端に各行と列の数字の合計が書いてある。グリッド上の数字に × を付けて消して、書いてある合計にするゲームだ。
 
 <img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdd3b6e61-fb2a-4f7f-a575-97fbbffb5008_1194x1482.png" alt="Sumplete" width="400"/>
 
-ところがこのゲームは実はすでに存在していた。Summer と呼ばれるスマホ向けゲームだ [^2]。世の中の全てのゲームを知ることは、人にも AI にも無理なので、新しいゲームを考えたけどすでにあったということは往々にしてある。なので本当に新しいかを保証するのは無理だ。
+ところがこのゲームは実はすでに存在していた。Summer と呼ばれるスマホ向けゲームだ [^2]。世の中の全てのゲームを知ることは、人にも AI にも無理なので、新しいゲームを考えたけどすでにあったということは往々にしてある。本当に新しいかを保証するのは無理だ。
 
 だが、ChatGPT に新しいロジックパズルを考えてもらうのは面白い試みである。例えば、以下のプロンプトを ChatGPT に与えると、いくつかのパズルを提案してくれる。
 
@@ -18,11 +18,11 @@
 >
 > In this puzzle, the grid contains magnets of opposite polarity (north and south). The player must fill in the grid with blocks of positive and negative polarity, such that each block attracts or repels adjacent magnets according to their polarities. A block can only be placed if it fits in with the surrounding magnets, and no two blocks of the same polarity can touch each other.
 
-Magnet Blocks という、磁石を題材にしたパズルのようだ。ChatGPT に日本語への翻訳もしてもらうと、以下の内容になる。
+Magnet Blocks という、磁石を題材にしたパズルだ。ChatGPT に日本語への翻訳もしてもらうと、以下の内容になる。
 
 > このパズルでは、グリッドには異なる極性（北極と南極）を持つ磁石が含まれています。プレイヤーは、各ブロックが隣接する磁石の極性に応じて引き付けまたは反発するように、正および負の極性のブロックでグリッドを埋める必要があります。ブロックは周囲の磁石に合わせて配置され、同じ極性のブロックは互いに触れてはいけません。
 
-パズルのルールとしてはあまりに漠然としているが、要は磁石を N と N、S と S が触れないように配置するゲームだと解釈し、実装した（画像クリックでプレイ）。
+パズルのルールとしてはあまりに漠然としているが、具体的には磁石を N と N、S と S が触れないように配置するゲームだと解釈し、実装した（画像クリックでプレイ）。
 
 [![Magnet Blocks](https://raw.githubusercontent.com/abagames/crisp-game-lib-11-games/main/docs/magnetblocks/screenshot.gif)](https://abagames.github.io/crisp-game-lib-11-games/?magnetblocks)
 
@@ -34,7 +34,7 @@ Magnet Blocks という、磁石を題材にしたパズルのようだ。ChatGP
 
 レベル生成ロジックがイマイチのこともあって、パズルとしての深みは出せていないが、一応パズルとして成り立っている。
 
-で、このパズルははたして新しいのか。似たルールのパズルとして、Magnets [^4] というパズルがあった。磁石が題材のところは同じだが、ルールはかなり異なる。
+このパズルははたして新しいのか。似たルールのパズルとして、Magnets [^4] というパズルがあった。磁石が題材のところは同じだが、ルールはかなり異なる。
 
 - 棒磁石が置ける場所、方向はあらかじめ決まっていて、長さは 2 で固定。
 - ＋とーが行と列に何回出現するかの制約がグリッドの外周に書いてある。
@@ -48,7 +48,7 @@ Magnet Blocks という、磁石を題材にしたパズルのようだ。ChatGP
 
 できたパズルが解いていて楽しいかということを判断する、というのもまた別の難しさだ。これはルールだけでなくて、問題の生成ロジックにもかかわってくる。
 
-厳密なルールを作る、などの ChatGPT が不得意とする作業は、ChatGPT とは別の方法、プログラムやプラグインで補うということができれば、チャット AI の応用範囲はさらに広がるだろう。
+厳密なルールを作る、などの ChatGPT が不得意とする作業は、ChatGPT とは別の方法、プログラムやプラグインで補うということができれば、AI チャットボットの応用範囲はさらに広がるだろう。
 
 ---
 

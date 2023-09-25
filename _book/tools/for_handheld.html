@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>ハンドヘルドデバイスでもゲームを動かそう · The Joys of Small Game Development</title>
+        <title>ハンドヘルドデバイスでもゲームを動かそう · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -496,20 +496,20 @@
                                 
                                 <h2 id="ハンドヘルドデバイスでもゲームを動かそう">ハンドヘルドデバイスでもゲームを動かそう</h2>
 <p>最近は、Arduino <sup><a href="#fn_1" id="reffn_1">1</a></sup> を代表とするワンボードマイコンをコアとし、それにディスプレイやボタンを追加したハンドヘルドゲーム機を DIY で作るというトレンドがある。自分好みのゲーム機を自由に作れるのが利点である一方、様々なデバイスが乱立してしまい、多くの人が持っている共通のデバイスというものはあまり無い。</p>
-<p>これらのデバイスで動作するためのゲームは、C 言語で書かれることが多い。なので付随するライブラリも C 言語で実装する必要がある。</p>
+<p>これらのデバイスで動作するためのゲームは、C 言語で書かれることが多い。そのため、付随するライブラリも C 言語で実装する必要がある。</p>
 <p>今回、私はブラウザ向けに JavaScript (TypeScript)で実装した自作ライブラリを C 言語に移植した。名前を crisp-game-lib-portable <sup><a href="#fn_2" id="reffn_2">2</a></sup> という。</p>
 <p><img src="https://abagames.github.io/crisp-game-lib-portable/screenshotPyBadge.gif" alt="PyBadge crisp-game-lib-portable screenshot"></p>
-<p>crisp-game-lib-portable で作ったゲームは、M5StickC PLUS <sup><a href="#fn_3" id="reffn_3">3</a></sup> や Adafruit PyBadge <sup><a href="#fn_4" id="reffn_4">4</a></sup> などで動く。また、Emscripten <sup><a href="#fn_5" id="reffn_5">5</a></sup> を活用することで、ブラウザでも遊べるようにした。</p>
-<p>また、ライブラリ本体 <sup><a href="#fn_6" id="reffn_6">6</a></sup>と ゲームのコード <sup><a href="#fn_7" id="reffn_7">7</a></sup>はブラウザを含むすべてのデバイス向けで共通、デバイス向けには最小限の個別コードを書けば対応できる、というのを目指している。</p>
-<p>デバイス個別コードで書かないといけない処理は、</p>
+<p>crisp-game-lib-portable で作ったゲームは、M5StickC PLUS <sup><a href="#fn_3" id="reffn_3">3</a></sup> や Adafruit PyBadge <sup><a href="#fn_4" id="reffn_4">4</a></sup> などで動く。また、Emscripten <sup><a href="#fn_5" id="reffn_5">5</a></sup> を活用することで、ブラウザ上でも遊べるようになった。</p>
+<p>また、ライブラリ本体 <sup><a href="#fn_6" id="reffn_6">6</a></sup> とゲームのコード <sup><a href="#fn_7" id="reffn_7">7</a></sup> はブラウザを含むすべてのデバイス向けで共通、デバイス向けには最小限の個別コードを書けば対応できる、というのを目指している。</p>
+<p>デバイス個別コードで書く必要がある処理は、</p>
 <ul>
 <li>デバイスの初期化処理（Arduino なら<code>setup()</code>）とそこからの<code>initGame()</code>の呼び出し。</li>
 <li>フレームの更新処理（Arduino なら<code>loop()</code>）とそこからの<code>setButtonState()</code>呼び出しによるボタン状態の通知と<code>updateFrame()</code>の呼び出し。</li>
 <li>machineDependent.h <sup><a href="#fn_8" id="reffn_8">8</a></sup> で定義された描画や音周りの処理。</li>
 </ul>
 <p>だけである。そのため、一般的なデバイスで固有に必要な実装は 250 行程度だ。</p>
-<p>音回りの実装は<code>md_playTone(float freq, float duration, float when)</code>で特定の周波数を、特定の期間、特定の開始時間で鳴らすことを要求していて、デバイスごとにこれに対応することが多少面倒かもしれない。PyBadge のようなブザー音量が<code>analogWrite()</code>で設定できる機能しか無いデバイスだと、音のタイミング管理をしつつ、矩形波を自力で生成しないといけない。</p>
-<p><code>md_drawCharacter(unsigned char grid[CHARACTER_HEIGHT][CHARACTER_WIDTH][3], float x, float y, int hash)</code>でドット絵を表示する機能も少し手間がかかる。最後にハッシュ値が付いているのは、毎回ドット絵のパターン定義をパース・描画するのではなくて、ハッシュ値でキャッシュしておいてそれを使う実装を想定している。LovyanGFX ライブラリ <sup><a href="#fn_9" id="reffn_9">9</a></sup> を使って描画しているならば、<code>LGFX_Sprite</code>とハッシュ値をペアで保存しておいて、それを取り出して<code>pushSprite()</code>すれば良い。</p>
+<p>音回りの実装は<code>md_playTone(float freq, float duration, float when)</code>で特定の周波数を、特定の期間、特定の開始時間で鳴らすことを要求している。デバイスごとにこれに対応することが、多少面倒かもしれない。PyBadge のようなブザー音量が<code>analogWrite()</code>で設定できる機能しか無いデバイスだと、音のタイミング管理をしつつ、矩形波を自力で生成しないといけない。</p>
+<p><code>md_drawCharacter(unsigned char grid[CHARACTER_HEIGHT][CHARACTER_WIDTH][3], float x, float y, int hash)</code>でドット絵を表示する機能も、少し手間がかかる。最後にハッシュ値が付いているのは、毎回ドット絵のパターン定義をパース・描画するのではなくて、ハッシュ値でキャッシュしておいてそれを使う実装を想定している。LovyanGFX ライブラリ <sup><a href="#fn_9" id="reffn_9">9</a></sup> を使って描画しているならば、<code>LGFX_Sprite</code>とハッシュ値をペアで保存しておいて、それを取り出して<code>pushSprite()</code>すれば良い。</p>
 <p>こういった移植性を考えながらコードを書くことは、色々なデバイスを相手にしたライブラリでないとできないことなので、なかなか楽しい経験ではある。あまたあるマイコンボードに対して、Arduino IDE などの共通な開発環境、Adafruit Arcada <sup><a href="#fn_10" id="reffn_10">10</a></sup> や LovyanGFX などの多デバイス対応ライブラリを駆使しつつ独自のゲームライブラリを作るのは、PC やスマホをターゲットとしたゲームライブラリとはまた違った面白さがある。興味があれば試していただきたい。</p>
 <hr>
 <blockquote id="fn_1">
@@ -585,7 +585,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"next":{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"path":"tools/fantasy_console.md","ref":"tools/fantasy_console.md","articles":[]},"previous":{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/for_handheld.md","mtime":"2023-09-23T01:35:19.289Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"next":{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"path":"tools/fantasy_console.md","ref":"tools/fantasy_console.md","articles":[]},"previous":{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/for_handheld.md","mtime":"2023-09-25T05:39:37.203Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -637,10 +637,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

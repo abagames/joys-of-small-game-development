@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>小さなゲーム、それ自体を自動生成することはできるのか · The Joys of Small Game Development</title>
+        <title>小さなゲーム、それ自体を自動生成することはできるのか · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chat_ai_new_puzzle.html" />
+    <link rel="next" href="ai_chatbot_new_puzzle.html" />
     
     
     <link rel="prev" href="../procedural/puzzle_level.html" />
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="ai_chatbot_new_puzzle.html">
             
-                <a href="chat_ai_new_puzzle.html">
+                <a href="ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="ai_chatbot_combine_tags.html">
             
-                <a href="chat_ai_combine_tags.html">
+                <a href="ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="can_ai_chatbot_create_game.html">
             
-                <a href="can_chat_ai_create_game.html">
+                <a href="can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -495,22 +495,18 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="小さなゲーム、それ自体を自動生成することはできるのか">小さなゲーム、それ自体を自動生成することはできるのか</h2>
-<p>小さなゲームを自動生成してくれる機械が欲しい。開発者はその機械が生成するゲームを遊んで良いゲーなら採用、面白くないならば捨てる、その作業だけでゲームが作れる。夢の機械だ。</p>
+<p>小さなゲームを自動生成してくれる機械が欲しい。開発者はその機械が生成するゲームを遊んで良いゲームなら採用、面白くないならば捨てる、その作業だけでゲームが作れる。夢の機械だ。</p>
 <p>人が後で見て取捨選択する前提なら、出来上がるものの大半は面白くなくても良い。それよりも大切なのは、ゲームの持つメカニクスが十分なバリエーションを持って生成されることだ。似たようなゲームしか作られないのではつまらない。</p>
-<p>AI にゲームを作らせるという試みは昔から行われてきた。ANGELINA というプロジェクト <sup><a href="#fn_1" id="reffn_1">1</a></sup> では、レベルデザイン、敵の動作、パワーアップの効果をリストからランダムに選び新しいゲームを生成している <sup><a href="#fn_2" id="reffn_2">2</a></sup>。</p>
-<p>また、レベル内のスタート地点からゴール地点へ到達するパズルジャンプアクションを、Toggleable Game Mechanics (TGM)と呼ばれる、ボタンが押されるたびに状態が切り替わる機構を用いて生成する手法も提案している <sup><a href="#fn_3" id="reffn_3">3</a></sup>。自機の位置や重力に対して、ボタンを押すと倍になる、半分になる、＋－が入れ替わる、という TGM を組み合わせてゲームを生成している。</p>
+<p>AI にゲームを作らせるという試みは昔から行われてきた。ANGELINA プロジェクト <sup><a href="#fn_1" id="reffn_1">1</a></sup> では、自機の位置や重力といった変数に対して、ボタンを押すと倍になる、半分になる、符号（＋－）が入れ替わるといった仕組みをランダムに組み合わせて、新しいゲームを生成する手法を提案している <sup><a href="#fn_2" id="reffn_2">2</a></sup>。これらのボタンが押されるたびに状態が切り替わる機構を Toggleable Game Mechanics (TGM)と呼び、スタート地点からゴール地点を目指すパズルジャンプアクションに対して、様々な TGM を適用して評価している。</p>
 <p>ランダムな TGM の組み合わせから適切な TGM 群を選択するためには、遺伝的アルゴリズムを用いている。選択のための適応度は、自機を適当に動かしてゴールに到達するまでに、レベルのどの程度の範囲を移動したかを指標として用いている。レベルのあちこちを移動してやっとゴールに到達できる、というのが質の良いゲームと判定し、ゴールに到達不能なものは排除される。</p>
 <p>ただ、このような方式で作られるものは、ある一定のゲームのバリエーションに留まっており、新たなゲームが作れているかと言われると微妙なところだ。新しいゲームを考えることは人間でも難しく、コンピュータにそれを作らせるのはとても困難である。</p>
-<p>しかし最近、その制約を打破できる可能性のある技術が生まれてきた。ChatGPT に代表される、大規模言語モデル (LLM)を備えたチャット AI だ。</p>
+<p>しかし最近、その制約を打破できる可能性のある技術が生まれてきた。ChatGPT に代表される、大規模言語モデル (LLM)を備えた AI チャットボットだ。</p>
 <hr>
 <blockquote id="fn_1">
 <sup>1</sup>. <a href="http://www.gamesbyangelina.org/" target="_blank">Games By Angelina</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. <a href="http://www.newscientist.com/article/mg21328554.900-ai-designs-its-own-video-game.html" target="_blank">AI designs its own video game</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. <a href="https://www.possibilityspace.org/papers/evo13.pdf" target="_blank">Mechanic Miner: Reflection-Driven Game Mechanic Discovery and Level Design (pdf)</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+<sup>2</sup>. <a href="https://www.possibilityspace.org/papers/evo13.pdf" target="_blank">Mechanic Miner: Reflection-Driven Game Mechanic Discovery and Level Design (pdf)</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -544,7 +540,7 @@
                 </a>
                 
                 
-                <a href="chat_ai_new_puzzle.html" class="navigation navigation-next " aria-label="Next page: チャット AI が考えるパズルゲーム">
+                <a href="ai_chatbot_new_puzzle.html" class="navigation navigation-next " aria-label="Next page: AI チャットボットが考えるパズルゲーム">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -555,7 +551,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"小さなゲーム、それ自体を自動生成することはできるのか","level":"1.10","depth":1,"next":{"title":"チャット AI が考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/chat_ai_new_puzzle.md","ref":"generation/chat_ai_new_puzzle.md","articles":[]},"previous":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]},"articles":[{"title":"チャット AI が考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/chat_ai_new_puzzle.md","ref":"generation/chat_ai_new_puzzle.md","articles":[]},{"title":"ゲームメカニクスをチャット AI に教えたら","level":"1.10.2","depth":2,"path":"generation/chat_ai_combine_tags.md","ref":"generation/chat_ai_combine_tags.md","articles":[]},{"title":"チャット AI は新しいゲームを作れるのか","level":"1.10.3","depth":2,"path":"generation/can_chat_ai_create_game.md","ref":"generation/can_chat_ai_create_game.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/README.md","mtime":"2023-09-23T11:15:11.658Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小さなゲーム、それ自体を自動生成することはできるのか","level":"1.10","depth":1,"next":{"title":"AI チャットボットが考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/ai_chatbot_new_puzzle.md","ref":"generation/ai_chatbot_new_puzzle.md","articles":[]},"previous":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]},"articles":[{"title":"AI チャットボットが考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/ai_chatbot_new_puzzle.md","ref":"generation/ai_chatbot_new_puzzle.md","articles":[]},{"title":"ゲームメカニクスを AI に教えたら","level":"1.10.2","depth":2,"path":"generation/ai_chatbot_combine_tags.md","ref":"generation/ai_chatbot_combine_tags.md","articles":[]},{"title":"AI チャットボットは新しいゲームを作れるのか","level":"1.10.3","depth":2,"path":"generation/can_ai_chatbot_create_game.md","ref":"generation/can_ai_chatbot_create_game.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/README.md","mtime":"2023-09-25T08:49:37.008Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -607,10 +603,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>ブラウザ用小さなゲーム向けライブラリを作ってみる · The Joys of Small Game Development</title>
+        <title>ブラウザ用小さなゲーム向けライブラリを作ってみる · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -495,11 +495,11 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ブラウザ用小さなゲーム向けライブラリを作ってみる">ブラウザ用小さなゲーム向けライブラリを作ってみる</h2>
-<p>ゲームライブラリやゲームエンジン、それらはどのような機能を備えている必要があるだろうか。&apos;How to make your own game engine (and why)&apos; <sup><a href="#fn_1" id="reffn_1">1</a></sup> という記事には以下の機能リストが挙げられている。</p>
+<p>ゲームライブラリやゲームエンジン、それらはどのような機能を備えている必要があるだろうか。&quot;How to make your own game engine (and why)&quot; <sup><a href="#fn_1" id="reffn_1">1</a></sup> という記事には以下の機能リストが挙げられている。</p>
 <ul>
 <li>基本機能<ul>
 <li>システム初期化：ウィンドウの準備や描画、オーディオの初期化</li>
-<li>フレームタイミング制御：1/60 秒ごとに定期的に呼び出されれるアップデート処理</li>
+<li>フレームタイミング制御：1/60 秒ごとに定期的に呼び出されるアップデート処理</li>
 <li>入力：ボタン入力などの処理</li>
 <li>描画：2D もしくは 3D のテクスチャやモデルなどの描画</li>
 <li>算術などのユーティリティ：ベクトル演算などゲームに必要な関数</li>
@@ -514,7 +514,7 @@
 </li>
 </ul>
 <p>上記以外にも、当たり判定、物理演算、シリアライズ、アニメーション、UI などの機能が、必須ではないが挙げられる。既存のゲームエンジンは長年の経験に裏付けされた機能群を提供しており、それらがどのような機能を備えているのかを知っておくことは、自作のゲームライブラリやゲームエンジンを作る際にはとても役に立つ。</p>
-<p>また、自作ゲームエンジンを作る際の心構えについても上記記事には記載がある。</p>
+<p>また上記記事には、自作ゲームエンジンを作る際の心構えについても記載がある。</p>
 <ul>
 <li>エンジンとゲームを同時につくる：エンジンが備えるべき機能は、作りたいゲームに必要とされていることに裏打ちされているべきである。</li>
 <li>必要になるまで機能を作るな：自作ゲームで必要とされない機能について、エンジンで作りこまない。</li>
@@ -534,15 +534,15 @@
 <p>他のライブラリに無い特徴として、箱・線・弧・テキスト・キャラクタなどの描画機能と衝突判定機能が一体化されているという点がある。</p>
 <p><a href="https://abagames.github.io/crisp-game-lib-games/?ref_collision" target="_blank"><img src="https://abagames.github.io/crisp-game-lib-games/ref_collision/screenshot.gif" alt="ref_collision screenshot"></a></p>
 <p>何かを描画すると、その描画がすでに画面に書かれている他の図形やテキスト、キャラクタと重なっているかの結果が返値として得られる。その値を確認するだけで、線や弧などの複雑な図形であっても衝突を判定でき、固有の当たり判定処理を必要としない。</p>
-<p>また、ゲームをジューシーにするための以下の機能も備えている。</p>
+<p>また、ゲームをジューシーにするための次の機能も備えている。</p>
 <ul>
-<li>鳴らしたい音名を選択するだけで鳴らせる効果音 <sup><a href="#fn_4" id="reffn_4">4</a></sup></li>
+<li>鳴らしたい音名を選択するだけで再生できる効果音 <sup><a href="#fn_4" id="reffn_4">4</a></sup></li>
 <li>オプション <sup><a href="#fn_5" id="reffn_5">5</a></sup> で<code>isPlayingBgm</code>を<code>true</code>にするだけで自動生成される BGM</li>
 <li><code>isReplayEnabled</code>を<code>true</code>にするだけで有効になるリプレイ機能</li>
 <li><code>theme</code>を設定するだけでレトロな CRT 風やドット絵風などに見た目を変化させる機能</li>
 <li><code>characters</code>配列で簡単に定義できるドット絵</li>
 </ul>
-<p>より効率的にゲームを作りたいならば、適切に機能を削ぎ落とした、自分に合った形の自作ゲームライブラリを作るのが楽しい。自分のゲーム開発スタイルに沿ったライブラリには、どのような機能が備わっていると嬉しいかを考えて、自分だけのオリジナルライブラリを作ってみよう。</p>
+<p>より効率的にゲームを作りたいならば、適切に機能を削ぎ落とした、自分に合った形の自作ゲームライブラリを作ることが楽しい。自分のゲーム開発スタイルに沿ったライブラリには、どのような機能が備わっていると嬉しいかを考えて、自分だけのオリジナルライブラリを作ってみよう。</p>
 <hr>
 <blockquote id="fn_1">
 <sup>1</sup>. <a href="https://medium.com/geekculture/how-to-make-your-own-game-engine-and-why-ddf0acbc5f3" target="_blank">How to make your own game engine (and why)</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
@@ -602,7 +602,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"next":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},"previous":{"title":"ゲームを作るツールを自作する","level":"1.8","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"path":"tools/fantasy_console.md","ref":"tools/fantasy_console.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/for_browser.md","mtime":"2023-09-23T01:31:35.533Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"next":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},"previous":{"title":"ゲームを作るツールを自作する","level":"1.8","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"ブラウザ用小さなゲーム向けライブラリを作ってみる","level":"1.8.1","depth":2,"path":"tools/for_browser.md","ref":"tools/for_browser.md","articles":[]},{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"path":"tools/fantasy_console.md","ref":"tools/fantasy_console.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/for_browser.md","mtime":"2023-09-25T06:47:27.924Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -654,10 +654,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>パズルゲームのレベル生成 · The Joys of Small Game Development</title>
+        <title>パズルゲームのレベル生成 · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -495,7 +495,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="パズルゲームのレベル生成">パズルゲームのレベル生成</h2>
-<p>ゲームの自動生成を目指すならば、レベル、つまり面のパターンの自動生成もやっておきたい。ゲーム＆ウォッチ的な単一の画面で遊ぶゲームはともかく、多くのゲームは複数の面があったり、スクロールに応じて出てくる地形があったりするので、レベル自動生成が必要となる。</p>
+<p>ここでは、レベル、つまり面のパターンの自動生成について考えてみよう。ゲーム＆ウォッチのような単一の画面で遊ぶゲームはともかく、多くのゲームは複数の面があったり、スクロールに応じて出てくる地形があったりするので、レベルの生成が必要となる。</p>
 <p>どれだけ質の良いレベルを作れるかがゲームの出来にダイレクトに効くのは、何と言ってもパズルゲームだ。特に倉庫番 <sup><a href="#fn_1" id="reffn_1">1</a></sup> のようなアクション性が無いパズルゲームにおいては、いかに解くのが楽しいレベルが作れるかがとても重要である。</p>
 <p>倉庫番のレベルジェネレータはすでにいろいろある。作り方としては、</p>
 <ol>
@@ -503,10 +503,10 @@
 <li>箱を正解位置に置く。</li>
 <li>ゲームを逆にシミュレートして箱を適当な位置に散らす。</li>
 </ol>
-<p>というのが一般的のようだ。3.は要するにプレイヤーで箱を「引いて」ずらしていけば、その結果移動される箱はちゃんと正解位置へ移動可能であるということを保証できるという意味だ。</p>
-<p>上の作り方に沿ったジェネレータ実装の一つ <sup><a href="#fn_2" id="reffn_2">2</a></sup> を見ると、プレイヤーが動けなくなったらバックトラックして他の置き方を探している。生成方法を記した論文 <sup><a href="#fn_3" id="reffn_3">3</a></sup>では、プレイヤーが箱を直線方向に押す回数や、別の箱を押しに行く回数などのメトリクスを導入し、正解位置からなるべく離れた、つまりプレイヤーがやることが多くなるレベルを作っている。</p>
-<p>汎用のパズルゲーム作成用言語 PuzzleScript <sup><a href="#fn_4" id="reffn_4">4</a></sup> で作られた、任意のパズルのレベルを生成することを目標とした論文 <sup><a href="#fn_5" id="reffn_5">5</a></sup> もある。PuzzleScript ルールのアナライザから、ゲーム内オブジェクトの特性をレベルのジェネレータとレベルのエバリュエータに渡してレベルを生成させる。これは後段のエバリュエータが生成されたレベルが解けるかどうか、解けたとして楽しいものか、などを判定するアプローチなので、上記 2 つのような逆方向のシミュレーションをするものとはちょっと違う。</p>
-<p>既存アプローチはいろいろあるが、ここでは自作パズルゲームに対してレベル生成を試みてみよう。</p>
+<p>というのが一般的だ。3.は要するにプレイヤーで箱を「引いて」ずらしていけば、その結果移動される箱はちゃんと正解位置へ移動可能であるということを保証できるという意味だ。</p>
+<p>上述の方法に基づくジェネレータ実装の一例 <sup><a href="#fn_2" id="reffn_2">2</a></sup> を見ると、プレイヤーが動けなくなったらバックトラックして他の置き方を探している。生成方法を記した論文 <sup><a href="#fn_3" id="reffn_3">3</a></sup>では、プレイヤーが箱を直線方向に押す回数や、別の箱を押しに行く回数などのメトリクスを導入し、正解位置からなるべく離れた、つまりプレイヤーが行うべきことが多くなるレベルを作っている。</p>
+<p>汎用のパズルゲーム作成用言語 PuzzleScript <sup><a href="#fn_4" id="reffn_4">4</a></sup> で作られた、任意のパズルのレベルを生成することを目標とした論文 <sup><a href="#fn_5" id="reffn_5">5</a></sup> もある。PuzzleScript ルールのアナライザから、ゲーム内オブジェクトの特性をレベルのジェネレータとレベルのエバリュエータに渡してレベルを生成させる。これは、後段のエバリュエータが生成されたレベルが解けるか、解いて楽しいか、などを判定するアプローチなので、先述の逆方向のシミュレーションを行う方法とは異なる。</p>
+<p>既存アプローチは多岐にわたるが、ここでは自作パズルゲームに対してレベル生成を試みてみよう。</p>
 <p>倉庫番とペンゴをつまみ食いしたようなパズルゲーム、slickslack <sup><a href="#fn_6" id="reffn_6">6</a></sup>を作ってみた。青い四角で表示される箱をフリックでスリップさせて、黄色の正解位置へ置くのが目的のゲームである（画像クリックでプレイ）。</p>
 <p><a href="https://abagames.github.io/slickslack/index.html" target="_blank"><img src="https://abagames.github.io/slickslack/screenshot.gif" alt="slickslack_screenshot"></a></p>
 <p>レベル自動生成方法は他の倉庫番ジェネレータと同様の正解から逆方向にゲームをシミュレートする方式とした。ただし、空の部屋を最初に作るのではなくて、全て壁の部屋を作ってから箱を逆方向にスリップさせつつ壁を掘っている。</p>
@@ -528,7 +528,7 @@
 <p>また別のレベル自動生成パズル HAKOSAN <sup><a href="#fn_7" id="reffn_7">7</a></sup> というゲームも作った。上下左右キーで 3 つのキャラクタを同時にスライドさせて、赤い目的地まで同時に到達させるのが目的だ（画像クリックでプレイ）。</p>
 <p><a href="https://abagames.github.io/hakosan/build/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/hakosan/main/docs/screenshot.gif" alt="HAKOSAN" width="640"></a></p>
 <p>これも同様に、目的地に配置したキャラクタを逆方向にスライドすることでレベルを生成している。</p>
-<p>このように正解から逆方向にパズルを進行することで、問題を自動生成する方法は応用しやすい。あとは PuzzleScript 論文にあるようなエバリュエータを加えてレベルの楽しさを判定し、生成したレベルを選別できるとより良い。この論文では正解位置と箱の距離や、プレイヤーの操作数、適用されたルール数などを使って評価を行っている。これらのメトリクスがレベルを解く際の楽しさをちゃんと反映しているかは確証が無いが、明らかに楽しくないレベルを弾くには使えそうである。余力があれば、このような工夫も盛り込むとより良い。</p>
+<p>このように、正解から逆方向にパズルを進行させることで問題を自動生成する方法は、多くの場面で応用可能だ。あとは PuzzleScript 論文にあるようなエバリュエータを加えてレベルの楽しさを判定し、生成したレベルを選別できるとより良い。この論文では正解位置と箱の距離や、プレイヤーの操作数、適用されたルール数などを使って評価を行っている。これらのメトリクスがレベルを解く際の楽しさをちゃんと反映しているかは確証が無いが、明らかに楽しくないレベルを弾くには使えそうである。余力があれば、このような工夫も盛り込むとより良い。</p>
 <hr>
 <blockquote id="fn_1">
 <sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E5%80%89%E5%BA%AB%E7%95%AA" target="_blank">倉庫番</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
@@ -594,7 +594,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"next":{"title":"小さなゲーム、それ自体を自動生成することはできるのか","level":"1.10","depth":1,"path":"generation/README.md","ref":"generation/README.md","articles":[{"title":"チャット AI が考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/chat_ai_new_puzzle.md","ref":"generation/chat_ai_new_puzzle.md","articles":[]},{"title":"ゲームメカニクスをチャット AI に教えたら","level":"1.10.2","depth":2,"path":"generation/chat_ai_combine_tags.md","ref":"generation/chat_ai_combine_tags.md","articles":[]},{"title":"チャット AI は新しいゲームを作れるのか","level":"1.10.3","depth":2,"path":"generation/can_chat_ai_create_game.md","ref":"generation/can_chat_ai_create_game.md","articles":[]}]},"previous":{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"procedural/puzzle_level.md","mtime":"2023-09-23T09:03:05.052Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"next":{"title":"小さなゲーム、それ自体を自動生成することはできるのか","level":"1.10","depth":1,"path":"generation/README.md","ref":"generation/README.md","articles":[{"title":"AI チャットボットが考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/ai_chatbot_new_puzzle.md","ref":"generation/ai_chatbot_new_puzzle.md","articles":[]},{"title":"ゲームメカニクスを AI に教えたら","level":"1.10.2","depth":2,"path":"generation/ai_chatbot_combine_tags.md","ref":"generation/ai_chatbot_combine_tags.md","articles":[]},{"title":"AI チャットボットは新しいゲームを作れるのか","level":"1.10.3","depth":2,"path":"generation/can_ai_chatbot_create_game.md","ref":"generation/can_ai_chatbot_create_game.md","articles":[]}]},"previous":{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"procedural/puzzle_level.md","mtime":"2023-09-25T07:00:27.279Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -646,10 +646,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

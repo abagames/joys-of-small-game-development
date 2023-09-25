@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>ファンタジーコンソールを自作する · The Joys of Small Game Development</title>
+        <title>ファンタジーコンソールを自作する · 小さなゲーム開発の楽しみ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.0">
@@ -178,7 +178,7 @@
                 <a href="../restrictions/one_button.html">
             
                     
-                    ワンボタンゲームにおけるワンボタンでできること
+                    ワンボタンの可能性
             
                 </a>
             
@@ -392,12 +392,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../generation/chat_ai_new_puzzle.html">
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
             
-                <a href="../generation/chat_ai_new_puzzle.html">
+                <a href="../generation/ai_chatbot_new_puzzle.html">
             
                     
-                    チャット AI が考えるパズルゲーム
+                    AI チャットボットが考えるパズルゲーム
             
                 </a>
             
@@ -405,12 +405,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../generation/chat_ai_combine_tags.html">
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
             
-                <a href="../generation/chat_ai_combine_tags.html">
+                <a href="../generation/ai_chatbot_combine_tags.html">
             
                     
-                    ゲームメカニクスをチャット AI に教えたら
+                    ゲームメカニクスを AI に教えたら
             
                 </a>
             
@@ -418,12 +418,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../generation/can_chat_ai_create_game.html">
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
             
-                <a href="../generation/can_chat_ai_create_game.html">
+                <a href="../generation/can_ai_chatbot_create_game.html">
             
                     
-                    チャット AI は新しいゲームを作れるのか
+                    AI チャットボットは新しいゲームを作れるのか
             
                 </a>
             
@@ -495,17 +495,17 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ファンタジーコンソールを自作する">ファンタジーコンソールを自作する</h2>
-<p>ファンタジーコンソール <sup><a href="#fn_1" id="reffn_1">1</a></sup> は、こんなゲーム機があったら面白いなという開発者の妄想を具現化したものだ。実在しなかった別のゲームボーイやファミコンを勝手に考えて PC 上で実装して遊ぶ、それがファンタジーコンソールだ。</p>
+<p>ファンタジーコンソール <sup><a href="#fn_1" id="reffn_1">1</a></sup> は、こんなゲーム機があったら面白いなという開発者の妄想を具現化したものだ。実在しない別のゲームボーイやファミコンを勝手に考えて PC 上で実装して遊ぶ、それがファンタジーコンソールだ。</p>
 <p>ファンタジーコンソールの代表例はなんといっても PICO-8 <sup><a href="#fn_2" id="reffn_2">2</a></sup> だ。128x128 ドットの画面、4 音同時再生、256 個の 8x8 スプライトを持ち、Lua での開発環境やドット絵エディタ、音楽エディタ、マップエディタなどを含むとてもリッチなマシンだ。</p>
-<p>コンソール（Video game console <sup><a href="#fn_3" id="reffn_3">3</a></sup> = ゲーム機）という名前にもかかわらず、ファンタジーコンソールは開発環境を内包した作りになっていることが多い。どちらかというと MSX のようなマイコンやファミリーベーシックっぽいものになっている。</p>
+<p>コンソール（Video game console <sup><a href="#fn_3" id="reffn_3">3</a></sup> = ゲーム機）という名前にもかかわらず、ファンタジーコンソールは開発環境を内包した作りになっていることが多い。どちらかというと、MSX のようなマイコンや、ファミリーベーシックに似た特徴を持っている。</p>
 <p>PICO-8 レベルのファンタジーコンソールを作るのはとても大変だ。しかし自分でもファンタジーコンソールを作ってみたい。ならば思いっきり仕様を絞る必要がある。ごく小さな画面、単純な音出力、簡素な入力手段しか持たないファンタジーコンソールを目指した結果、PEEKPOKE <sup><a href="#fn_4" id="reffn_4">4</a></sup> というファンタジーコンソールを作ってみた。</p>
 <p>PEEKPOKE は、PC やスマホのブラウザで遊べる（画面クリックでプレイ）。</p>
 <p><a href="https://abagames.github.io/peekpoke/bombsnake/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/peekpoke/main/docs/screenshot.gif" alt="BOMB SNAKE"></a></p>
-<p>上下左右 or WASD キーで蛇を動かして赤い爆弾を取るスネークゲームだ。スマホでも画面下のバーチャルパッドで操作できる。</p>
+<p>上下左右、もしくは WASD キーで蛇を動かして赤い爆弾を取るスネークゲームだ。スマホでも画面下のバーチャルパッドで操作できる。</p>
 <p><img src="https://raw.githubusercontent.com/abagames/peekpoke/main/docs/memorymap.png" alt="PEEKPOKE memory map"></p>
-<p>PEEKPOKE では peek 命令と poke 命令しかマシンの制御に使えない。32x30 ドット 8 色の画面と 8x5 のテキスト画面、7 つのキー入力、単音ブザーのみ、という限定された機能を、メモリから操作できるメモリマップド I/O <sup><a href="#fn_5" id="reffn_5">5</a></sup>を採用している。開発環境は入っていない。ゲームは JavaScript で記述できる <sup><a href="#fn_6" id="reffn_6">6</a></sup>。</p>
+<p>PEEKPOKE では、メモリの読み書きを行う peek 命令と poke 命令しかマシンの制御に使えない。32x30 ドット 8 色の画面と 8x5 のテキスト画面、7 つのキー入力、単音ブザーのみ、という限定された機能を、メモリから操作できるメモリマップド I/O <sup><a href="#fn_5" id="reffn_5">5</a></sup>を採用している。開発環境は入っていない。ゲームは JavaScript で記述できる <sup><a href="#fn_6" id="reffn_6">6</a></sup>。</p>
 <p>コンソール独自の機能はすべてメモリに押し込んだうえで、開発環境は JavaScript に丸投げしたので、作りはかなり簡単にできた。作れるゲームもかなり簡単なものに限られるが、ぎりぎりファンタジーコンソールを名乗れるのではないか。あと起動時にスプラッシュスクリーンを入れると、なんとなくファンタジーコンソールっぽくなる。</p>
-<p>開発環境抜きであればファンタジーコンソールを作る手間はだいぶ削減できるので、何か面白いスペックのコンソールを妄想して作ってみるのも楽しい。今回作ったものはだいぶ素直なアーキテクチャのものだが、もっと変わった機能を持ったコンソールだったり、カセットビジョンや ATARI 2600 などの、既存コンソールをオマージュしたものを考えてみるのも楽しそうだ。</p>
+<p>開発環境抜きであればファンタジーコンソールを作る手間はだいぶ削減できる。何か面白いスペックのコンソールを妄想して、手軽に作ってみるのも楽しい。今回作ったものはだいぶ素直なアーキテクチャのものだが、もっと変わった機能を持ったコンソールだったり、カセットビジョンや ATARI 2600 などの、既存コンソールをオマージュしたものを考えてみるのも楽しそうだ。</p>
 <hr>
 <blockquote id="fn_1">
 <sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB" target="_blank">ファンタジーコンソール</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
@@ -568,7 +568,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"next":{"title":"自動生成で楽をする","level":"1.9","depth":1,"path":"procedural/README.md","ref":"procedural/README.md","articles":[{"title":"ドット絵を自動生成する","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]}]},"previous":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Joys of Small Game Development","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/fantasy_console.md","mtime":"2023-09-23T01:37:57.535Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-24T00:43:08.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"next":{"title":"自動生成で楽をする","level":"1.9","depth":1,"path":"procedural/README.md","ref":"procedural/README.md","articles":[{"title":"ドット絵を自動生成する","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]}]},"previous":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/fantasy_console.md","mtime":"2023-09-25T05:43:08.565Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:17:41.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -620,10 +620,6 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
