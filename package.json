@@ -4,7 +4,7 @@
   "description": "Guidebook for Enjoying Creating Small Games",
   "scripts": {
     "serve": "honkit serve",
-    "build": "honkit build"
+    "build": "honkit build . docs"
   },
   "keywords": [],
   "author": "abagames",

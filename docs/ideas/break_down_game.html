@@ -1,0 +1,669 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ゲームを仕組みに分解し、組み立てる · 小さなゲーム開発の楽しみ</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.0">
+        <meta name="author" content="abagames">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../restrictions/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../fun_to_make_small_games.html">
+            
+                <a href="../fun_to_make_small_games.html">
+            
+                    
+                    小さなゲームを作ること、それ自身が楽しいのだ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../device_and_environment.html">
+            
+                <a href="../device_and_environment.html">
+            
+                    
+                    ターゲットデバイスと開発環境、何向けに何で作ろうか
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    小さなゲームのアイデアって、どうやって思いつくの
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="break_down_game.html">
+            
+                <a href="break_down_game.html">
+            
+                    
+                    ゲームを仕組みに分解し、組み立てる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
+            
+                <a href="../restrictions/">
+            
+                    
+                    制約がアイデアを生み、ゲームを完成させる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
+            
+                <a href="../restrictions/one_button.html">
+            
+                    
+                    ワンボタンの可能性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
+            
+                <a href="../restrictions/limited_size.html">
+            
+                    
+                    限られたサイズでゲームを作る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../difficulty/">
+            
+                <a href="../difficulty/">
+            
+                    
+                    小さなゲームにおける適切な難しさとは
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../difficulty/curve.html">
+            
+                <a href="../difficulty/curve.html">
+            
+                    
+                    難度の上昇カーブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../difficulty/level.html">
+            
+                <a href="../difficulty/level.html">
+            
+                    
+                    レベルごとの難度設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../make_game_juicy.html">
+            
+                <a href="../make_game_juicy.html">
+            
+                    
+                    ゲームを「ジューシー」にする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    ゲームを作るツールを自作する
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tools/for_browser.html">
+            
+                <a href="../tools/for_browser.html">
+            
+                    
+                    ブラウザ用小さなゲーム向けライブラリを作ってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tools/for_handheld.html">
+            
+                <a href="../tools/for_handheld.html">
+            
+                    
+                    ハンドヘルドデバイスでもゲームを動かそう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tools/fantasy_console.html">
+            
+                <a href="../tools/fantasy_console.html">
+            
+                    
+                    ファンタジーコンソールを自作する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../procedural/">
+            
+                <a href="../procedural/">
+            
+                    
+                    自動生成で楽をする
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../procedural/pixel_art.html">
+            
+                <a href="../procedural/pixel_art.html">
+            
+                    
+                    ドット絵を自動生成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../procedural/sound.html">
+            
+                <a href="../procedural/sound.html">
+            
+                    
+                    BGM や効果音の自動生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../procedural/puzzle_level.html">
+            
+                <a href="../procedural/puzzle_level.html">
+            
+                    
+                    パズルゲームのレベル生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../generation/">
+            
+                <a href="../generation/">
+            
+                    
+                    小さなゲーム、それ自体を自動生成することはできるのか
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
+            
+                <a href="../generation/ai_chatbot_new_puzzle.html">
+            
+                    
+                    AI チャットボットが考えるパズルゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
+            
+                <a href="../generation/ai_chatbot_combine_tags.html">
+            
+                    
+                    ゲームメカニクスを AI に教えたら
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
+            
+                <a href="../generation/can_ai_chatbot_create_game.html">
+            
+                    
+                    AI チャットボットは新しいゲームを作れるのか
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../conclusion.html">
+            
+                <a href="../conclusion.html">
+            
+                    
+                    おわりに
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ゲームを仕組みに分解し、組み立てる</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="ゲームを仕組みに分解し、組み立てる">ゲームを仕組みに分解し、組み立てる</h2>
+<p>ゲームのアイデアの考え方として、今まで作ったゲームがどのような仕組みから出来上がっていて、その仕組みがプレイヤーにとってどのような楽しさや難しさを提供しているかを整理し、それら仕組みを組み合わせて新たなゲームを作る、という方法も考えられる。</p>
+<p>一例として、今まで私が作ってきたゲームを仕組みに分解してみた。各ゲームが、どのようなプレイヤーキャラクタ、武器、障害物、フィールド、ルール、操作から構成されているかを、カテゴリごとのタグで整理した <sup><a href="#fn_1" id="reffn_1">1</a></sup>（画像クリックでトップページへ移動）。</p>
+<p><a href="https://abagames.github.io/action-mini-game-mechanic-tags/index_ja.html" target="_blank"><img src="https://abagames.github.io/action-mini-game-mechanic-tags/twitter_card_image.png" alt="action-mini-game mechanic tags" width="600"></a></p>
+<p>各タグの詳細（Detail）ボタンを押すと、それぞれのタグの説明、およびそのタグが付加されたゲームの一覧を見ることができる。</p>
+<p>タグには、例えば以下のような仕組みが対応している。</p>
+<ul>
+<li>プレイヤーキャラクタが回転する <sup><a href="#fn_2" id="reffn_2">2</a></sup>：回転のタイミングに合わせて操作する。</li>
+<li>武器が放物線状に飛ぶ <sup><a href="#fn_3" id="reffn_3">3</a></sup>：投げ方や投げるもの、着弾した時の効果などにバリエーションがある。</li>
+<li>ペナルティのある物を混ぜる <sup><a href="#fn_4" id="reffn_4">4</a></sup>：何も考えずに攻撃を続けるのではなく、画面の状況をよく見て攻撃タイミングを図る必要がある。</li>
+<li>1D フィールド <sup><a href="#fn_5" id="reffn_5">5</a></sup>：ゲーム画面が 1 次元でも表現でき、キャラクタは左右（もしくは上下）にしか動けない。</li>
+<li>近接ボーナス <sup><a href="#fn_6" id="reffn_6">6</a></sup>：障害物の近くにボーナス点を配置することで、リスク・リワードの基本形が実現できる。</li>
+<li>ボタンを押したら属性反転 <sup><a href="#fn_7" id="reffn_7">7</a></sup>：特殊なプレイヤー操作の一例である。</li>
+</ul>
+<p>これらページの使い方としては、以下を想定している。</p>
+<ul>
+<li>タグ一覧ページを見てアクションミニゲームに組み込める仕組みを把握する。</li>
+<li>タグ詳細ページを見てその仕組みを使った別のゲームを考える。</li>
+<li>複数のタグを適当に組み合わせてそれら仕組みを使ったゲームを考える。</li>
+</ul>
+<p>こういったゲームの仕組みは、よくゲームメカニクスと呼ばれる <sup><a href="#fn_8" id="reffn_8">8</a></sup>。</p>
+<p>ゲーム内でとれるプレイヤーの行動や、その行動に対応して起こるゲーム内の出来事などを整理したものがゲームメカニクスだ。あるゲームがどのようにデザインされているかを解析するためや、新たなゲームを考える際の助けとして使われたりする。ゲームプレイはゲームメカニクスの間のフローと言われたりする <sup><a href="#fn_9" id="reffn_9">9</a></sup> が、ゲームメカニクスをベースに、それらを組み合わせたゲームプレイ体験をどのようにするか、プレイヤーに対するチャレンジをどう与えるかなどを考えることができる。</p>
+<p>ゲームメカニクスとしてどの程度の粒度のものを挙げるべきかは、特に決まった指標が無いように思える。ターン、リソース管理、リスクとリワード、など抽象的な要素をメカニクスとして挙げる場合もあれば、ジャンプ、シールド、回転、パワーアップなど細かなゲーム内アクションを挙げる場合もある。</p>
+<p>今回は新しいアクションミニゲームを考える助けになるために、という目的のもと整理し、後者の細かなゲーム内アクションに近い粒度でまとめた。あと各メカニクスに対してそれを取り入れた実例が見えることが、そのメカニクスをどのように他のメカニクスと組み合わせているか、どのようなリスク（チャレンジ）やリワードをプレイヤーに与えているかを把握することを重視し、実例のゲームが見られて遊べるようにした。</p>
+<p>自作ゲームを例に整理したので、アクションミニゲーム、とくにワンボタンゲームに偏重した内容になっていることは否めないが、今回はゲームアイデアの発想法の一例として示した。</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://github.com/abagames/action-mini-game-mechanic-tags" target="_blank">action-mini-game-mechanic-tags</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/player_rotate_ja.html" target="_blank">回転する</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/weapon_artillery_ja.html" target="_blank">重力の影響を受けて砲弾のように放物線状に飛ぶ</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/obstacle_penalty_ja.html" target="_blank">接触したり破壊したりすることでペナルティになる物が混在している</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/field_1D_ja.html" target="_blank">1 次元に制限されたフィールド</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/rule_proximity_bonus_ja.html" target="_blank">リスクに近接すると点が入る</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. <a href="https://abagames.github.io/action-mini-game-mechanic-tags/on_pressed_reverse_state_ja.html" target="_blank">属性や状態を反転させる</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. <a href="https://en.wikipedia.org/wiki/Game_mechanics" target="_blank">Game mechanics</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. <a href="https://gamedesignskills.com/game-design/video-game-mechanics/#ancor4" target="_blank">Video Game Mechanics: A Beginner’s Guide (with Examples)</a><a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 小さなゲームのアイデアって、どうやって思いつくの">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../restrictions/" class="navigation navigation-next " aria-label="Next page: 制約がアイデアを生み、ゲームを完成させる">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"next":{"title":"制約がアイデアを生み、ゲームを完成させる","level":"1.5","depth":1,"path":"restrictions/README.md","ref":"restrictions/README.md","articles":[{"title":"ワンボタンの可能性","level":"1.5.1","depth":2,"path":"restrictions/one_button.md","ref":"restrictions/one_button.md","articles":[]},{"title":"限られたサイズでゲームを作る","level":"1.5.2","depth":2,"path":"restrictions/limited_size.md","ref":"restrictions/limited_size.md","articles":[]}]},"previous":{"title":"小さなゲームのアイデアって、どうやって思いつくの","level":"1.4","depth":1,"path":"ideas/README.md","ref":"ideas/README.md","articles":[{"title":"ゲームを仕組みに分解し、組み立てる","level":"1.4.1","depth":2,"path":"ideas/break_down_game.md","ref":"ideas/break_down_game.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"ideas/break_down_game.md","mtime":"2023-09-25T03:56:36.297Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:25:59.225Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

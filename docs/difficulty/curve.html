@@ -1,0 +1,628 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>難度の上昇カーブ · 小さなゲーム開発の楽しみ</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.0">
+        <meta name="author" content="abagames">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="level.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../fun_to_make_small_games.html">
+            
+                <a href="../fun_to_make_small_games.html">
+            
+                    
+                    小さなゲームを作ること、それ自身が楽しいのだ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../device_and_environment.html">
+            
+                <a href="../device_and_environment.html">
+            
+                    
+                    ターゲットデバイスと開発環境、何向けに何で作ろうか
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ideas/">
+            
+                <a href="../ideas/">
+            
+                    
+                    小さなゲームのアイデアって、どうやって思いつくの
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ideas/break_down_game.html">
+            
+                <a href="../ideas/break_down_game.html">
+            
+                    
+                    ゲームを仕組みに分解し、組み立てる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
+            
+                <a href="../restrictions/">
+            
+                    
+                    制約がアイデアを生み、ゲームを完成させる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
+            
+                <a href="../restrictions/one_button.html">
+            
+                    
+                    ワンボタンの可能性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
+            
+                <a href="../restrictions/limited_size.html">
+            
+                    
+                    限られたサイズでゲームを作る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    小さなゲームにおける適切な難しさとは
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="curve.html">
+            
+                <a href="curve.html">
+            
+                    
+                    難度の上昇カーブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="level.html">
+            
+                <a href="level.html">
+            
+                    
+                    レベルごとの難度設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../make_game_juicy.html">
+            
+                <a href="../make_game_juicy.html">
+            
+                    
+                    ゲームを「ジューシー」にする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    ゲームを作るツールを自作する
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tools/for_browser.html">
+            
+                <a href="../tools/for_browser.html">
+            
+                    
+                    ブラウザ用小さなゲーム向けライブラリを作ってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tools/for_handheld.html">
+            
+                <a href="../tools/for_handheld.html">
+            
+                    
+                    ハンドヘルドデバイスでもゲームを動かそう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tools/fantasy_console.html">
+            
+                <a href="../tools/fantasy_console.html">
+            
+                    
+                    ファンタジーコンソールを自作する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../procedural/">
+            
+                <a href="../procedural/">
+            
+                    
+                    自動生成で楽をする
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../procedural/pixel_art.html">
+            
+                <a href="../procedural/pixel_art.html">
+            
+                    
+                    ドット絵を自動生成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../procedural/sound.html">
+            
+                <a href="../procedural/sound.html">
+            
+                    
+                    BGM や効果音の自動生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../procedural/puzzle_level.html">
+            
+                <a href="../procedural/puzzle_level.html">
+            
+                    
+                    パズルゲームのレベル生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../generation/">
+            
+                <a href="../generation/">
+            
+                    
+                    小さなゲーム、それ自体を自動生成することはできるのか
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
+            
+                <a href="../generation/ai_chatbot_new_puzzle.html">
+            
+                    
+                    AI チャットボットが考えるパズルゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
+            
+                <a href="../generation/ai_chatbot_combine_tags.html">
+            
+                    
+                    ゲームメカニクスを AI に教えたら
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
+            
+                <a href="../generation/can_ai_chatbot_create_game.html">
+            
+                    
+                    AI チャットボットは新しいゲームを作れるのか
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../conclusion.html">
+            
+                <a href="../conclusion.html">
+            
+                    
+                    おわりに
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >難度の上昇カーブ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="難度の上昇カーブ">難度の上昇カーブ</h2>
+<p>適切な速度での難度上昇とはどのようなものだろう。これはプレイヤーに 1 ゲームをどのくらいの長さ遊んで欲しいかに依存する。例えば 1 ゲーム 3 分間を想定したうえで、ゲーム開始時の 2 倍の難度になるとたいていのプレイヤーが脱落する、というゲームにした場合、難度を計算する式として以下が考えられる。</p>
+<pre><code>[難度] = sqrt([経過フレーム数] * 0.0001) + 1
+</code></pre><p>フレームは、ゲームでの 1/60 秒を意味する。経過フレーム数は 1 秒で 60、1 分で 3600 となる。<code>sqrt</code>は平方根を意味する。フレーム数に比例して線形に難度を設定するのではなく、<code>sqrt</code>を用いることで、ある程度時間が経過した後の難度上昇がおだやかになる。上記の式に、3 分後のフレーム数である 10800 を代入すると難度は 2.04 となり、当初想定の難度が得られることが分かる。</p>
+<p>ただ全てのミニゲームでこの難度設定でうまくいくかというとそうとも限らない。場合によってはもっと素早く難度を上げたほうが緊張感が出て良い場合もある。</p>
+<p>どのような難度上昇が適切か、この辺の感覚は実際にゲームに適用してみないと分かりにくい。そこで、難度上昇を時間を横軸とした曲線で可視化し、その曲線を調整できる UI を準備し、それをゲームに反映するサンプルゲームを作ってみた（画像クリックでデモページへ）。</p>
+<p><a href="https://abagames.github.io/diffi-tween/" target="_blank"><img src="https://abagames.github.io/diffi-tween/screenshot.png" alt="diff-tween" width="600"></a></p>
+<p>右の UI で難度曲線を調整したのち、左のゲーム画面をクリックすると、上から落ちてくる岩を避けるゲームが遊べる。初期設定の曲線は、難度の上昇具合が分かりやすいよう、30 秒で 2 倍と速めの設定になっている。</p>
+<p>各難度曲線はその計算式 (sqrt, linear, pow)と上昇具合 (climb)、あと一定時間ごとにがくんと難度が下がるノコギリ波 (saw)の調整ができるようになっている。ノコギリ波の難度曲線はゲーム＆ウォッチでも使われている方式で、難度にメリハリを付けるには良い方法だ。また複数のパラメタに対して難度が設定できる。今回の例だと岩の落下速度 (speed)と大きさ (size)だ。</p>
+<p>難度に影響を受けるパラメタが複数あると調整はより難しい。ゲームをプレイしてみると分かるが、岩の落下速度（≒ ゲームスピード）が速くなってもプレイヤーの技量でなんとか対処可能だが、岩の大きさがある程度まで大きくなると対応が不可能に感じる。岩が速く落ちてくる分にはマウスさばきでなんとかなるように思えるが、大きい岩が降ってくる状態はどうしようもなく理不尽な印象を受ける。</p>
+<p>そのため、岩の大きさは sqrt を用いて難度上昇を抑えて理不尽感を減らし、岩の落下速度は緊張感を持たせるために linear でゲーム序盤からどんどん難しくし、たまにノコギリ波でゆるめる、のような調整が考えられる。</p>
+<p>また、このように調整したゲームは、ゲーム開始直後の難度が低く退屈に感じるという欠点もある。その場合、岩の近くを通るとボーナス点が入るなど、プレイヤーが積極的にリスクを取りに行くとリワードが得られるようなメカニクスを導入することで、ゲーム序盤からプレイヤーに緊張感を提供することができる。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 小さなゲームにおける適切な難しさとは">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="level.html" class="navigation navigation-next " aria-label="Next page: レベルごとの難度設定">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"next":{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"path":"difficulty/level.md","ref":"difficulty/level.md","articles":[]},"previous":{"title":"小さなゲームにおける適切な難しさとは","level":"1.6","depth":1,"path":"difficulty/README.md","ref":"difficulty/README.md","articles":[{"title":"難度の上昇カーブ","level":"1.6.1","depth":2,"path":"difficulty/curve.md","ref":"difficulty/curve.md","articles":[]},{"title":"レベルごとの難度設定","level":"1.6.2","depth":2,"path":"difficulty/level.md","ref":"difficulty/level.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"difficulty/curve.md","mtime":"2023-09-25T05:28:24.620Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:25:59.225Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

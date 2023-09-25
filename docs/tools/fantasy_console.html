@@ -1,0 +1,647 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ファンタジーコンソールを自作する · 小さなゲーム開発の楽しみ</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.0">
+        <meta name="author" content="abagames">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../procedural/" />
+    
+    
+    <link rel="prev" href="for_handheld.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../fun_to_make_small_games.html">
+            
+                <a href="../fun_to_make_small_games.html">
+            
+                    
+                    小さなゲームを作ること、それ自身が楽しいのだ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../device_and_environment.html">
+            
+                <a href="../device_and_environment.html">
+            
+                    
+                    ターゲットデバイスと開発環境、何向けに何で作ろうか
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ideas/">
+            
+                <a href="../ideas/">
+            
+                    
+                    小さなゲームのアイデアって、どうやって思いつくの
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ideas/break_down_game.html">
+            
+                <a href="../ideas/break_down_game.html">
+            
+                    
+                    ゲームを仕組みに分解し、組み立てる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
+            
+                <a href="../restrictions/">
+            
+                    
+                    制約がアイデアを生み、ゲームを完成させる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
+            
+                <a href="../restrictions/one_button.html">
+            
+                    
+                    ワンボタンの可能性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
+            
+                <a href="../restrictions/limited_size.html">
+            
+                    
+                    限られたサイズでゲームを作る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../difficulty/">
+            
+                <a href="../difficulty/">
+            
+                    
+                    小さなゲームにおける適切な難しさとは
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../difficulty/curve.html">
+            
+                <a href="../difficulty/curve.html">
+            
+                    
+                    難度の上昇カーブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../difficulty/level.html">
+            
+                <a href="../difficulty/level.html">
+            
+                    
+                    レベルごとの難度設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../make_game_juicy.html">
+            
+                <a href="../make_game_juicy.html">
+            
+                    
+                    ゲームを「ジューシー」にする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ゲームを作るツールを自作する
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="for_browser.html">
+            
+                <a href="for_browser.html">
+            
+                    
+                    ブラウザ用小さなゲーム向けライブラリを作ってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="for_handheld.html">
+            
+                <a href="for_handheld.html">
+            
+                    
+                    ハンドヘルドデバイスでもゲームを動かそう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="fantasy_console.html">
+            
+                <a href="fantasy_console.html">
+            
+                    
+                    ファンタジーコンソールを自作する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../procedural/">
+            
+                <a href="../procedural/">
+            
+                    
+                    自動生成で楽をする
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../procedural/pixel_art.html">
+            
+                <a href="../procedural/pixel_art.html">
+            
+                    
+                    ドット絵を自動生成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../procedural/sound.html">
+            
+                <a href="../procedural/sound.html">
+            
+                    
+                    BGM や効果音の自動生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../procedural/puzzle_level.html">
+            
+                <a href="../procedural/puzzle_level.html">
+            
+                    
+                    パズルゲームのレベル生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../generation/">
+            
+                <a href="../generation/">
+            
+                    
+                    小さなゲーム、それ自体を自動生成することはできるのか
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
+            
+                <a href="../generation/ai_chatbot_new_puzzle.html">
+            
+                    
+                    AI チャットボットが考えるパズルゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
+            
+                <a href="../generation/ai_chatbot_combine_tags.html">
+            
+                    
+                    ゲームメカニクスを AI に教えたら
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
+            
+                <a href="../generation/can_ai_chatbot_create_game.html">
+            
+                    
+                    AI チャットボットは新しいゲームを作れるのか
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../conclusion.html">
+            
+                <a href="../conclusion.html">
+            
+                    
+                    おわりに
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ファンタジーコンソールを自作する</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="ファンタジーコンソールを自作する">ファンタジーコンソールを自作する</h2>
+<p>ファンタジーコンソール <sup><a href="#fn_1" id="reffn_1">1</a></sup> は、こんなゲーム機があったら面白いなという開発者の妄想を具現化したものだ。実在しない別のゲームボーイやファミコンを勝手に考えて PC 上で実装して遊ぶ、それがファンタジーコンソールだ。</p>
+<p>ファンタジーコンソールの代表例はなんといっても PICO-8 <sup><a href="#fn_2" id="reffn_2">2</a></sup> だ。128x128 ドットの画面、4 音同時再生、256 個の 8x8 スプライトを持ち、Lua での開発環境やドット絵エディタ、音楽エディタ、マップエディタなどを含むとてもリッチなマシンだ。</p>
+<p>コンソール（Video game console <sup><a href="#fn_3" id="reffn_3">3</a></sup> = ゲーム機）という名前にもかかわらず、ファンタジーコンソールは開発環境を内包した作りになっていることが多い。どちらかというと、MSX のようなマイコンや、ファミリーベーシックに似た特徴を持っている。</p>
+<p>PICO-8 レベルのファンタジーコンソールを作るのはとても大変だ。しかし自分でもファンタジーコンソールを作ってみたい。ならば思いっきり仕様を絞る必要がある。ごく小さな画面、単純な音出力、簡素な入力手段しか持たないファンタジーコンソールを目指した結果、PEEKPOKE <sup><a href="#fn_4" id="reffn_4">4</a></sup> というファンタジーコンソールを作ってみた。</p>
+<p>PEEKPOKE は、PC やスマホのブラウザで遊べる（画面クリックでプレイ）。</p>
+<p><a href="https://abagames.github.io/peekpoke/bombsnake/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/peekpoke/main/docs/screenshot.gif" alt="BOMB SNAKE"></a></p>
+<p>上下左右、もしくは WASD キーで蛇を動かして赤い爆弾を取るスネークゲームだ。スマホでも画面下のバーチャルパッドで操作できる。</p>
+<p><img src="https://raw.githubusercontent.com/abagames/peekpoke/main/docs/memorymap.png" alt="PEEKPOKE memory map"></p>
+<p>PEEKPOKE では、メモリの読み書きを行う peek 命令と poke 命令しかマシンの制御に使えない。32x30 ドット 8 色の画面と 8x5 のテキスト画面、7 つのキー入力、単音ブザーのみ、という限定された機能を、メモリから操作できるメモリマップド I/O <sup><a href="#fn_5" id="reffn_5">5</a></sup>を採用している。開発環境は入っていない。ゲームは JavaScript で記述できる <sup><a href="#fn_6" id="reffn_6">6</a></sup>。</p>
+<p>コンソール独自の機能はすべてメモリに押し込んだうえで、開発環境は JavaScript に丸投げしたので、作りはかなり簡単にできた。作れるゲームもかなり簡単なものに限られるが、ぎりぎりファンタジーコンソールを名乗れるのではないか。あと起動時にスプラッシュスクリーンを入れると、なんとなくファンタジーコンソールっぽくなる。</p>
+<p>開発環境抜きであればファンタジーコンソールを作る手間はだいぶ削減できる。何か面白いスペックのコンソールを妄想して、手軽に作ってみるのも楽しい。今回作ったものはだいぶ素直なアーキテクチャのものだが、もっと変わった機能を持ったコンソールだったり、カセットビジョンや ATARI 2600 などの、既存コンソールをオマージュしたものを考えてみるのも楽しそうだ。</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB" target="_blank">ファンタジーコンソール</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://www.lexaloffle.com/pico-8.php" target="_blank">PICO-8</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://en.wikipedia.org/wiki/Video_game_console" target="_blank">Video game console</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="https://github.com/abagames/peekpoke" target="_blank">PEEKPOKE</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97%E3%83%89I/O" target="_blank">メモリマップド I/O</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://github.com/abagames/peekpoke/blob/main/docs/bombsnake/main.js" target="_blank">peekpoke bombsnake/main.js</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="for_handheld.html" class="navigation navigation-prev " aria-label="Previous page: ハンドヘルドデバイスでもゲームを動かそう">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../procedural/" class="navigation navigation-next " aria-label="Next page: 自動生成で楽をする">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ファンタジーコンソールを自作する","level":"1.8.3","depth":2,"next":{"title":"自動生成で楽をする","level":"1.9","depth":1,"path":"procedural/README.md","ref":"procedural/README.md","articles":[{"title":"ドット絵を自動生成する","level":"1.9.1","depth":2,"path":"procedural/pixel_art.md","ref":"procedural/pixel_art.md","articles":[]},{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"path":"procedural/puzzle_level.md","ref":"procedural/puzzle_level.md","articles":[]}]},"previous":{"title":"ハンドヘルドデバイスでもゲームを動かそう","level":"1.8.2","depth":2,"path":"tools/for_handheld.md","ref":"tools/for_handheld.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"tools/fantasy_console.md","mtime":"2023-09-25T05:43:08.565Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:25:59.225Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,673 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>パズルゲームのレベル生成 · 小さなゲーム開発の楽しみ</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.0">
+        <meta name="author" content="abagames">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../generation/" />
+    
+    
+    <link rel="prev" href="sound.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../fun_to_make_small_games.html">
+            
+                <a href="../fun_to_make_small_games.html">
+            
+                    
+                    小さなゲームを作ること、それ自身が楽しいのだ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../device_and_environment.html">
+            
+                <a href="../device_and_environment.html">
+            
+                    
+                    ターゲットデバイスと開発環境、何向けに何で作ろうか
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ideas/">
+            
+                <a href="../ideas/">
+            
+                    
+                    小さなゲームのアイデアって、どうやって思いつくの
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ideas/break_down_game.html">
+            
+                <a href="../ideas/break_down_game.html">
+            
+                    
+                    ゲームを仕組みに分解し、組み立てる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../restrictions/">
+            
+                <a href="../restrictions/">
+            
+                    
+                    制約がアイデアを生み、ゲームを完成させる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../restrictions/one_button.html">
+            
+                <a href="../restrictions/one_button.html">
+            
+                    
+                    ワンボタンの可能性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../restrictions/limited_size.html">
+            
+                <a href="../restrictions/limited_size.html">
+            
+                    
+                    限られたサイズでゲームを作る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../difficulty/">
+            
+                <a href="../difficulty/">
+            
+                    
+                    小さなゲームにおける適切な難しさとは
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../difficulty/curve.html">
+            
+                <a href="../difficulty/curve.html">
+            
+                    
+                    難度の上昇カーブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../difficulty/level.html">
+            
+                <a href="../difficulty/level.html">
+            
+                    
+                    レベルごとの難度設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../make_game_juicy.html">
+            
+                <a href="../make_game_juicy.html">
+            
+                    
+                    ゲームを「ジューシー」にする
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    ゲームを作るツールを自作する
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tools/for_browser.html">
+            
+                <a href="../tools/for_browser.html">
+            
+                    
+                    ブラウザ用小さなゲーム向けライブラリを作ってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tools/for_handheld.html">
+            
+                <a href="../tools/for_handheld.html">
+            
+                    
+                    ハンドヘルドデバイスでもゲームを動かそう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tools/fantasy_console.html">
+            
+                <a href="../tools/fantasy_console.html">
+            
+                    
+                    ファンタジーコンソールを自作する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    自動生成で楽をする
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="pixel_art.html">
+            
+                <a href="pixel_art.html">
+            
+                    
+                    ドット絵を自動生成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="sound.html">
+            
+                <a href="sound.html">
+            
+                    
+                    BGM や効果音の自動生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.3" data-path="puzzle_level.html">
+            
+                <a href="puzzle_level.html">
+            
+                    
+                    パズルゲームのレベル生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../generation/">
+            
+                <a href="../generation/">
+            
+                    
+                    小さなゲーム、それ自体を自動生成することはできるのか
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../generation/ai_chatbot_new_puzzle.html">
+            
+                <a href="../generation/ai_chatbot_new_puzzle.html">
+            
+                    
+                    AI チャットボットが考えるパズルゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../generation/ai_chatbot_combine_tags.html">
+            
+                <a href="../generation/ai_chatbot_combine_tags.html">
+            
+                    
+                    ゲームメカニクスを AI に教えたら
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../generation/can_ai_chatbot_create_game.html">
+            
+                <a href="../generation/can_ai_chatbot_create_game.html">
+            
+                    
+                    AI チャットボットは新しいゲームを作れるのか
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../conclusion.html">
+            
+                <a href="../conclusion.html">
+            
+                    
+                    おわりに
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >パズルゲームのレベル生成</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="パズルゲームのレベル生成">パズルゲームのレベル生成</h2>
+<p>ここでは、レベル、つまり面のパターンの自動生成について考えてみよう。ゲーム＆ウォッチのような単一の画面で遊ぶゲームはともかく、多くのゲームは複数の面があったり、スクロールに応じて出てくる地形があったりするので、レベルの生成が必要となる。</p>
+<p>どれだけ質の良いレベルを作れるかがゲームの出来にダイレクトに効くのは、何と言ってもパズルゲームだ。特に倉庫番 <sup><a href="#fn_1" id="reffn_1">1</a></sup> のようなアクション性が無いパズルゲームにおいては、いかに解くのが楽しいレベルが作れるかがとても重要である。</p>
+<p>倉庫番のレベルジェネレータはすでにいろいろある。作り方としては、</p>
+<ol>
+<li>箱が配置されていない空の部屋を作る。</li>
+<li>箱を正解位置に置く。</li>
+<li>ゲームを逆にシミュレートして箱を適当な位置に散らす。</li>
+</ol>
+<p>というのが一般的だ。3.は要するにプレイヤーで箱を「引いて」ずらしていけば、その結果移動される箱はちゃんと正解位置へ移動可能であるということを保証できるという意味だ。</p>
+<p>上述の方法に基づくジェネレータ実装の一例 <sup><a href="#fn_2" id="reffn_2">2</a></sup> を見ると、プレイヤーが動けなくなったらバックトラックして他の置き方を探している。生成方法を記した論文 <sup><a href="#fn_3" id="reffn_3">3</a></sup>では、プレイヤーが箱を直線方向に押す回数や、別の箱を押しに行く回数などのメトリクスを導入し、正解位置からなるべく離れた、つまりプレイヤーが行うべきことが多くなるレベルを作っている。</p>
+<p>汎用のパズルゲーム作成用言語 PuzzleScript <sup><a href="#fn_4" id="reffn_4">4</a></sup> で作られた、任意のパズルのレベルを生成することを目標とした論文 <sup><a href="#fn_5" id="reffn_5">5</a></sup> もある。PuzzleScript ルールのアナライザから、ゲーム内オブジェクトの特性をレベルのジェネレータとレベルのエバリュエータに渡してレベルを生成させる。これは、後段のエバリュエータが生成されたレベルが解けるか、解いて楽しいか、などを判定するアプローチなので、先述の逆方向のシミュレーションを行う方法とは異なる。</p>
+<p>既存アプローチは多岐にわたるが、ここでは自作パズルゲームに対してレベル生成を試みてみよう。</p>
+<p>倉庫番とペンゴをつまみ食いしたようなパズルゲーム、slickslack <sup><a href="#fn_6" id="reffn_6">6</a></sup>を作ってみた。青い四角で表示される箱をフリックでスリップさせて、黄色の正解位置へ置くのが目的のゲームである（画像クリックでプレイ）。</p>
+<p><a href="https://abagames.github.io/slickslack/index.html" target="_blank"><img src="https://abagames.github.io/slickslack/screenshot.gif" alt="slickslack_screenshot"></a></p>
+<p>レベル自動生成方法は他の倉庫番ジェネレータと同様の正解から逆方向にゲームをシミュレートする方式とした。ただし、空の部屋を最初に作るのではなくて、全て壁の部屋を作ってから箱を逆方向にスリップさせつつ壁を掘っている。</p>
+<p><img src="https://abagames.github.io/slickslack/screenshot_generating.gif" alt="slickslack_screenshot_generating"></p>
+<ol>
+<li>適当な大きさの全て壁（正確には壁か空白どちらでもいい状態）からなる部屋を作る。</li>
+<li>正解位置に箱を置く。</li>
+<li>箱を適当な方向に適当な距離スリップさせる。</li>
+<li>スリップ開始時にスリップ方向と逆方向に壁を置いてそこで止まるようにする。</li>
+<li>スリップした場所は空白で確定する（壁を掘る）。</li>
+</ol>
+<p>上記スリップ動作を適当な回数行ってレベルを作る。ただこれで闇雲に作ってもあまり楽しいレベルが出来るとは限らないので、ちょっとだけ細工をしている。</p>
+<p>このパズルではプレイヤーキャラがいないため、かなり自由に箱をスリップさせることが出来てしまう。そのため、パズルっぽさを出すには箱をスリップさせる順番や、別の箱にぶつけて箱を適切な場所で止めるにはどうするかを考えるような、箱と箱の間のインタラクションが多いものにしないといけない。また、壁が多すぎるとより制約が減ってしまってパズルっぽさが減る。それらを踏まえて、</p>
+<ul>
+<li>スリップさせる時はなるべく壁を作らないで、すでにある壁や箱で止められる方向を優先する。</li>
+<li>スリップさせた後になるべく他の箱に隣接させるようにする。</li>
+</ul>
+<p>という工夫を加えた。</p>
+<p>また別のレベル自動生成パズル HAKOSAN <sup><a href="#fn_7" id="reffn_7">7</a></sup> というゲームも作った。上下左右キーで 3 つのキャラクタを同時にスライドさせて、赤い目的地まで同時に到達させるのが目的だ（画像クリックでプレイ）。</p>
+<p><a href="https://abagames.github.io/hakosan/build/" target="_blank"><img src="https://raw.githubusercontent.com/abagames/hakosan/main/docs/screenshot.gif" alt="HAKOSAN" width="640"></a></p>
+<p>これも同様に、目的地に配置したキャラクタを逆方向にスライドすることでレベルを生成している。</p>
+<p>このように、正解から逆方向にパズルを進行させることで問題を自動生成する方法は、多くの場面で応用可能だ。あとは PuzzleScript 論文にあるようなエバリュエータを加えてレベルの楽しさを判定し、生成したレベルを選別できるとより良い。この論文では正解位置と箱の距離や、プレイヤーの操作数、適用されたルール数などを使って評価を行っている。これらのメトリクスがレベルを解く際の楽しさをちゃんと反映しているかは確証が無いが、明らかに楽しくないレベルを弾くには使えそうである。余力があれば、このような工夫も盛り込むとより良い。</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://ja.wikipedia.org/wiki/%E5%80%89%E5%BA%AB%E7%95%AA" target="_blank">倉庫番</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://github.com/miki151/sokoban" target="_blank">sokoban</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://ianparberry.com/pubs/GAMEON-NA_METH_03.pdf" target="_blank">Procedural Generation of Sokoban Levels (pdf)</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="http://www.puzzlescript.net/" target="_blank">PuzzleScript</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://www.um.edu.mt/library/oar/bitstream/123456789/81990/1/Automatic_puzzle_level_generation_a_general_approach_using_a_description_language_2015.pdf" target="_blank">Automatic Puzzle Level Generation: A General Approach using a Description Language (pdf)</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://github.com/abagames/slickslack" target="_blank">slickslack</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. <a href="https://github.com/abagames/hakosan" target="_blank">hakosan</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sound.html" class="navigation navigation-prev " aria-label="Previous page: BGM や効果音の自動生成">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../generation/" class="navigation navigation-next " aria-label="Next page: 小さなゲーム、それ自体を自動生成することはできるのか">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"パズルゲームのレベル生成","level":"1.9.3","depth":2,"next":{"title":"小さなゲーム、それ自体を自動生成することはできるのか","level":"1.10","depth":1,"path":"generation/README.md","ref":"generation/README.md","articles":[{"title":"AI チャットボットが考えるパズルゲーム","level":"1.10.1","depth":2,"path":"generation/ai_chatbot_new_puzzle.md","ref":"generation/ai_chatbot_new_puzzle.md","articles":[]},{"title":"ゲームメカニクスを AI に教えたら","level":"1.10.2","depth":2,"path":"generation/ai_chatbot_combine_tags.md","ref":"generation/ai_chatbot_combine_tags.md","articles":[]},{"title":"AI チャットボットは新しいゲームを作れるのか","level":"1.10.3","depth":2,"path":"generation/can_ai_chatbot_create_game.md","ref":"generation/can_ai_chatbot_create_game.md","articles":[]}]},"previous":{"title":"BGM や効果音の自動生成","level":"1.9.2","depth":2,"path":"procedural/sound.md","ref":"procedural/sound.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"procedural/puzzle_level.md","mtime":"2023-09-25T07:00:27.279Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2023-09-25T10:25:59.225Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
