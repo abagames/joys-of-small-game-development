@@ -4,7 +4,7 @@
 
 レベルの数が進むたびに少しずつ難しくならないとハリが無い。かといって単に線形に難しくなっていくとメリハリが無い。それなりの波がありながらも確実に難しくなっていくレベルをどうすれば作れるか。一例として、以下のグラフを使う方法を示す。
 
-<img src="http://chart.googleapis.com/chart?cht=lc&chs=400x300&chd=t:-1|-1|-1|-1|-1&chdl=STAGE1|STAGE10|STAGE50|STAGE100|STAGE200&chco=4444CC,44CCCC,44CC44,CCCC44,CC4444&chxr=0,0,1,0.2|1,0,1,0.2&chfd=0,x,0,1,0.01,(x^100)*100|1,x,0,1,0.01,(x^10)*100|2,x,0,1,0.01,(x^2)*100|3,x,0,1,0.01,(x^1)*100|4,x,0,1,0.01,(x^.5)*100&chxt=x,y,x,y&chxl=2:|random|3:|difficulty&chxp=2,50|3,50" alt="level-difficulty-curve" />
+<img src="https://chart.googleapis.com/chart?cht=lc&chs=400x300&chd=t:-1|-1|-1|-1|-1&chdl=STAGE1|STAGE10|STAGE50|STAGE100|STAGE200&chco=4444CC,44CCCC,44CC44,CCCC44,CC4444&chxr=0,0,1,0.2|1,0,1,0.2&chfd=0,x,0,1,0.01,(x^100)*100|1,x,0,1,0.01,(x^10)*100|2,x,0,1,0.01,(x^2)*100|3,x,0,1,0.01,(x^1)*100|4,x,0,1,0.01,(x^.5)*100&chxt=x,y,x,y&chxl=2:|random|3:|difficulty&chxp=2,50|3,50" alt="level-difficulty-curve" />
 
 横軸は、0 から 1 の値をランダムに返す `random` 関数から得られる数値を表している。縦軸は難度で、0 が最も簡単、1 が最も難しい状態を示している。ステージ開始前に `random` 関数から一つ値を取得し横軸の値とし、対応する難度をそのステージの難度として採用する。
 
