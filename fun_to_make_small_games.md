@@ -4,6 +4,14 @@
 
 その定義で言うと、私は小さなゲームをすでに 350 個以上 [^2] 作っていることになる。1 年間で 139 個作ったこともある [^3] 。無類の小さなゲーム好きだ。
 
+赤い棒を等分に切るシンプルなゲーム、例えばこれが小さなゲームだ（以下の画像をクリックすると、ブラウザで直接プレイできる）。
+
+[![TIMBER TEST](https://github.com/abagames/crisp-game-lib-11-games/raw/main/docs/timbertest/screenshot.gif)](https://abagames.github.io/crisp-game-lib-11-games/?timbertest)
+
+タップでひもを切り画面下に触れないようにするゲーム、これも小さなゲームで、スマホなどのタッチパネルデバイスでも楽しめる。
+
+[![C NODES](https://github.com/abagames/crisp-game-lib-games/raw/main/docs/cnodes/screenshot.gif)](https://abagames.github.io/crisp-game-lib-games/?cnodes)
+
 小さなゲームの何が良いって、短時間で作れるのが良い。速くて 2 時間、ちょっと苦戦しても 10 時間くらいでできるだろう。アートワークなどを凝り始めるといくらでも時間はかけられるが、ここでは 1 週間に 1 つゲームを作る、Game a week [^4] のような取り組みでできる規模の、開発者目線でも小さなゲームとしたい。
 
 短時間で作れるということは、いろんなアイデアを簡単に試すことができるということだ。「ヘンテコにおもしろい小さなゲームを作ろう」[^5] というエッセイを「ゲームクリエイターが知るべき 97 のこと 2」という本に寄稿したのは、だいぶ昔の 2013 年のことだが、そのころから私はちょっと変わったゲームを、いろいろ作って試してみるのが好きなのだ。
