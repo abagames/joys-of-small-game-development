@@ -29,7 +29,7 @@ ChatGPT に以下のプロンプトを与えて、ゲームデザイナーとし
 > Selected tags: player: string, player: bounce, field: gravity, on pressed: jump
 >
 > Description: In this game, the player controls a spring-like character that bounces around a zero-gravity field. The character can jump by pressing the button, which sends it bouncing higher into the air. The objective is to avoid obstacles and enemies while collecting power-ups and reaching the end of the level.
-
+>
 > Game 4: Wipeout Warriors<br>
 > Selected tags: player: bar, field: water, obstacle: chase, weapon: wipe, on pressed: jump
 >
