@@ -53,6 +53,6 @@ Magnet Blocks という、磁石を題材にしたパズルだ。ChatGPT に日�
 ---
 
 [^1]: [ChatGPT invented its own puzzle game.](https://puzzledpenguin.substack.com/p/chatgpt-invented-its-own-puzzle-game)
-[^2]: [Summer](https://play.google.com/store/apps/details?id=com.rohitpailwangames.summerpro)
+[^2]: [Summer](https://web.archive.org/web/20230726112930/https://play.google.com/store/apps/details?id=com.rohitpailwangames.summerpro)
 [^3]: [へやわけ](https://www.nikoli.co.jp/ja/puzzles/heyawake/)
 [^4]: [Magnets](https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/magnets.html)
