@@ -6,7 +6,7 @@
 
 私もこの方式に従ったドット絵作成ライブラリを作ってみた [^3]。例えば、このライブラリを作って様々な形の宇宙船を作ると、以下のようになる（画像クリックでデモページへ）。
 
-[![pixel-art-gen](https://camo.githubusercontent.com/9020e7dc180bc5c301d6ff1a65183bfa292e97c8acb154caf569b9a2b4826c2a/68747470733a2f2f61626167616d65732e6769746875622e696f2f706978656c2d6172742d67656e2f73686970732e676966)](https://abagames.github.io/pixel-art-gen/index.html?ships)
+[![pixel-art-gen](../images/ships.gif)](https://abagames.github.io/pixel-art-gen/index.html?ships)
 
 この方式で出来上がるものはランダム性が高く、宇宙船などの造形が自由なキャラクタを得意としているが、目・腕・足などがきちんとある横から見たモンスター、などの制約があるキャラクタは不得意だ。このようにドット絵のジェネレーターは得手不得手がどうしてもあり、万能なものは無い。
 
