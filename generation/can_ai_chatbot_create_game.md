@@ -1,110 +1,145 @@
 ## AI チャットボットは新しいゲームを作れるのか
 
-ChatGPT を用いたゲーム考案の方法はいくつか考えられるが、ChatGPT に新しいゲームを考えさせ、それを実装させることは難しい。少なくとも現状の ChatGPT には、以下の課題があるように思える。
+大規模言語モデル（LLM）を搭載した AI チャットボットは、ゲームのアイデア創出とコード実装が可能である。しかし、その能力はまだ発展途上であり、人間の介入なしに適切にバランスの取れたゲームを作成するには至っていない。それでも、近年の LLM の性能向上により、ミニゲーム開発の多くの部分を担えるようになってきた。
 
-- ChatGPT に、実装可能なアルゴリズムのレベルまで詳細化された、新しいゲームのアイデアを考えさせるのは難しい。
-- ChatGPT は、今までにない新しいアルゴリズムを、ソースコードとして実装することを不得意としている。
+### GPT-3.5 時代
 
-### ChatGPT に新しいゲームのアイデアを考えさせるのは難しい
+ChatGPT で GPT-4 が利用可能になったのは 2023 年 3 月 14 日であり、それ以前は GPT-3.5 が使用されていた。GPT-3.5 は登場時には画期的な性能を持つ LLM であったが、その後に登場したより高性能な LLM と比較すると、生成物の品質が劣る点は否めない。
 
-ChatGPT は与えられた問に対して愚直に正しい答えを返すので、単に新しいアクションミニゲームのアイデアを教えて、と聞いても当たり障りのない凡庸なアイデアが返ってくる（以下は GPT-3.5 での入出力例である。また GPT のモデルは逐次改良されるので、異なる結果が得られる場合もある）。
+GPT-3.5 を用いたゲーム制作には、以下の課題があった：
 
-> I want you to act as a game designer. Show me ideas for new action mini-games.
+- 新しいゲームのアイデアを発想すること、またそれを実装可能なレベルまで詳細化することが困難
+- 新しいアルゴリズムのソースコードを実装することが不得意
 
-このプロンプトに対する回答例は、以下のような漠然とした当たり障りのないゲームアイデアが返ってきただけだ。
+GPT-3.5 にミニゲームのアイデアを考えさせても、漠然とした凡庸なゲームアイデアが返ってくるだけで、実装に必要な具体性に欠けていた。また、具体的なアイデアを提示しても、新しいアルゴリズムが必要な場合、適切なコードを出力できないなどの問題もあった。そのため、LLM をミニゲーム生成器として活用することは困難であった。
 
-> Certainly! Here are some ideas for action mini-games that could be integrated into a larger video game or used as standalone experiences:
->
-> Laser Maze Runner:
->
-> The player navigates through a complex maze filled with laser beams. They must use their agility and quick reflexes to dodge and jump over the lasers to reach the exit.
+### Claude 3.5 Sonnet 時代
 
-プロンプトの工夫で、ある程度は ChatGPT にありきたりではないゲームを考えさせることができる。ただ、そのような工夫を経ても、返ってきたアイデアはまだぼんやりとしていて、ブレーンストーミングの元ネタにはなるが、ここから具体的なゲームのルール、アルゴリズムまで到達させることは難しい。
+OpenAI は ChatGPT のモデルを GPT-3.5 から GPT-4、GPT-4o へとアップデートし、性能が大幅に向上していった。OpenAI の競合である Anthropic がリリースする Claude の LLM も変更を重ねてアップデートし、2024 年 6 月 21 日に Claude 3.5 Sonnet [^1] がリリースされた。
 
-より詳細なアルゴリズムにするために、以下のようなプロンプトで、そのゲームの疑似コードを書いてもらうことはできる。
+これら LLM の性能向上とともに、プロンプトに大量の参考文書を添付することが可能になり、LLM に様々な前提知識を与えた上で作業させることができるようになった。これら LLM の性能や機能の強化により、上記の問題はある程度克服されてきている。
 
-> I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm representing the rules of the following game:
->
-> Game 2: Pinball Panic
->
-> Selected tags: player: circle, weapon: bounce, field: pins, on pressed: shoot
->
-> Description: In this game, the player controls a circular character that bounces around a pinball-like field. The player can shoot projectiles by pressing the button, which bounce off the pins and destroy enemies. The objective is to survive as long as possible while racking up points by destroying enemies and collecting power-ups.
+### LLM は新しいアイデアを考えられるようになってきた
 
-しかし、結果として出力されるコードにはあまり具体性が無く、実装可能な解像度までは遠い。
+LLM の性能向上がそのままアイデア発想能力の向上につながるのかは不明な点も多いが、体感的には良くなってきている。また、参考文書を通じて、アイデアの考え方や、このようなアイデアを考えて欲しいという例を、前提知識として与えることが簡単になった。
 
-### ChatGPT は新しいアルゴリズムを実装するのは不得意
+ワンボタンで遊べるアクションミニゲームの自動生成を目標に LLM を使う場合、ここで言うアイデアとは、新しくて面白いゲームルールのことである。そのため、以下の知識を LLM に与えた。
 
-別の問題として、ChatGPT は既存のアルゴリズムを様々なプログラミング言語で実装するのは得意だが、前例の無い新しいアルゴリズムをコードにするのは不得意なのでは、という点がある。
+- ゲームアイデアを生み出すためのブレーンストーミング方法 [^2]
+- ワンボタンに割り振ることのできるアクションの説明 [^3]
+- 既存自作ゲームのルール [^4]
 
-"Can GPT-4 _Actually_ Write Code?"という記事 [^1] には、可能であればなるべく火を通らないように目的地までのパスを探索する、というアルゴリズムを ChatGPT に書かせようとしたがうまくいかなかった、ということが書いてある。一般的な A\* の探索アルゴリズムのコードであれば ChatGPT は難なく出力するが、それをアレンジした要求をするとうまく答えられなくなるという例だ。
+その結果、Claude 3.5 Sonnet の性能の高さもあいまって、ユニークなゲームルールが生成される確率を高めることができた。
 
-ChatGPT はユーザーの要求を解釈してそれに合致する既存コードを持ってくることや、それに対する追加要求に応じてコードを書き換える、といったことは得意だ。だが、今までに無いアルゴリズムやルールを含むコードを生成する能力がどの程度あるのかは未知数だ。
+### LLM は手順を踏めば新しいアルゴリズムを実装できる
 
-今までにない簡単なゲームの例として、自作したゲームの一つである PIN CLIMB を、なんとかして ChatGPT に書かせられないかということを試していた。
+上記のように適切なゲームルールを LLM が生成できるようになった。次の問題はそれを正しいコードに落とし込めるかどうかである。
 
-[![PIN CLIMB](https://github.com/abagames/crisp-game-lib-games/raw/main/docs/pinclimb/screenshot.gif)](https://abagames.github.io/crisp-game-lib-games/?pinclimb)
+ゲームルールをいきなりコードに変換することは、最近の性能の良い LLM でも難しい。ゲームルールから少しずつ具体的な実現方法を書き出していくことで、正しいコードが得られる確率が高まる。そのため、プロンプトで以下のステップを踏んで実装するよう指示した。
 
-上記のゲーム実装方法を説明する文章を元に、以下のプロンプトでゲームのアルゴリズムを示す疑似コードを作成し、
+1. ゲームルールを、ゲーム環境、コアメカニクス、プレイヤーインタラクション、チャレンジの点から整理する。
+2. 整理したゲームルールを実現するゲームオブジェクトの動作を、プロパティ、初期状態、形、色、動作、ワンボタンコントロールなどの面から詳細化する。
+3. ゲームルールやゲームオブジェクトを実現する JavaScript のスケルトンコードを提示する。
+4. ライブラリを用いてスケルトンコードをゲームが動くコードとして完成させる。
 
-<blockquote>
-<p>
-I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm for the following game inside one unique code block. Do not write explanations.<br>
-# Characters<br>
-- bar<br>
-- pins<br>
-# Controls<br>
-- The bar stretches as long as the button is held down and shrinks to a default length when the button is released.<br>
-# Rules<br>
-- One end of the bar is fixed to the pin and the other end rotates around the pin.<br>
-- The game screen scrolls down so that the bar is positioned slightly above the bottom edge of the screen.<br>
-- Pins appear at random locations at the top edge of the screen after each scrolling of a certain distance.<br>
-- When the bar catches on another pin, the bar is fixed to that pin.<br>
-# Initial state<br>
-- Pins are placed in about 10 random positions on the screen, and the bar is fixed to the bottom pin.
-</p>
-</blockquote>
+合わせて、自作ゲームを上記ステップで実装する例をプロンプト内で示した。こうすることで、どのような出力を期待されているかを LLM に伝え、出力をさらに改良した。
 
-その後、以下のプロンプトで具体的な Phaser のソースコードにする、ということを試した。Phaser を選んだのは、JavaScript ベースのゲームライブラリで一番 Web 上に情報が豊富なのは Phaser だろうという予測の元だ。
+### LLM はゲームのバランス調整は不得意である
 
-> Implement the game using the HTML5 game framework "Phaser 3" without using external resources such as image files or audio files. Just show me the JavaScript source code.
+高性能な LLM を用いることで、ゲームのモチーフ、ルールなどのアイデア作成や、アイデアに対応するソースコード生成を、一定の品質で行えるようになった。反面、作ったゲームの良し悪しの判断、ゲームの悪いところの改良を行うことは、LLM では今だほとんどできない。
 
-結果としてはうまくいかなかった。最初の疑似コード時点で十分な情報量があるか怪しいものが出てくるし、そこから Phaser への変換もあまりうまくいかない。
+ここで言うゲームの良し悪しとは、以下を意図している。
 
-疑似コードを挟まず、ピンを書く、スクロールさせる、ひもを回す、のようにステップバイステップで指示して直接ソースコードを書かせても、ひもが他のピンに当たるとそのピンへ固定される、のあたりでうまくいかなくなる。ここの実装難度が高いことは分かる。回転する矩形の当たり判定を取ることも、当たった後にそのピンへ固定することも、両方とも処理としては特殊であり、この辺が限界であっても納得はできる。
+- ゲームとして成り立っているか。不条理なゲームオーバーや、永久パターンなどが存在しないか。
+- 適切なリスクやリワードを備えているか。プレイヤーの技量に応じてスコアやプレイ時間が伸びるようになっているか。
+- 楽しいか。プレイ感覚が直感的で、爽快感が得られる内容か。
 
-### プロンプトの工夫でこれらの課題を乗り越えられる？
+上記の問題に対する改良としては、以下が一例となるだろう。
 
-分からない。
+- ルールの改良：ゲームオーバー条件やスコアリングシステムの変更
+- パラメタの調整：自機や敵の速度や出現頻度の変更
+- 操作方法の改良：プレイヤーにとって分かりやすくストレスを感じない操作への変更
 
-ゲームのアイデア発想はなるべく自由に、それをルールや実装へ落とすところは具体的に、のようなことをプロンプトでうまく制御するのはかなり難しいのでは、と直感的には思われる。また、モデルの限界はプロンプトでは乗り越えられない。
+これらは LLM 単体でなんとかできるとは思えない。作ったゲームの良し悪しの判断を行うためには、コンピュータが実装されたゲームを自らプレイし、その結果を解析する必要がある。ただ、LLM に限らない範囲では、ゲームをプレイする AI はすでに存在するので、そういった仕組みと併用することで現時点でもある程度は可能であろう。爽快感などの人間感覚を、コンピュータがどの程度理解可能かは正直よく分からない。
 
-### GPT-〇〇 になればこの辺の問題は解決される？
+ゲームの悪いところの改良をコンピュータに行わせることは、とても難しそうだ。AI がゲームの良し悪しを判断できるのであれば、それを報酬とした強化学習的な仕組みでなんとかできるかもしれない。ただ、ゲームを良くするためにルールや操作方法などを適切に改良することや、非常に多岐に渡るゲーム中パラメタを適切に調整することは、AI に可能なのだろうか。
 
-分からない。
+そのため、現時点では LLM のできることに限定して、小さなゲーム作りを助けてもらった方がよさそうだ。そうすると、LLM に行わせることは、ゲームアイデア作成およびその実装コード生成までとなる。その結果生成されたコードやゲームはまだ不完全なので、以下を人手で行う。
 
-画像生成 AI の急激な改善を見ていると、半年後にはこの辺の問題は解決するのかもしれない。モデルの規模で乗り越えられる課題なのか、そもそもアプローチとして筋悪なのか、どちらかは現時点では不明だ。
+- コードの不具合や意図通りになっていないルールに対応する修正
+- ゲームとして成り立つためのルール、コードの改良
+- リスクやリワードを加味したゲームオーバー条件やスコアリングシステムの追加
+- ゲームを楽しくするためのルールやパラメタの調整
+- 難度上昇方法の実装、難度曲線の調整
 
-実際、最初に試したアクションミニゲームのアイデアについて、GPT-3.5 でなく GPT-4 に聞いてみると、下記のような少し改良された回答が得られる。
+こう考えると、LLM を使ったところであまり作る手間は減って無さそうに見える。ただ、LLM が実装したコードを見ると、面白い挙動をするものが出てくることもある。なので、そういったゲームの発想のベースとなるトイ（おもちゃ）を作る、という用途には今でも使える。
 
-> Certainly! Here are some unique action mini-game ideas:
->
-> Asteroid Surfing
->
-> Setting: Outer space, amidst a field of rapidly moving asteroids.<br>
-> Objective: Ride the largest asteroids and jump between them to reach a goal point in the least amount of time.<br>
-> Mechanics: Players must balance on moving asteroids, time their jumps, and avoid smaller, more hazardous space debris.
+### LLM を用いたガチャ指向ゲーム開発
 
-ゲームアイデアとしてはまだ凡庸だが、より詳細なゲーム内容が得られる。言語モデルの発展と、プロンプトの工夫で、より面白く具体的なゲームが考案できる可能性はある。
+上記のような LLM の使い方をすることで、自分の気に入るゲームが生成されるまでひたすら LLM を回し、それを人手で完成までもっていくというゲーム開発が可能となる。これを仮にガチャ指向ゲーム開発と呼ぼう。
 
-### 今でもできる他のアプローチがあるのでは？
+ここではガチャ指向ゲーム開発の実例を示す。使う LLM は Claude 3.5 Sonnet、LLM に与えるプロンプトや前提知識は、[^5] のリポジトリ内にある。
 
-分からない。
+上記のプロンプトに「fragile pillars」というテーマを与えると、以下のゲームを提案してくる。
 
-ポンとかブロック崩しとか、既存のゲームのコードをまず提示させて、そこから対話的に新しい要素を加えていく、のような方法は今でもうまくいく可能性がある。その場合、どのくらいの新しさなら許容されるのか、どの程度細切れに指示するのが効率が良いのか、などのプロンプトエンジニアリングが必要となる。
-
-そのようにゲームを作るのが直接コードを書くのに比べて効率良いかと問われると、おそらく悪いので、これは効率性の問題ではなく、ChatGPT を使ってゲームを作るという縛りプレイとしての楽しさを追い求めることになる。「AI にゲームを作らせるゲーム」という新しいゲームを、旬のうちにいろいろ試してみるのも楽しいだろう。
+> Pillar Paraglider: Control a paraglider flying through a course of fragile pillars. The paraglider constantly descends. Press the button to ascend, but each press also sends a shockwave that can damage nearby pillars. Core mechanic: Balancing ascent with pillar preservation.
 
 ---
 
-[^1]: [Can GPT-4 _Actually_ Write Code?](https://tylerglaiel.substack.com/p/can-gpt-4-actually-write-code)
+> Pillar Paraglider: 壊れやすい柱のコースを飛行するパラグライダーを操縦します。パラグライダーは常に下降しています。ボタンを押すと上昇しますが、押すたびにショックウェーブが発生し、近くの柱にダメージを与える可能性があります。コアメカニズム：上昇と柱の保護のバランスを取ること。
+
+このアイデアを詳細化し、実装させた結果、[^6] のゲームができた。これは Claude の出力結果そのままである。
+
+ボタンを押すと赤い自機が上昇し、同時に周囲に円状のショックウェーブを放つ。ショックウェーブは柱を破壊する。フラッピーバードの影響を受けすぎな感じはするが、挙動としてはなかなか面白いものが実装できている。
+
+だが、このゲームには明らかにいくつかの問題がある。
+
+- 簡単すぎる。ボタンを連打していればショックウェーブで柱を無効化できる。自機が画面上端や下端に行っても何も起きないので、ほぼゲームオーバーにならない。
+- スコアリングシステムが安直である。単に進んだ距離がスコアになっているだけなので、リスキーな行動がスコアにつながったりしない。
+- 元々のコアメカニズムを実現していない。「上昇と柱の保護のバランスを取ること」とあるので、本来はショックウェーブで柱を壊さないようにするゲームにしたいのだろうが、そのように実装されていない。また、そのメカニズムを忠実に実装すると、当たり判定の大きい自機でプレイするようなストレスフルなゲームになる。
+
+ガチャ指向ゲーム開発では、このように面白い挙動をする不完全なゲームを、どのようにしてゲームとしても面白いものに改良するか、このプロセスが重要となる。
+
+今回のゲームでは、以下のように変更した。
+
+- 全方向に出る円状のショックウェーブは強すぎるので、自機に方向を付け、自機の前方向の限られた角度にのみショックウェーブが出るようにする。また、ショックウェーブは柱全体を破壊するのではなく、当たった部分のみを破壊する。また、自機が画面上端や下端に接触したらゲームオーバーとする。
+- 破壊した部分ごとにスコアを与える。また連続して破壊することで、スコアが増加するようにし、柱に向かって進むリスキーな行動で大きなスコアが得られるようにする。
+- コアメカニズムは無視する。「壊さないように」よりも「壊しまくる」ゲームの方が、一般的には楽しい。
+
+その結果、ゲームは [^7] のようになった。
+
+![WAVY BIRD screenshot](https://abagames.github.io/claude-one-button-game-creation/wavybird/screenshot.gif)
+
+柱にショックウェーブで穴を開けて進むゲームになった。若干難しすぎる感じはするが、最初のバージョンよりは、適切なリスクとリワードのバランスが実現できており、ゲームとしての完成度が上がっているだろう。
+
+改良版とオリジナルのコード上の差異は [^8] の通りである。こう見るとオリジナルのコードは跡形もなくなっているように見えるが、実際はオリジナルの枠組みを参考にして修正できるので、0 から作るよりはだいぶ楽である。
+
+音やタイトルを付けた完成版は [^9] になった。[^5] のリポジトリには、同様なプロセスで開発したゲームが多数あるので、参照いただきたい。
+
+これが現時点での、LLM を用いたガチャ指向ゲーム開発の実態である。果たしてこれが、人が普通にアイデアを考えて、それを実装するのと比べて楽か、と言われると、あまり楽ではない。ただ、LLM が提案してくるゲームを選別し、それをいかにして面白いゲームにするのか、というコンピュータからのお題に立ち向かうような開発プロセスは、従来の開発プロセスとは違った面白さがある。また、ゲーム開発と並行して、生成のためのプロンプト開発・改良を行う必要もあり、そこも合わせて楽しむことが、ガチャ指向ゲーム開発においては大切である。
+
+将来的には何も考えずに「面白いゲームを作って」と LLM に言えば、いい感じのゲームが実装されて返ってくるようになるかもしれない。現時点だと、面白い挙動をするゲームを得るには数十回のガチャが必要とされるのが当たり前で、打率はかなり低いと言わざるを得ない。だが、以前の LLM ではそもそも挙動として面白いものが返ってくることは皆無で、どこかで見たような凡庸なゲームしか出てこないことが当たり前であった。それがここ 1 年程度の LLM の進化によって、少なくともなにかの斬新さを感じられるものが生成されるようになったのは、良い兆候である。
+
+LLM がこのまま進化を続ければ、出てくるアイデアの質が上がり、アイデアをコードとしてより正確に実装できるようになるだろう。また、上記で挙げたような問題点を指摘すると、それに応じてコードを修正できるかもしれない。そうすれば、より少ないガチャ回数と、より簡単な改良で、遊べるゲームが作れるようになるだろう。ただ、そのようなことができるように今後の LLM が順調に性能向上するかは現時点では不明である。2024 年現在、LLM の性能向上スピードは鈍化している印象もある。
+
+### AI チャットボットを活用したゲーム開発の今後
+
+AI チャットボットを活用したゲーム開発は、まだ完全に自動化されたプロセスではないが、新しい可能性を秘めている。現時点では、AI チャットボットは面白い挙動をする「トイ」を生成する程度の能力を持っており、それを人間が改良してゲームに仕上げるというプロセスが有効である。
+
+今後、LLM の性能がさらに向上すれば、より質の高いゲームアイデアやコードが生成されるようになる可能性がある。しかし、ゲームのバランス調整や楽しさの評価など、創造的な側面については依然として人間の介入が必要不可欠であろう。
+
+「ガチャ指向ゲーム開発」は、従来とは異なる新しいゲーム開発の楽しみ方を提供している。LLM が生成するアイデアやコードを基に、人間の創造性を加えてゲームを作り上げていくプロセスには、新たな発見や驚きがある。
+
+LLM の進化と共に、このような開発手法もさらに発展していくことが期待される。小さなゲームの開発者にとって、AI チャットボットは新しい創造の扉を開く可能性を秘めている。
+
+---
+
+[^1]: [Claude 3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)
+[^2]: [claude-one-button-game-creation/ideas.md](https://github.com/abagames/claude-one-button-game-creation/blob/main/project_knowledge/ideas.md)
+[^3]: [claude-one-button-game-creation/one_button.md](https://github.com/abagames/claude-one-button-game-creation/blob/main/project_knowledge/one_button.md)
+[^4]: [claude-one-button-game-creation/arcfire.md](https://github.com/abagames/claude-one-button-game-creation/blob/main/project_knowledge/arcfire.md)
+[^5]: [claude-one-button-game-creation](https://github.com/abagames/claude-one-button-game-creation/)
+[^6]: [Claude の作ったオリジナルの Pillar Paraglider](https://abagames.github.io/claude-one-button-game-creation/?sample_before)
+[^7]: [改良された Pillar Paraglider](https://abagames.github.io/claude-one-button-game-creation/?sample_after)
+[^8]: [改良版とオリジナルの diff](https://github.com/abagames/claude-one-button-game-creation/commit/9e04ca08aa426f33909e99b6eb5d19d6ec55e446)
+[^9]: [Pillar Paraglider 改め WAVY BIRD](https://abagames.github.io/claude-one-button-game-creation/?wavybird)

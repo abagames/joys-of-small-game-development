@@ -495,84 +495,128 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="ai-チャットボットは新しいゲームを作れるのか">AI チャットボットは新しいゲームを作れるのか</h2>
-<p>ChatGPT を用いたゲーム考案の方法はいくつか考えられるが、ChatGPT に新しいゲームを考えさせ、それを実装させることは難しい。少なくとも現状の ChatGPT には、以下の課題があるように思える。</p>
+<p>大規模言語モデル（LLM）を搭載した AI チャットボットは、ゲームのアイデア創出とコード実装が可能である。しかし、その能力はまだ発展途上であり、人間の介入なしに適切にバランスの取れたゲームを作成するには至っていない。それでも、近年の LLM の性能向上により、ミニゲーム開発の多くの部分を担えるようになってきた。</p>
+<h3 id="gpt-35-時代">GPT-3.5 時代</h3>
+<p>ChatGPT で GPT-4 が利用可能になったのは 2023 年 3 月 14 日であり、それ以前は GPT-3.5 が使用されていた。GPT-3.5 は登場時には画期的な性能を持つ LLM であったが、その後に登場したより高性能な LLM と比較すると、生成物の品質が劣る点は否めない。</p>
+<p>GPT-3.5 を用いたゲーム制作には、以下の課題があった：</p>
 <ul>
-<li>ChatGPT に、実装可能なアルゴリズムのレベルまで詳細化された、新しいゲームのアイデアを考えさせるのは難しい。</li>
-<li>ChatGPT は、今までにない新しいアルゴリズムを、ソースコードとして実装することを不得意としている。</li>
+<li>新しいゲームのアイデアを発想すること、またそれを実装可能なレベルまで詳細化することが困難</li>
+<li>新しいアルゴリズムのソースコードを実装することが不得意</li>
 </ul>
-<h3 id="chatgpt-に新しいゲームのアイデアを考えさせるのは難しい">ChatGPT に新しいゲームのアイデアを考えさせるのは難しい</h3>
-<p>ChatGPT は与えられた問に対して愚直に正しい答えを返すので、単に新しいアクションミニゲームのアイデアを教えて、と聞いても当たり障りのない凡庸なアイデアが返ってくる（以下は GPT-3.5 での入出力例である。また GPT のモデルは逐次改良されるので、異なる結果が得られる場合もある）。</p>
+<p>GPT-3.5 にミニゲームのアイデアを考えさせても、漠然とした凡庸なゲームアイデアが返ってくるだけで、実装に必要な具体性に欠けていた。また、具体的なアイデアを提示しても、新しいアルゴリズムが必要な場合、適切なコードを出力できないなどの問題もあった。そのため、LLM をミニゲーム生成器として活用することは困難であった。</p>
+<h3 id="claude-35-sonnet-時代">Claude 3.5 Sonnet 時代</h3>
+<p>OpenAI は ChatGPT のモデルを GPT-3.5 から GPT-4、GPT-4o へとアップデートし、性能が大幅に向上していった。OpenAI の競合である Anthropic がリリースする Claude の LLM も変更を重ねてアップデートし、2024 年 6 月 21 日に Claude 3.5 Sonnet <sup><a href="#fn_1" id="reffn_1">1</a></sup> がリリースされた。</p>
+<p>これら LLM の性能向上とともに、プロンプトに大量の参考文書を添付することが可能になり、LLM に様々な前提知識を与えた上で作業させることができるようになった。これら LLM の性能や機能の強化により、上記の問題はある程度克服されてきている。</p>
+<h3 id="llm-は新しいアイデアを考えられるようになってきた">LLM は新しいアイデアを考えられるようになってきた</h3>
+<p>LLM の性能向上がそのままアイデア発想能力の向上につながるのかは不明な点も多いが、体感的には良くなってきている。また、参考文書を通じて、アイデアの考え方や、このようなアイデアを考えて欲しいという例を、前提知識として与えることが簡単になった。</p>
+<p>ワンボタンで遊べるアクションミニゲームの自動生成を目標に LLM を使う場合、ここで言うアイデアとは、新しくて面白いゲームルールのことである。そのため、以下の知識を LLM に与えた。</p>
+<ul>
+<li>ゲームアイデアを生み出すためのブレーンストーミング方法 <sup><a href="#fn_2" id="reffn_2">2</a></sup></li>
+<li>ワンボタンに割り振ることのできるアクションの説明 <sup><a href="#fn_3" id="reffn_3">3</a></sup></li>
+<li>既存自作ゲームのルール <sup><a href="#fn_4" id="reffn_4">4</a></sup></li>
+</ul>
+<p>その結果、Claude 3.5 Sonnet の性能の高さもあいまって、ユニークなゲームルールが生成される確率を高めることができた。</p>
+<h3 id="llm-は手順を踏めば新しいアルゴリズムを実装できる">LLM は手順を踏めば新しいアルゴリズムを実装できる</h3>
+<p>上記のように適切なゲームルールを LLM が生成できるようになった。次の問題はそれを正しいコードに落とし込めるかどうかである。</p>
+<p>ゲームルールをいきなりコードに変換することは、最近の性能の良い LLM でも難しい。ゲームルールから少しずつ具体的な実現方法を書き出していくことで、正しいコードが得られる確率が高まる。そのため、プロンプトで以下のステップを踏んで実装するよう指示した。</p>
+<ol>
+<li>ゲームルールを、ゲーム環境、コアメカニクス、プレイヤーインタラクション、チャレンジの点から整理する。</li>
+<li>整理したゲームルールを実現するゲームオブジェクトの動作を、プロパティ、初期状態、形、色、動作、ワンボタンコントロールなどの面から詳細化する。</li>
+<li>ゲームルールやゲームオブジェクトを実現する JavaScript のスケルトンコードを提示する。</li>
+<li>ライブラリを用いてスケルトンコードをゲームが動くコードとして完成させる。</li>
+</ol>
+<p>合わせて、自作ゲームを上記ステップで実装する例をプロンプト内で示した。こうすることで、どのような出力を期待されているかを LLM に伝え、出力をさらに改良した。</p>
+<h3 id="llm-はゲームのバランス調整は不得意である">LLM はゲームのバランス調整は不得意である</h3>
+<p>高性能な LLM を用いることで、ゲームのモチーフ、ルールなどのアイデア作成や、アイデアに対応するソースコード生成を、一定の品質で行えるようになった。反面、作ったゲームの良し悪しの判断、ゲームの悪いところの改良を行うことは、LLM では今だほとんどできない。</p>
+<p>ここで言うゲームの良し悪しとは、以下を意図している。</p>
+<ul>
+<li>ゲームとして成り立っているか。不条理なゲームオーバーや、永久パターンなどが存在しないか。</li>
+<li>適切なリスクやリワードを備えているか。プレイヤーの技量に応じてスコアやプレイ時間が伸びるようになっているか。</li>
+<li>楽しいか。プレイ感覚が直感的で、爽快感が得られる内容か。</li>
+</ul>
+<p>上記の問題に対する改良としては、以下が一例となるだろう。</p>
+<ul>
+<li>ルールの改良：ゲームオーバー条件やスコアリングシステムの変更</li>
+<li>パラメタの調整：自機や敵の速度や出現頻度の変更</li>
+<li>操作方法の改良：プレイヤーにとって分かりやすくストレスを感じない操作への変更</li>
+</ul>
+<p>これらは LLM 単体でなんとかできるとは思えない。作ったゲームの良し悪しの判断を行うためには、コンピュータが実装されたゲームを自らプレイし、その結果を解析する必要がある。ただ、LLM に限らない範囲では、ゲームをプレイする AI はすでに存在するので、そういった仕組みと併用することで現時点でもある程度は可能であろう。爽快感などの人間感覚を、コンピュータがどの程度理解可能かは正直よく分からない。</p>
+<p>ゲームの悪いところの改良をコンピュータに行わせることは、とても難しそうだ。AI がゲームの良し悪しを判断できるのであれば、それを報酬とした強化学習的な仕組みでなんとかできるかもしれない。ただ、ゲームを良くするためにルールや操作方法などを適切に改良することや、非常に多岐に渡るゲーム中パラメタを適切に調整することは、AI に可能なのだろうか。</p>
+<p>そのため、現時点では LLM のできることに限定して、小さなゲーム作りを助けてもらった方がよさそうだ。そうすると、LLM に行わせることは、ゲームアイデア作成およびその実装コード生成までとなる。その結果生成されたコードやゲームはまだ不完全なので、以下を人手で行う。</p>
+<ul>
+<li>コードの不具合や意図通りになっていないルールに対応する修正</li>
+<li>ゲームとして成り立つためのルール、コードの改良</li>
+<li>リスクやリワードを加味したゲームオーバー条件やスコアリングシステムの追加</li>
+<li>ゲームを楽しくするためのルールやパラメタの調整</li>
+<li>難度上昇方法の実装、難度曲線の調整</li>
+</ul>
+<p>こう考えると、LLM を使ったところであまり作る手間は減って無さそうに見える。ただ、LLM が実装したコードを見ると、面白い挙動をするものが出てくることもある。なので、そういったゲームの発想のベースとなるトイ（おもちゃ）を作る、という用途には今でも使える。</p>
+<h3 id="llm-を用いたガチャ指向ゲーム開発">LLM を用いたガチャ指向ゲーム開発</h3>
+<p>上記のような LLM の使い方をすることで、自分の気に入るゲームが生成されるまでひたすら LLM を回し、それを人手で完成までもっていくというゲーム開発が可能となる。これを仮にガチャ指向ゲーム開発と呼ぼう。</p>
+<p>ここではガチャ指向ゲーム開発の実例を示す。使う LLM は Claude 3.5 Sonnet、LLM に与えるプロンプトや前提知識は、<sup><a href="#fn_5" id="reffn_5">5</a></sup> のリポジトリ内にある。</p>
+<p>上記のプロンプトに「fragile pillars」というテーマを与えると、以下のゲームを提案してくる。</p>
 <blockquote>
-<p>I want you to act as a game designer. Show me ideas for new action mini-games.</p>
+<p>Pillar Paraglider: Control a paraglider flying through a course of fragile pillars. The paraglider constantly descends. Press the button to ascend, but each press also sends a shockwave that can damage nearby pillars. Core mechanic: Balancing ascent with pillar preservation.</p>
 </blockquote>
-<p>このプロンプトに対する回答例は、以下のような漠然とした当たり障りのないゲームアイデアが返ってきただけだ。</p>
+<hr>
 <blockquote>
-<p>Certainly! Here are some ideas for action mini-games that could be integrated into a larger video game or used as standalone experiences:</p>
-<p>Laser Maze Runner:</p>
-<p>The player navigates through a complex maze filled with laser beams. They must use their agility and quick reflexes to dodge and jump over the lasers to reach the exit.</p>
+<p>Pillar Paraglider: 壊れやすい柱のコースを飛行するパラグライダーを操縦します。パラグライダーは常に下降しています。ボタンを押すと上昇しますが、押すたびにショックウェーブが発生し、近くの柱にダメージを与える可能性があります。コアメカニズム：上昇と柱の保護のバランスを取ること。</p>
 </blockquote>
-<p>プロンプトの工夫で、ある程度は ChatGPT にありきたりではないゲームを考えさせることができる。ただ、そのような工夫を経ても、返ってきたアイデアはまだぼんやりとしていて、ブレーンストーミングの元ネタにはなるが、ここから具体的なゲームのルール、アルゴリズムまで到達させることは難しい。</p>
-<p>より詳細なアルゴリズムにするために、以下のようなプロンプトで、そのゲームの疑似コードを書いてもらうことはできる。</p>
-<blockquote>
-<p>I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm representing the rules of the following game:</p>
-<p>Game 2: Pinball Panic</p>
-<p>Selected tags: player: circle, weapon: bounce, field: pins, on pressed: shoot</p>
-<p>Description: In this game, the player controls a circular character that bounces around a pinball-like field. The player can shoot projectiles by pressing the button, which bounce off the pins and destroy enemies. The objective is to survive as long as possible while racking up points by destroying enemies and collecting power-ups.</p>
-</blockquote>
-<p>しかし、結果として出力されるコードにはあまり具体性が無く、実装可能な解像度までは遠い。</p>
-<h3 id="chatgpt-は新しいアルゴリズムを実装するのは不得意">ChatGPT は新しいアルゴリズムを実装するのは不得意</h3>
-<p>別の問題として、ChatGPT は既存のアルゴリズムを様々なプログラミング言語で実装するのは得意だが、前例の無い新しいアルゴリズムをコードにするのは不得意なのでは、という点がある。</p>
-<p>&quot;Can GPT-4 <em>Actually</em> Write Code?&quot;という記事 <sup><a href="#fn_1" id="reffn_1">1</a></sup> には、可能であればなるべく火を通らないように目的地までのパスを探索する、というアルゴリズムを ChatGPT に書かせようとしたがうまくいかなかった、ということが書いてある。一般的な A* の探索アルゴリズムのコードであれば ChatGPT は難なく出力するが、それをアレンジした要求をするとうまく答えられなくなるという例だ。</p>
-<p>ChatGPT はユーザーの要求を解釈してそれに合致する既存コードを持ってくることや、それに対する追加要求に応じてコードを書き換える、といったことは得意だ。だが、今までに無いアルゴリズムやルールを含むコードを生成する能力がどの程度あるのかは未知数だ。</p>
-<p>今までにない簡単なゲームの例として、自作したゲームの一つである PIN CLIMB を、なんとかして ChatGPT に書かせられないかということを試していた。</p>
-<p><a href="https://abagames.github.io/crisp-game-lib-games/?pinclimb" target="_blank"><img src="https://github.com/abagames/crisp-game-lib-games/raw/main/docs/pinclimb/screenshot.gif" alt="PIN CLIMB"></a></p>
-<p>上記のゲーム実装方法を説明する文章を元に、以下のプロンプトでゲームのアルゴリズムを示す疑似コードを作成し、</p>
-<blockquote>
-<p>
-I want you to act as a game programmer. Write a pseudo code outlining the detailed algorithm for the following game inside one unique code block. Do not write explanations.<br>
-# Characters<br>
-- bar<br>
-- pins<br>
-# Controls<br>
-- The bar stretches as long as the button is held down and shrinks to a default length when the button is released.<br>
-# Rules<br>
-- One end of the bar is fixed to the pin and the other end rotates around the pin.<br>
-- The game screen scrolls down so that the bar is positioned slightly above the bottom edge of the screen.<br>
-- Pins appear at random locations at the top edge of the screen after each scrolling of a certain distance.<br>
-- When the bar catches on another pin, the bar is fixed to that pin.<br>
-# Initial state<br>
-- Pins are placed in about 10 random positions on the screen, and the bar is fixed to the bottom pin.
-</p>
-</blockquote>
-
-<p>その後、以下のプロンプトで具体的な Phaser のソースコードにする、ということを試した。Phaser を選んだのは、JavaScript ベースのゲームライブラリで一番 Web 上に情報が豊富なのは Phaser だろうという予測の元だ。</p>
-<blockquote>
-<p>Implement the game using the HTML5 game framework &quot;Phaser 3&quot; without using external resources such as image files or audio files. Just show me the JavaScript source code.</p>
-</blockquote>
-<p>結果としてはうまくいかなかった。最初の疑似コード時点で十分な情報量があるか怪しいものが出てくるし、そこから Phaser への変換もあまりうまくいかない。</p>
-<p>疑似コードを挟まず、ピンを書く、スクロールさせる、ひもを回す、のようにステップバイステップで指示して直接ソースコードを書かせても、ひもが他のピンに当たるとそのピンへ固定される、のあたりでうまくいかなくなる。ここの実装難度が高いことは分かる。回転する矩形の当たり判定を取ることも、当たった後にそのピンへ固定することも、両方とも処理としては特殊であり、この辺が限界であっても納得はできる。</p>
-<h3 id="プロンプトの工夫でこれらの課題を乗り越えられる？">プロンプトの工夫でこれらの課題を乗り越えられる？</h3>
-<p>分からない。</p>
-<p>ゲームのアイデア発想はなるべく自由に、それをルールや実装へ落とすところは具体的に、のようなことをプロンプトでうまく制御するのはかなり難しいのでは、と直感的には思われる。また、モデルの限界はプロンプトでは乗り越えられない。</p>
-<h3 id="gpt-〇〇-になればこの辺の問題は解決される？">GPT-〇〇 になればこの辺の問題は解決される？</h3>
-<p>分からない。</p>
-<p>画像生成 AI の急激な改善を見ていると、半年後にはこの辺の問題は解決するのかもしれない。モデルの規模で乗り越えられる課題なのか、そもそもアプローチとして筋悪なのか、どちらかは現時点では不明だ。</p>
-<p>実際、最初に試したアクションミニゲームのアイデアについて、GPT-3.5 でなく GPT-4 に聞いてみると、下記のような少し改良された回答が得られる。</p>
-<blockquote>
-<p>Certainly! Here are some unique action mini-game ideas:</p>
-<p>Asteroid Surfing</p>
-<p>Setting: Outer space, amidst a field of rapidly moving asteroids.<br>
-Objective: Ride the largest asteroids and jump between them to reach a goal point in the least amount of time.<br>
-Mechanics: Players must balance on moving asteroids, time their jumps, and avoid smaller, more hazardous space debris.</p>
-</blockquote>
-<p>ゲームアイデアとしてはまだ凡庸だが、より詳細なゲーム内容が得られる。言語モデルの発展と、プロンプトの工夫で、より面白く具体的なゲームが考案できる可能性はある。</p>
-<h3 id="今でもできる他のアプローチがあるのでは？">今でもできる他のアプローチがあるのでは？</h3>
-<p>分からない。</p>
-<p>ポンとかブロック崩しとか、既存のゲームのコードをまず提示させて、そこから対話的に新しい要素を加えていく、のような方法は今でもうまくいく可能性がある。その場合、どのくらいの新しさなら許容されるのか、どの程度細切れに指示するのが効率が良いのか、などのプロンプトエンジニアリングが必要となる。</p>
-<p>そのようにゲームを作るのが直接コードを書くのに比べて効率良いかと問われると、おそらく悪いので、これは効率性の問題ではなく、ChatGPT を使ってゲームを作るという縛りプレイとしての楽しさを追い求めることになる。「AI にゲームを作らせるゲーム」という新しいゲームを、旬のうちにいろいろ試してみるのも楽しいだろう。</p>
+<p>このアイデアを詳細化し、実装させた結果、<sup><a href="#fn_6" id="reffn_6">6</a></sup> のゲームができた。これは Claude の出力結果そのままである。</p>
+<p>ボタンを押すと赤い自機が上昇し、同時に周囲に円状のショックウェーブを放つ。ショックウェーブは柱を破壊する。フラッピーバードの影響を受けすぎな感じはするが、挙動としてはなかなか面白いものが実装できている。</p>
+<p>だが、このゲームには明らかにいくつかの問題がある。</p>
+<ul>
+<li>簡単すぎる。ボタンを連打していればショックウェーブで柱を無効化できる。自機が画面上端や下端に行っても何も起きないので、ほぼゲームオーバーにならない。</li>
+<li>スコアリングシステムが安直である。単に進んだ距離がスコアになっているだけなので、リスキーな行動がスコアにつながったりしない。</li>
+<li>元々のコアメカニズムを実現していない。「上昇と柱の保護のバランスを取ること」とあるので、本来はショックウェーブで柱を壊さないようにするゲームにしたいのだろうが、そのように実装されていない。また、そのメカニズムを忠実に実装すると、当たり判定の大きい自機でプレイするようなストレスフルなゲームになる。</li>
+</ul>
+<p>ガチャ指向ゲーム開発では、このように面白い挙動をする不完全なゲームを、どのようにしてゲームとしても面白いものに改良するか、このプロセスが重要となる。</p>
+<p>今回のゲームでは、以下のように変更した。</p>
+<ul>
+<li>全方向に出る円状のショックウェーブは強すぎるので、自機に方向を付け、自機の前方向の限られた角度にのみショックウェーブが出るようにする。また、ショックウェーブは柱全体を破壊するのではなく、当たった部分のみを破壊する。また、自機が画面上端や下端に接触したらゲームオーバーとする。</li>
+<li>破壊した部分ごとにスコアを与える。また連続して破壊することで、スコアが増加するようにし、柱に向かって進むリスキーな行動で大きなスコアが得られるようにする。</li>
+<li>コアメカニズムは無視する。「壊さないように」よりも「壊しまくる」ゲームの方が、一般的には楽しい。</li>
+</ul>
+<p>その結果、ゲームは <sup><a href="#fn_7" id="reffn_7">7</a></sup> のようになった。</p>
+<p><img src="https://abagames.github.io/claude-one-button-game-creation/wavybird/screenshot.gif" alt="WAVY BIRD screenshot"></p>
+<p>柱にショックウェーブで穴を開けて進むゲームになった。若干難しすぎる感じはするが、最初のバージョンよりは、適切なリスクとリワードのバランスが実現できており、ゲームとしての完成度が上がっているだろう。</p>
+<p>改良版とオリジナルのコード上の差異は <sup><a href="#fn_8" id="reffn_8">8</a></sup> の通りである。こう見るとオリジナルのコードは跡形もなくなっているように見えるが、実際はオリジナルの枠組みを参考にして修正できるので、0 から作るよりはだいぶ楽である。</p>
+<p>音やタイトルを付けた完成版は <sup><a href="#fn_9" id="reffn_9">9</a></sup> になった。<sup><a href="#fn_5" id="reffn_5">5</a></sup> のリポジトリには、同様なプロセスで開発したゲームが多数あるので、参照いただきたい。</p>
+<p>これが現時点での、LLM を用いたガチャ指向ゲーム開発の実態である。果たしてこれが、人が普通にアイデアを考えて、それを実装するのと比べて楽か、と言われると、あまり楽ではない。ただ、LLM が提案してくるゲームを選別し、それをいかにして面白いゲームにするのか、というコンピュータからのお題に立ち向かうような開発プロセスは、従来の開発プロセスとは違った面白さがある。また、ゲーム開発と並行して、生成のためのプロンプト開発・改良を行う必要もあり、そこも合わせて楽しむことが、ガチャ指向ゲーム開発においては大切である。</p>
+<p>将来的には何も考えずに「面白いゲームを作って」と LLM に言えば、いい感じのゲームが実装されて返ってくるようになるかもしれない。現時点だと、面白い挙動をするゲームを得るには数十回のガチャが必要とされるのが当たり前で、打率はかなり低いと言わざるを得ない。だが、以前の LLM ではそもそも挙動として面白いものが返ってくることは皆無で、どこかで見たような凡庸なゲームしか出てこないことが当たり前であった。それがここ 1 年程度の LLM の進化によって、少なくともなにかの斬新さを感じられるものが生成されるようになったのは、良い兆候である。</p>
+<p>LLM がこのまま進化を続ければ、出てくるアイデアの質が上がり、アイデアをコードとしてより正確に実装できるようになるだろう。また、上記で挙げたような問題点を指摘すると、それに応じてコードを修正できるかもしれない。そうすれば、より少ないガチャ回数と、より簡単な改良で、遊べるゲームが作れるようになるだろう。ただ、そのようなことができるように今後の LLM が順調に性能向上するかは現時点では不明である。2024 年現在、LLM の性能向上スピードは鈍化している印象もある。</p>
+<h3 id="ai-チャットボットを活用したゲーム開発の今後">AI チャットボットを活用したゲーム開発の今後</h3>
+<p>AI チャットボットを活用したゲーム開発は、まだ完全に自動化されたプロセスではないが、新しい可能性を秘めている。現時点では、AI チャットボットは面白い挙動をする「トイ」を生成する程度の能力を持っており、それを人間が改良してゲームに仕上げるというプロセスが有効である。</p>
+<p>今後、LLM の性能がさらに向上すれば、より質の高いゲームアイデアやコードが生成されるようになる可能性がある。しかし、ゲームのバランス調整や楽しさの評価など、創造的な側面については依然として人間の介入が必要不可欠であろう。</p>
+<p>「ガチャ指向ゲーム開発」は、従来とは異なる新しいゲーム開発の楽しみ方を提供している。LLM が生成するアイデアやコードを基に、人間の創造性を加えてゲームを作り上げていくプロセスには、新たな発見や驚きがある。</p>
+<p>LLM の進化と共に、このような開発手法もさらに発展していくことが期待される。小さなゲームの開発者にとって、AI チャットボットは新しい創造の扉を開く可能性を秘めている。</p>
 <hr>
 <blockquote id="fn_1">
-<sup>1</sup>. <a href="https://tylerglaiel.substack.com/p/can-gpt-4-actually-write-code" target="_blank">Can GPT-4 <em>Actually</em> Write Code?</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+<sup>1</sup>. <a href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank">Claude 3.5 Sonnet</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://github.com/abagames/claude-one-button-game-creation/blob/main/project_knowledge/ideas.md" target="_blank">claude-one-button-game-creation/ideas.md</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://github.com/abagames/claude-one-button-game-creation/blob/main/project_knowledge/one_button.md" target="_blank">claude-one-button-game-creation/one_button.md</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="https://github.com/abagames/claude-one-button-game-creation/blob/main/project_knowledge/arcfire.md" target="_blank">claude-one-button-game-creation/arcfire.md</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a href="https://github.com/abagames/claude-one-button-game-creation/" target="_blank">claude-one-button-game-creation</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a href="https://abagames.github.io/claude-one-button-game-creation/?sample_before" target="_blank">Claude の作ったオリジナルの Pillar Paraglider</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. <a href="https://abagames.github.io/claude-one-button-game-creation/?sample_after" target="_blank">改良された Pillar Paraglider</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. <a href="https://github.com/abagames/claude-one-button-game-creation/commit/9e04ca08aa426f33909e99b6eb5d19d6ec55e446" target="_blank">改良版とオリジナルの diff</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. <a href="https://abagames.github.io/claude-one-button-game-creation/?wavybird" target="_blank">Pillar Paraglider 改め WAVY BIRD</a><a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
 </blockquote>
 
                                 
@@ -617,7 +661,7 @@ Mechanics: Players must balance on moving asteroids, time their jumps, and avoid
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AI チャットボットは新しいゲームを作れるのか","level":"1.10.3","depth":2,"next":{"title":"おわりに","level":"1.11","depth":1,"path":"conclusion.md","ref":"conclusion.md","articles":[]},"previous":{"title":"ゲームメカニクスを AI に教えたら","level":"1.10.2","depth":2,"path":"generation/ai_chatbot_combine_tags.md","ref":"generation/ai_chatbot_combine_tags.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/can_ai_chatbot_create_game.md","mtime":"2023-09-25T08:50:33.076Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2024-01-04T12:23:26.024Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AI チャットボットは新しいゲームを作れるのか","level":"1.10.3","depth":2,"next":{"title":"おわりに","level":"1.11","depth":1,"path":"conclusion.md","ref":"conclusion.md","articles":[]},"previous":{"title":"ゲームメカニクスを AI に教えたら","level":"1.10.2","depth":2,"path":"generation/ai_chatbot_combine_tags.md","ref":"generation/ai_chatbot_combine_tags.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"abagames","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小さなゲーム開発の楽しみ","gitbook":"*","description":"Guidebook for Enjoying Creating Small Games"},"file":{"path":"generation/can_ai_chatbot_create_game.md","mtime":"2024-07-31T12:22:08.950Z","type":"markdown"},"gitbook":{"version":"5.1.0","time":"2024-07-31T12:22:13.942Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
